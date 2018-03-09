@@ -1,0 +1,17 @@
+```{r}
+
+library(haven)
+# yourData = read_dta("CHIP2013_rural_household_f_income_asset.dta")
+# yourData
+
+yourData2 = read_dta("RHS_w2_vill.dta")
+yourData3 = read_dta("RHS_w2_abc.dta")
+yourData4 = read_dta("RHS_w2_d.dta")
+yourData5 = read_dta("RHS_w2_e.dta")
+
+
+yourData2
+yourData3
+yourData4
+yourData5
+```

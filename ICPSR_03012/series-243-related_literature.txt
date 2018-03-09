@@ -1,0 +1,16 @@
+Bibliography
+Chinese Household Income Project Series
+
+This bibliography includes published and unpublished works that are
+related to ICPSR series 243. It includes works that are based on
+primary or secondary analysis of the data, or which describe or critique
+those data or the collection methodology. This list represents all items
+known to ICPSR as of 2017-08-09.
+
+If you publish a work or know of other works that are based on these data,
+please send the complete citation and name of the ICPSR series used to:
+icpsr-biblio-notify@umich.edu 
+
+
+1. Luo, Yiyang, "Essays in Family and Labour Economics." Dissertation,
+University of Essex, 2017.

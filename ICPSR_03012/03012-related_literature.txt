@@ -1,0 +1,1116 @@
+Bibliography
+Chinese Household Income Project, 1995
+
+This bibliography includes published and unpublished works that are related 
+to ICPSR study 3012. It includes works that are based on primary
+or secondary analysis of the data, or which describe or critique those
+data or the collection methodology. 
+
+If you publish a work or know of other works that are based on these data,
+please send the complete citation and name of the ICPSR study used to:
+icpsr-biblio-notify@umich.edu 
+
+
+1. Almas, Ingvild; Johnsen, Ashild Auglaend, "The Cost of Living in China:
+Implications for Inequality and Poverty." NHH Dept. of Economics Discussion
+Paper No. 21/2012. Norwegian School of Economics, Department of Economics,
+Nov 2012. DOI: 10.2139/ssrn.2205788
+
+2. Almas, Ingvild; Johnsen, Ashild Auglaend, "The cost of living and its
+implications for inequality and poverty measures for China." Jul 15, 2012..
+Full text PDF: http://www.sv.uio.no/esop/english/research/news-and-events/events/conferences-and-seminars/normac-papers/almaas.pdf
+
+3. Almas, Ingvild; Johnsen, Ashild Auglaend , "The Cost of a Growth Miracle
+-- Reassessing Price and
+Poverty Trends in China." No. 06/2013. Oslo, Norway: University of Oslo,
+Department of Economics, 2013.
+Full text PDF: http://perseus.iies.su.se/~ialm/assets/papers/cost_of_miracle.pdf
+
+4. Almas, Ingvild; Johnsen, Auglaend, "China's Growth Miracle - Still
+Awaiting the Real Great Leap Forward?." Presented at the 31st General
+Conference of the International Association for Research in Income and
+Wealth, International Association for Research in Income and Wealth, St.
+Gallen, Switzerland, Aug 22-28, 2010.
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+5. An, Di, "Multiple Imputation Methods for Statistical Disclosure
+Control." Dissertation, University of Michigan, 2008.
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+6. An, Di; Little, Roderick J.A., "Multiple imputation: An alternative to
+top coding for statistical disclosure control." Journal of the Royal
+Statistical Society, Series A: Statistics in Society. Oct 2007, 170, (4),
+923 - 940. DOI: 10.1111/j.1467-985X.2007.00492.x
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+7. Anderson, Gordon, "Measuring aspects of mobility, polarization and
+convergence in the absence of cardinality: Indices based upon transitional
+typology." Social Indicators Research. in press 2018,. DOI: 10.1007/s11205-
+017-1767-1
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+8. Angelillo, Nicola, "Vulnerability to poverty in China: A subjective
+poverty line approach." Journal of Chinese Economic and Business Studies.
+2014, 12, (4), 315 - 331. DOI: 10.1080/14765284.2014.952512
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+9. Appleton, Simon; Song, Lina; Xia, Qingjie, "Growing out of poverty:
+Trends and patterns of urban poverty in China 1988-2002." World
+Development. May 2010, 38, (5), 665 - 678. DOI:
+10.1016/j.worlddev.2009.11.016
+Full text PDF: http://www.iariw.org/papers/2010/poster2Johnsen.pdf
+
+10. Appleton, Simon; Song, Lina; Xia, Qingjie, "Understanding Urban Wage
+Inequality in China
+1988-2008: Evidence from Quantile Analysis." IZA Discussion Paper No. 7101.
+Bonn, Germany: Institute for the Study of Labor, Dec 2012.
+Full text PDF: http://ftp.iza.org/dp7101.pdf
+
+11. Asuyama, Yoko, "Changes in the Causes of Earnings Inequality in Urban
+China from 1988 to 2002." Institute of Developing Economies Discussion
+Paper. No. 176, Chiba, Japan: Institute of Developing Economies, 2008.
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/176.pdf
+
+12. Asuyama, Yoko, "The Contribution of Supply and Demand Shifts to
+Earnings Inequality in Urban China." Institute of Developing Economies
+Discussion Paper. No. 177, Chiba, Japan: Institute of Developing Economies,
+Oct 2008.
+Full text PDF: http://www.ide-jetro.jp/English/Publish/Download/Dp/pdf/177.pdf
+
+13. Asuyama, Yoko, "The Contribution of Supply and Demand Shifts to
+Earnings Inequality in urban China." Institute of Developing Economies
+Discussion Paper No. 177. Chiba, Japan: Institute of Developing Economies,
+Jun 2009.
+Full text PDF: http://ir.ide.go.jp/dspace/bitstream/2344/795/3/ARRIDE_Discussion_No.177_asuyama.pdf
+
+14. Atella, V.; Brugiavini, A.; Chen, H.; Pace, N., "Chinese healthcare
+system reforms and household saving patterns: Some stylised facts." In
+Taylor, Robert, The Globalization of Chinese Business: Implications for
+Multinational Investors. Asian Studies Series. 189 - 204, Amsterdam:
+Chandos Publishing,2014. DOI: 10.1533/9781780634494.2.189
+Full text PDF: http://ir.ide.go.jp/dspace/bitstream/2344/795/3/ARRIDE_Discussion_No.177_asuyama.pdf
+
+15. Atella, Vincenzo; Brugiavini, Agar; Pace, Noemi, "The health care
+system reform in China: Effects on out-of-pocket expenses and saving."
+China Economic Review. Jul 2015, 34, 182 - 195. DOI:
+10.1016/j.chieco.2015.02.003
+Full text PDF: http://ir.ide.go.jp/dspace/bitstream/2344/795/3/ARRIDE_Discussion_No.177_asuyama.pdf
+
+16. Athukorala, Prema-chnadra; Fukao, Kyoji; Yuan, Tangjun, "Economic
+Transition and Labour Market Adjustment in China: An Exploratory Essay."
+2008..
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+17. Bian, Yanjie; Zhang, Zhanxin, "Marketization and income distribution in
+urban China, 1988 and 1995." Research in Social Stratification and
+Mobility. 2002, 19, (1), 377 - 415. DOI: 10.1016/S0276-5624(02)80047-6
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+18. Bian, Yanjie; Zhang, Zhanxin, "Urban elites and income differential in
+China: 1988-1995." Japanese Journal of Political Science. May 2004, 5, (1),
+51 - 68. DOI: 10.1017/S1468109904001318
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+19. Bishop, John A.; Chiou, Jong-Rong, "Economic transformation and
+earnings inequality in China and Taiwan." Journal of Asian Economics. Jun
+2004, 15, (3), 549 - 562. DOI: 10.1016/j.asieco.2004.05.009
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+20. Bishop, John A.; Liu, Haiyong, "Liberalization and rent-seeking in
+China's labor market." Public Choice. Jun 2008, 135, (3-4), 151 - 164. DOI:
+10.1007/s11127-007-9251-0
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+21. Bishop, John A.; Liu, Haiyong; Meng, Qi, "Are Chinese smokers sensitive
+to price?." China Economic Review. 2007, 18, (2), 113 - 121. DOI:
+10.1016/j.chieco.2006.12.001
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+22. Bishop, John A.; Luo, Feijun; Pan, Xi, "Economic transition and
+subjective poverty in urban China." Review of Income and Wealth. Dec 2006,
+52, (4), 625 - 641. DOI: 10.1111/j.1475-4991.2006.00209.x
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+23. Bishop, John A.; Luo, Feijun; Wang, Fang, "Economic transition, gender
+bias, and the distribution of earnings in China." Economics of Transition.
+Apr 2005, 13, (2), 239 - 259. DOI: 10.1111/j.1468-0351.2005.00218.x
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+24. Brenner, Mark D., "Socialist fetters? Land tenure and economic growth
+in post-Mao rural China." In Boyce, James K.; Cullenberg, Stephen;
+Pattanaik, Prasanta K.; Pollin, Robert, Human Development in the Era of
+Globalization. 64 - 82, Cheltenham, UK: Edward Elgar,2006.
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+25. Brenner, Mark; Riddle, Matthew; Boyce, James K., "A Chinese sky trust?:
+Distributional impacts of carbon charges and revenue recycling in China."
+Energy Policy. Mar 2007, 35, (3), 1771 - 1784. DOI:
+10.1016/j.enpol.2006.04.016
+Full text PDF: http://hi-stat.ier.hit-u.ac.jp/information/schedule/schedulelog/S093/PCA-KF-TY.pdf
+
+26. Cao, Jing, "A Dynamic Computable General Equilibrium Analysis of
+Environmental Taxation and 'Rural-Urban' Migration Distortions In China."
+EEPSEA Research Report No. 2006-RR9. Singapore: Economy and Environment
+Program for Southeast Asia (EEPSEA), Apr 2007.
+Full text PDF: http://www.eepsea.org/pub/rr/11998456031Cao_Jing_RR9.pdf
+
+27. Cao, Jing, "Measuring green productivity growth for China's
+manufacturing sectors: 1991-2000." Asian Economic Journal. Dec 2007, 21,
+(4), 425 - 451. DOI: 10.1111/j.1467-8381.2007.00265.x
+Full text PDF: http://www.eepsea.org/pub/rr/11998456031Cao_Jing_RR9.pdf
+
+28. Cao, Jing; Ho, Mun S.; Jorgenson, Dale W.; Ren, Ruoen; Sun, Linlin;
+Yue, Ximing, "Industrial and aggregate measures of productivity growth in
+China, 1982-2000." Review of Income and Wealth. Jul 2009, 55, (s1), 485 -
+513. DOI: 10.1111/j.1475-4991.2009.00328.x
+Full text PDF: http://www.eepsea.org/pub/rr/11998456031Cao_Jing_RR9.pdf
+
+29. Cao, Yang; Nee, Victor, "Remaking Inequality: Market Expansion and
+Income Stratification in Reforming State Socialism." Department of
+Sociology Working Paper. Baton Rouge, Louisiana: Louisiana State
+University, Mar 5, 2002.
+Full text PDF: http://www.lsu.edu/departments/sociology/workingpapers/Cao-Nee-Remaking.pdf
+
+30. Chen, Chen; Qin, Bo, "The emergence of China's middle class: Social
+mobility in a rapidly urbanizing economy." Habitat International. Oct 2014,
+44, 528 - 535. DOI: 10.1016/j.habitatint.2014.10.007
+Full text PDF: http://www.lsu.edu/departments/sociology/workingpapers/Cao-Nee-Remaking.pdf
+
+31. Chen, Chuanbo; Fan, C. Cindy, "China’s hukou puzzle: Why don’t rural
+migrants want urban hukou?." China Review. Oct 2016, 16, (3),.
+Full text PDF: http://www.lsu.edu/departments/sociology/workingpapers/Cao-Nee-Remaking.pdf
+
+32. Chen, Hao, "Three Essays in Chinese Reforms and Household Savings."
+Dissertation, Universita Ca' Foscari Venezia, 2011.
+Full text PDF: http://www.lsu.edu/departments/sociology/workingpapers/Cao-Nee-Remaking.pdf
+
+33. Chen, Tao, "Three Essays on Labor Migration (China)." Dissertation,
+Tulane University, 2006.
+Full text PDF: http://www.lsu.edu/departments/sociology/workingpapers/Cao-Nee-Remaking.pdf
+
+34. Chen, Xi; Zhang, Xiaobo, "The Distribution of Income and Well-Being in
+Rural China: A Survey of Panel Data Sets, Studies and New Directions." Oct
+25, 2009..
+Full text PDF: http://mpra.ub.uni-muenchen.de/20587/1/Income_Distribution_Wellbeing_Rural_China.pdf
+
+35. Chen, Yi, "Never Too Old to Save--Explaining the High Saving Rates of
+the Chinese Elderly." Nov 30, 2014..
+Full text: https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjaGVueWl1Y2xhZWNvbnxneDo2MDA3ZDI5MTYyMDZmZjNj
+Full text PDF: https://www.researchgate.net/profile/Yi_Chen60/publication/281643297_Never_Too_Old_to_Save_-_Explaining_the_High_Saving_Rates_of_the_Chinese_Elderly/links/55f273e508ae199d47c47f55.pdf
+
+36. Chen, Yi; Demurger, Sylvie; Fournier, Martin, "Earnings differentials
+and ownership structure in Chinese enterprises." Economic Development and
+Cultural Change. 2005, 53, (4), 933 - 958. DOI: 10.1086/429845
+Full text: https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjaGVueWl1Y2xhZWNvbnxneDo2MDA3ZDI5MTYyMDZmZjNj
+Full text PDF: https://www.researchgate.net/profile/Yi_Chen60/publication/281643297_Never_Too_Old_to_Save_-_Explaining_the_High_Saving_Rates_of_the_Chinese_Elderly/links/55f273e508ae199d47c47f55.pdf
+
+37. Chen, Yuanyuan, "The Impact of Agricultural and Industrial Development
+on Income Inequality in Rural China." School of Economics Working Paper.
+Shanghai, China: Shanghai University of Finance and Economics, Oct 20,
+2005.
+Full text PDF: http://se.shufe.edu.cn/upload/htmleditor/File/090604043333.pdf
+
+38. Chen, Yuanyuan, "Two Essays on Selection Models and One Essay on Income
+Inequality in Rural China." Dissertation, Boston College, 2005.
+Full text PDF: http://se.shufe.edu.cn/upload/htmleditor/File/090604043333.pdf
+
+39. Chen, Zhao; Lu, Ming; Wan, Guanghua, "Inter-Industry Wage
+Differentials: An Increasingly Important Contributor to Urban China Income
+Inequality." Global COE Hi-Stat Discussion Paper Series. No. 130, Tokyo,
+Japan: Hitotsubashi University, Mar 2010.
+Full text PDF: http://hermes-ir.lib.hit-u.ac.jp/rs/bitstream/10086/18367/1/gd09-130.pdf
+
+40. Chen, Zhao; Lu, Ming; Wan, Guanghua, "Rising inter-industrial income
+inequality in China: Can it be narrowed and how?." In Zhang, Jun,
+Unfinished Reforms in the Chinese Economy. 197 - 228, Singapore: World
+Scientific Publishing Co.,2013.
+Full text PDF: http://hermes-ir.lib.hit-u.ac.jp/rs/bitstream/10086/18367/1/gd09-130.pdf
+
+41. Chuliang, Luo, "Economic Restructuring, Informal Jobs and Pro-poor
+Growth in Urban China." Fukino Project Discussion Paper Series, Tokyo,
+Japan: Hitosubashi University, Feb 2009..
+Full text PDF: http://www.ijrc.hit-u.ac.jp/pdf/files/Fukino_DP_10_uQS6SQ.pdf
+
+42. Chuliang, Luo, "Income Growth, Inequality and Poverty Reduction in
+Rural China." Presented at the Asian Historical Economics Conference,
+Tokyo, Sep 13-15, 2012.
+Abstract: http://ahec2012.org/programme.html
+Full text PDF: http://ahec2012.org/papers/S2B-2_Luo.pdf
+
+43. Cui, Yuling; Nahm, Daehoon; Tani, Massimiliano, "Employment choice and
+ownership structure in transitional China." Singapore Economic Review.
+2015,. DOI: 10.1142/S0217590815500885
+Abstract: http://ahec2012.org/programme.html
+Full text PDF: http://ahec2012.org/papers/S2B-2_Luo.pdf
+
+44. Cui, Yuling; Nahm, Dauhoon; Tani, Massimiliano, "The Determinants of
+Rural Migrants' Employment
+Choice in China: Results from a Joint Estimation." Discussion Paper Series,
+Forschungsinstitut zur Zukunft der Arbeit, No. 6968. Leibniz, Germany:
+Leibniz Information Centre for Economics; Institute for the Study of Labor
+(IZA), Oct 2012.
+Abstract: http://www.econstor.eu/handle/10419/67238
+Full text PDF: http://www.econstor.eu/bitstream/10419/67238/1/729304302.pdf
+
+45. Demurger, Sylvie; Fournier, Martin; Chen, Yi, "The evolution of gender
+earnings gaps and discrimination in urban China, 1988-95." Developing
+Economies. Mar 2007, 45, (1), 97 - 121. DOI: 10.1111/j.1746-
+1049.2007.00031.x
+Abstract: http://www.econstor.eu/handle/10419/67238
+Full text PDF: http://www.econstor.eu/bitstream/10419/67238/1/729304302.pdf
+
+46. Ding, Sai; Dong, Xiao-yuan; Li, Shi, "Women's employment and family
+income inequality during China's economic transition." Feminist Economics.
+Jul 2009, 15, (3), 163. DOI: 10.1080/13545700802526541
+Abstract: http://www.econstor.eu/handle/10419/67238
+Full text PDF: http://www.econstor.eu/bitstream/10419/67238/1/729304302.pdf
+
+47. Dong, Han BIng, "Economic Reforms and the Rate of Returns to Schooling
+in China's Transition Period." Thesis, University of Ottawa, 2007.
+Abstract: http://137.122.14.44/handle/10393/25295?mode=full
+Full text PDF: http://137.122.14.44/bitstream/10393/25295/1/2007_dong_han-bing.pdf
+
+48. Démurger, Sylvie; Fournier, Martin; Shi, Li; Zhong, Wei, "Economic
+Liberalization with Rising Segmentation in China's Urban Labor Market."
+Presented at the Asian Economic Panel meeting, Seoul, South Korea, Mar
+2006.
+Full text: https://halshs.archives-ouvertes.fr/halshs-00353336/document
+
+49. Emran, M. Shahe; Hou, Zhaoyang, "Access to Markets and Household
+Consumption: Evidence from Rural China." Jul 10, 2008.. DOI:
+10.2139/ssrn.1157912
+Abstract: http://ssrn.com/abstract=1157912
+
+50. Emran, M.S.; Hou, Z., "Access to markets and rural poverty: Evidence
+from household consumption in china." Review of Economics and Statistics.
+May 2013, 95, (2), 682 - 697. DOI: 10.1162/REST_a_00354
+Abstract: http://ssrn.com/abstract=1157912
+
+51. Faigen, Benjamin, "The Returns to Education: An Empirical Study of
+Urban China, 1988-2007." Thesis, Lund University, 2012.
+Abstract: http://ssrn.com/abstract=1157912
+
+52. Fan, Lida, "Measuring interprovincial flows of human capital in China:
+1995-2000." Population Research and Policy Review. Jun 2009, 28, (3), 367 -
+387. DOI: 10.1007/s11113-008-9103-8
+Abstract: http://ssrn.com/abstract=1157912
+
+53. Fan, Yi, "Intergenerational income persistence and transmission
+mechanism: Evidence from urban China." China Economic Review. in press
+2016,. DOI: 10.1016/j.chieco.2016.10.005
+Abstract: http://ssrn.com/abstract=1157912
+
+54. Fang, Qing, "Changes in Determinants of Personal Earnings in People's
+Republic of China in 1988 and in 1995." Greenville, NC: East Carolina
+University, Apr 2001..
+Full text PDF: http://www.ecu.edu/cs-educ/econ/upload/fang.pdf
+
+55. Feng, Jin; He, Lixin; Sato, Hiroshi, "Public Pension and Household
+Saving: Evidence from Urban China." Fukino Project Discussion Paper Series.
+No. 009, Tokyo, Japan: Hitotsubashi University, Feb 2009.
+Full text PDF: http://hermes-ir.lib.hit-u.ac.jp/rs/bitstream/10086/16841/1/070fukino00901.pdf
+
+56. Feng, Jin; He, Lixin; Sato, Hiroshi, "Public pension and household
+saving: Evidence from urban China." Journal of Comparative Economics. Dec
+2011, 39, (4), 470 - 485. DOI: 10.1016/j.jce.2011.01.002
+Full text PDF: http://hermes-ir.lib.hit-u.ac.jp/rs/bitstream/10086/16841/1/070fukino00901.pdf
+
+57. Fleisher, Belton M.; Li, Haizheng; Li, Shi, "Job Choices, Sectoral
+Attachment, and Educational Attainment in China's Transition Economy."
+Department of Economics Working Paper. Columbus, OH: Ohio State University,
+Jan 5, 2005.
+Full text: http://economics.sbs.ohio-state.edu/Fleisher/working_papers/SectoralChoice1_14.doc
+
+58. Fleisher, Belton M.; Li, Haizheng; Li, Shi; Wang, Xiaojun, "Sorting,
+Selection, and Transformation of the Return to College Education in China."
+Department of Economics Working Papers. Columbus, OH: Ohio State
+University, Dec 17, 2004.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+59. Friedman, Barry L., "China's Social Security Policy in the Context of
+Its Evolving Employment Policy." Presented at the APPAM Conference on Asian
+Social Protection, Association for Public Policy Analysis and Management,
+Singapore, Jan 7-9, 2009.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+60. Friedman, Barry L., "Social security policy in the context of evolving
+employment policy." In Besharaov, Douglas J.; Baehler, Karen, Chinese
+Social Policy in a Time of Transition. International Policy Exchange
+Series. 68 - 85, New York, NY: Oxford University Press,2013.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+61. Gao, Hang; Marchand, Joseph; Song, Tao, "The supply and demand factors
+behind
+the relative earnings increases in Urban
+China at the turn of the 21st century." Comparative Economic Studies. 2013,
+55, 121 - 143. DOI: 10.1057/ces.2012.43
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+62. Geng, Nan, "Generalized Stochastic Earnings Functions, Human Capital
+and Risk of Return in Urban China." Thesis, Dalhousie University, 2004.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+63. Gong, Jinquan, "Three Essays on Chinese Economy." Dissertation,
+University at Buffalo, State University of New York, 2017.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+64. Guo, Xiaoqi, "The Economic Value of Air-Pollution-Related Health Risks
+in China." Dissertation, Ohio State University, 2006.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+65. Guo, Xiaoqi; Hammitt, James K., "Compensating wage differentials with
+unemployment: Evidence from China." Environmental and Resource Economics.
+Feb 2009, 42, (2), 187 - 209. DOI: 10.1007/s10640-008-9217-9
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+66. Gustafsson, Bjorn; Li, Shi, "Economic transformation and the gender
+earnings gap in urban China." Journal of Population Economics. Jul 2000,
+13, (2), 305 - 329. DOI: 10.1007/s001480050140
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+67. Han, Li, "Marketing Politics? Economic Reforms and the Selection of
+Political Elites in China." Department of Economics Job Market Paper.
+Cambridge, MA: Harvard University, Nov 2007.
+Full text PDF: http://www.econ.ohio-state.edu/Fleisher/working_papers/FLLW%2012-17-04.pdf
+
+68. Han, Li, "The Making of Political Elites in Autocracies: Evidence from
+the Chinese Communist Party." Sep 2007..
+Full text PDF: http://isites.harvard.edu/fs/docs/icb.topic203645.files/partymember1LI_Han.pdf
+
+69. Hauser, Seth M.; Xie, Yu, "Temporal and regional variation in earnings
+inequality: Urban China in transition between 1988 and 1995." Social
+Science Research. Mar 2005, 34, (1), 44 - 79. DOI:
+10.1016/j.ssresearch.2003.12.002
+Full text PDF: http://isites.harvard.edu/fs/docs/icb.topic203645.files/partymember1LI_Han.pdf
+
+70. He, Hui; Huang, Feng; Liu, Zheng; Shu, Dongming, "Breaking the 'Iron
+Rice Bowl' and Precautionary
+Savings: Evidence from Chinese State-Owned
+Enterprises Reform." Federal Reserve Bank of San Francisco Working Paper
+2014-04. San Francisco, CA: Federal Reserve Bank of San Francisco, Apr 16,
+2014.
+Full text PDF: http://www.frbsf.org/economic-research/files/wp2014-04.pdf
+
+71. He, Xiaobin, "Property Transformation, Marketization and Wealth
+Inequality in Urban China 1988, 1995 and 2002." Dissertation, Stanford
+University, 2010.
+Full text PDF: http://www.frbsf.org/economic-research/files/wp2014-04.pdf
+
+72. He, Xiaobin; Huang, Zhuo, "Ownership restructuring, marketization and
+wealth inequality in urban China: 1995 and 2002." China and World Economy.
+Sep/Oct 2012, 20, (5), 37 - 62. DOI: 10.1111/j.1749-124X.2012.01301.x
+Full text PDF: http://www.frbsf.org/economic-research/files/wp2014-04.pdf
+
+73. Heng, Yin, "Characteristics of Inter-regional Income Disparities in
+China." Social Sciences in China. 2011, 32, (3), 123 - 144. DOI:
+10.1080/02529203.2011.598305
+Full text PDF: http://www.frbsf.org/economic-research/files/wp2014-04.pdf
+
+74. Hering, Laura; Poncet, Sandra, "Acces au marche et salaires individuels
+en Chine: L'influence de la influence de la propriete des firmes." Revue
+Economique. May 2008, 59, (3), 653 - 662.
+Full text: http://www.jstor.org/stable/25483946
+
+75. Hering, Laura; Poncet, Sandra, "Market access and individual wages:
+Evidence from China." Review of Economics and Statistics. Feb 2010, 92,
+(1), 145 - 159. DOI: 10.1162/rest.2009.11418
+Full text: http://www.jstor.org/stable/25483946
+
+76. Hnatkovskay, Viktoria; Lahiri, Amartya , "Urbanization, structural
+transformation and
+rural-urban disparities." Sep 2016..
+Full text PDF: http://faculty.arts.ubc.ca/vhnatkovska/Research/ChinaIndia_urban_v10.pdf
+
+77. Hou, Zhaoyang, "Access to Markets, Poverty, and Inequality: Evidence
+from Rural China." National University of Singapore, Nov 2011..
+Full text PDF: http://www.fas.nus.edu.sg/ecs/events/seminar/seminar-papers/17Jan12.pdf
+
+78. Hou, Zhaoyang, "Local versus Global: The Impact of Domestic and
+International Market Access on Household Income in Rural China." Job Market
+Paper. Washington, DC: George Washington University, Oct 2008.
+Full text PDF: http://home.gwu.edu/~houz/JobMarketPaper.pdf
+
+79. Hu, A.; Qian, Z., "Educational homogamy and earnings inequality of
+married couples: Urban China, 1988-2007." Research in Social Stratification
+and Mobility. Jun 2015, 40, 1 - 15. DOI: 10.1016/j.rssm.2015.01.004
+Full text PDF: http://home.gwu.edu/~houz/JobMarketPaper.pdf
+
+80. Hu, Anning, "Two approaches to counterfactual decomposition:
+Clarification and illustration." Social Currents. in press 2016,. DOI:
+10.1177/2329496515616823
+Full text PDF: http://home.gwu.edu/~houz/JobMarketPaper.pdf
+
+81. Huang, Ziyan, "Three Essays on Applied Microeconomics." Dissertation ,
+University of California, Los Angeles, 2013.
+Full text PDF: http://home.gwu.edu/~houz/JobMarketPaper.pdf
+
+82. Hwang, Jungbin, "Simple and Trustworthy Cluster-Robust GMM Inference."
+Presented at the UNC Charlotte Economics Seminar Series, University of
+North Carolina, Belk College of Business, Department of Economics,
+Charlotte, NC, Sep 2016.
+Full text PDF: https://belkcollegeofbusiness.uncc.edu/economicsseminar/wp-content/uploads/sites/885/2012/10/jungbin_hwang.pdf
+
+83. Imai, Katsushi; Wang, Xiaobing; Kang, Woojin, "Poverty and
+Vulnerability in Rural China: Effects of Taxation." Economics Discussion
+Paper Series, Manchester, England: University of Manchester, Aug 2009..
+Full text PDF: http://www.socialsciences.manchester.ac.uk/disciplines/economics/research/discussionpapers/pdf/EDP-0913.pdf
+
+84. Kamal, Fariha; Lovely, Mary E.; Ouyang, Puman, "Does deeper integration
+enhance spatial advantages? Market access and wage growth in China."
+International Review of Economics and Finance. Jun 2012, 23, 59 - 74. DOI:
+10.1016/j.iref.2011.10.006
+Full text PDF: http://www.socialsciences.manchester.ac.uk/disciplines/economics/research/discussionpapers/pdf/EDP-0913.pdf
+
+85. Khan, Azizur Rahman; Riskin, Carl, Income and Poverty in China in the
+Age of Globalization. New York: Oxford University Press, 2001.
+Full text PDF: http://www.socialsciences.manchester.ac.uk/disciplines/economics/research/discussionpapers/pdf/EDP-0913.pdf
+
+86. Khan, Azizur Rahman; Riskin, Carl, "Income inequality in China:
+Composition, distribution, and growth of household income, 1988 to 1995."
+China Quarterly. Jun 1998, 154, 221 -. DOI: 10.1017/S0305741000002022
+Full text PDF: http://www.socialsciences.manchester.ac.uk/disciplines/economics/research/discussionpapers/pdf/EDP-0913.pdf
+
+87. Khor, Niny; Pencavel, John, "Evolution of Income Mobility in the
+People's Republic of China: 1991-2002." Asian Development Bank Economics
+Working Paper Series. 204, Asian Development Bank, Jun 2010.
+Full text: http://papers.ssrn.com/sol3/papers.cfm?abstract_id=1639322
+
+88. Khor, Niny; Pencavel, John, "Evolution of income mobility: People's
+Republic of China, 1991-2002." In Zhuang, Juzhong, Poverty, Inequality, and
+Inclusive Growth in Asia: Measurement, Policy Issues, and Country Studies.
+344 - 366, London: Anthem Press,2011.
+Full text: http://papers.ssrn.com/sol3/papers.cfm?abstract_id=1639322
+
+89. Khor, Niny; Pencavel, John, "Income Inequality and Income Mobility
+Among Urban and Rural Households of China and the United States." Stanford
+Center for International Development Working Paper No. 341. Stanford, CA:
+Stanford University, May 2007.
+Full text PDF: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.570.6968&rep=rep1&type=pdf
+
+90. Khor, Niny; Pencavel, John, "Income Mobility of Individuals in China
+and the United States." Berkeley, CA: University of California-Berkeley,
+Dec 2005.
+Full text PDF: http://www.econ.berkeley.edu/users/webfac/qian/e261_s06/pencavel.pdf
+
+91. Khor, Niny; Pencavel, John, "Income inequality, income mobility, and
+social welfare for urban and rural households of China and the United
+States." In Polachek, Solomon W.; Tatsiramos, Konstantinos, Jobs, Training
+and Worker Well-being. Research in Labor Economics, Volume 30. 61 - 106,
+Bingley, UK: Emerald Group Publishing Limited,2010.
+Full text PDF: http://www.econ.berkeley.edu/users/webfac/qian/e261_s06/pencavel.pdf
+
+92. Khor, Niny; Pencavel, John, "Income mobility of individuals in China
+and the United States." Economics of Transition. Jul 2006, 14, (3), 417 -
+458. DOI: 10.1111/j.1468-0351.2006.00257.x
+Full text PDF: http://www.econ.berkeley.edu/users/webfac/qian/e261_s06/pencavel.pdf
+
+93. Khor, Niny; Pencavel, John, "Measuring Income Mobility, Income
+Inequality, and Social Welfare for Households of the People's Republic of
+China." ADB Economics Working Paper Series. No. 145, Mandaluyong City,
+Philippines: Asian Development Bank, Dec 2008.
+Full text PDF: http://www.adb.org/Documents/Working-Papers/2008/Economics-WP145.pdf
+
+94. Khor, Niny; Pencavel, John, "The Dynamics of Urban Poverty in China."
+Stanford Center for International Development Working Paper. Working Paper
+342, Stanford, CA: Stanford University, May 2007.
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+95. Khor, Niny; Pencavel, John H., "Evolution of Income Mobility in the
+People’s Republic of China: 1991-2002." ADB Economics Working Paper No.
+204, Manila, Philippines: Asian Development Bank, Jun 2010.. DOI:
+10.2139/ssrn.1639322
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+96. Knight, John; Song, Lina, "Increasing urban wage inequality in China."
+Economics of Transition. Dec 2003, 11, (4), 597 - 619. DOI: 10.1111/j.0967-
+0750.2003.00168.x
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+97. Li, Bo, "A Theory of Multi-Transitions and the Chinese Welfare State."
+Dissertation, University of Tennessee-Knoxville, 2007.
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+98. Li, Bo; Zhong, Yang, "How did China's transitions impact people's
+welfare benefits in the reform era?." Journal of Contemporary China. Nov
+2009, 18, (62), 813 - 829. DOI: 10.1080/10670560903174606
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+99. Li, Haizheng, "Economic transition and returns to education in China."
+Economics of Education Review. Jun 2003, 22, (3), 317 - 328. DOI:
+10.1016/S0272-7757(02)00056-0
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+100. Li, Haizheng; Luo, Yi, "Reporting errors, ability heterogeneity, and
+returns to schooling in China." Pacific Economic Review. Oct 2004, 9, (3),
+191 - 207. DOI: 10.1111/j.1468-0106.2004.00244.x
+Full text PDF: http://www.stanford.edu/group/siepr/cgi-bin/siepr/?q=system/files/shared/pubs/papers/pdf/SCID342.pdf
+
+101. Li, Haizheng; Urmanbetova, Aselia, "The Causal Effect of Education on
+Wages: Evidence from China's Rural Industry." School of Economics Working
+Paper. Atlanta, GA: Georgia Institute of Technology, n.d..
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/ruralw.pdf
+
+102. Li, Haizheng; Urmanbetova, Aselia, "The Effect of Education and Wage
+Determination in China's Rural Industry." Atlanta, GA: Georgia Institute of
+Technology, May 10, 2002.
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/school.pdf
+
+103. Li, Haizheng; Urmanbetova, Aselia, "The effect of education and wage
+determination in China's rural industry." In Lin, Shuanglin; Zhu, Xiaodong,
+Private Enterprises and China's Economic Development. 235 - 253, New York,
+NY: Routledge,2007.
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/school.pdf
+
+104. Li, Haizheng; Zahniser, Steven, "The determinants of temporary rural-
+to-urban migration in China." Urban Studies. Nov 2002, 39, (12), 2219 -
+2235. DOI: 10.1080/0042098022000033836
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/school.pdf
+
+105. Li, Haizheng; Zax, Jeffrey, "Economic Transition and the Labor Market
+in China." Atlanta, GA: Georgia Institute of Technology, Sep 2003.
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/lbmkt.pdf
+
+106. Li, Lianyou; Song, Ze; Ma, Chao, "Engel curves and price elasticity in
+urban Chinese Households." Economic Modelling. Jan 2015, 44, 236 - 242.
+DOI: 10.1016/j.econmod.2014.10.002
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/lbmkt.pdf
+
+107. Li, Shi; Chuliang, Luo; Zhong, Wei; Ximing, Yue, "Appendix: The 1995
+and 2002 household surveys: Sampling methods and data description." In
+Gustafsson, Bjorn A.; Li, Shi; Sicular, Terry, Inequality and Public Policy
+in China. 337 - 353, New York, NY: Cambridge University Press,2008.
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/lbmkt.pdf
+
+108. Li, Shi; Ma, Xinxin, "Impact of minimum wage on gender wage gaps in
+urban China." IZA Journal of Labor and Development. Nov 2015, 4, (1),. DOI:
+10.1186/s40175-015-0044-4
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/lbmkt.pdf
+
+109. Liane, Gro Maele, "Why is the Chinese Saving Profile Upside-Down? A
+LCH-Study of Chinese Household Savings." Thesis, Norges Handelshoyskole,
+2011.
+Full text PDF: http://www.prism.gatech.edu/~hl45/research/lbmkt.pdf
+
+110. Liao, Pei-Ju; Wang, Ping; Wang, Yin-Chi; Yip, Chong Kee, "Educational
+Choice, Rural-urban Migration and Economic Development." NBER Working Paper
+No. 23939. Cambridge, MA: National Bureau of Economic Research, Oct 2017.
+DOI: 10.3386/w23939
+Abstract: http://www.nber.org/papers/w23939
+Observing rapid structural transformation accompanied by a continual
+process of rural to urban migration in many developing countries, we
+construct a micro founded dynamic framework to explore how important
+education-based migration is, as opposed to work-based migration, for
+economic development, urbanization and city workforce composition. We then
+calibrate our model to fit the data from China over the period from 1980 to
+2007, a developing economy featuring not only large migration flows but
+major institutional reforms that may affect work and education based
+migration differently. We find that, although education-based migration
+only amounts to one-fifth of that of work-based migration, its contribution
+to the enhancement of per capita output is larger than that of work-based
+migration. Moreover, the abolishment of the government job assignment for
+college graduates and the relaxation of the work-based migration have
+limited effects on economic development and urbanization. Furthermore, the
+increase in college admission selectivity for rural students plays a
+crucial but negative role in China's development, lowering per capita
+output and worsening the high-skilled employment share in urban areas.
+
+111. Lin, Tun; Shuang, Huzhong; Yarcia, Damaris; Lin, Fen, "Decomposing
+income inequality: People's Republic of China, 1990-2005." In Zhuang,
+Juzhong, Poverty, Inequality, and Inclusive Growth in Asia: Measurement,
+Policy Issues, and Country Studies. 367 - 386, London: Anthem Press,2011.
+Abstract: http://www.nber.org/papers/w23939
+Observing rapid structural transformation accompanied by a continual
+process of rural to urban migration in many developing countries, we
+construct a micro founded dynamic framework to explore how important
+education-based migration is, as opposed to work-based migration, for
+economic development, urbanization and city workforce composition. We then
+calibrate our model to fit the data from China over the period from 1980 to
+2007, a developing economy featuring not only large migration flows but
+major institutional reforms that may affect work and education based
+migration differently. We find that, although education-based migration
+only amounts to one-fifth of that of work-based migration, its contribution
+to the enhancement of per capita output is larger than that of work-based
+migration. Moreover, the abolishment of the government job assignment for
+college graduates and the relaxation of the work-based migration have
+limited effects on economic development and urbanization. Furthermore, the
+increase in college admission selectivity for rural students plays a
+crucial but negative role in China's development, lowering per capita
+output and worsening the high-skilled employment share in urban areas.
+
+112. Liu, Huangjin, "Inequality, Determinants of Income, and A Re-test of
+the Market Transition Theory: Evidence from Urban China." Osaka Prefecture
+University Working Paper. Osaka, Japan: Osaka Prefecture University, 2003.
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+113. Liu, Qian, "Unemployment and labor force participation in urban
+China." China Economic Review. Mar 2012, 23, (1), 18 - 33. DOI:
+10.1016/j.chieco.2011.07.008
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+114. Liu, Wenjun, "Regional technical efficiency and technology gaps in
+rural China: Evidence from CHIP surveys." China Economic Journal. 2011, 4,
+(2-3), 125 - 144. DOI: 10.1080/17538963.2011.666058
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+115. Liu, Zhiqiang, "Human capital externalities and rural-urban migration:
+Evidence from rural China." China Economic Review. Sep 2008, 19, (3), 521 -
+535. DOI: 10.1016/j.chieco.2008.04.001
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+116. Liu, Zhiqiang, "Institution and inequality: The hukou system in
+China." Journal of Comparative Economics. Mar 2005, 33, (1), 133 - 157.
+DOI: 10.1016/j.jce.2004.11.001
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+117. Liu, Zhiqiang, "The external returns to education: Evidence from
+Chinese cities." Journal of Urban Economics. May 2007, 61, (3), 542 - 564.
+DOI: 10.1016/j.jue.2006.08.007
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+118. Luo, Chuliang, "Economic restructuring, informal jobs and pro-poor
+growth in urban China." Asian Economic Journal. Mar 2011, 25, (1), 79 - 98.
+DOI: 10.1111/j.1467-8381.2011.02048.x
+Full text PDF: http://repository.osakafu-u.ac.jp/dspace/bitstream/10466/2384/1/KJ00000332238.pdf
+
+119. Ma, Xinxin, "Changes of wage structures in Chinese public and private
+sectors: 1995-2007." Management Studies. Nov-Dec 2016, 4, (6), 243 - 255.
+DOI: 10.17265/2328-2185/2016.06.002
+Full text PDF: http://www.davidpublisher.org/Public/uploads/Contribute/574e505de1e0b.pdf
+
+120. Ma, Xinxin , "Impacts of minimum wage policy on wage distributions in
+urban China: Comparison between public and private sectors." Chinese
+Studies. 2016, 5, 45 - 61. DOI: 10.4236/chnstd.2016.53006
+Full text PDF: http://www.davidpublisher.org/Public/uploads/Contribute/574e505de1e0b.pdf
+
+121. McLaughlin, Joanne Song, "Does Communist Party membership pay?
+Estimating the economic returns to Party membership in the labor market in
+China." Journal of Comparative Economics. in press 2016,. DOI:
+10.1016/j.jce.2016.09.009
+Full text PDF: http://www.davidpublisher.org/Public/uploads/Contribute/574e505de1e0b.pdf
+
+122. Meng, Lei, "Bride Drain: Rising Female Migration and Declining
+Marriage Rates in Rural China." Institute for Advanced Research Working
+Paper. Shanghai, China: Shanghai University of Finance and Economics, Oct
+10, 2009.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+123. Meng, Qi, "The Effect of Cigarette Prices on Smoking Decision and
+Intensity in China." Thesis, East Carolina University, 2004.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+124. Mercado, Maira T, "Changes in the Effects of Determinants of Earnings
+Inequality and Their Labor Implications in Urban China, 1988-2002." Thesis,
+Claremont McKenna College, 2012.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+125. Millimet, D.L.; Wang, L., "A distributional analysis of the gender
+earnings gap in urban China." B.E. Journal of Economic Analysis and Policy.
+2006, 5, (1),.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+126. Minoiu, Camelia; Reddy, Sanjay G., "Chinese poverty: Assessing the
+impact of alternative assumptions." Review of Income and Wealth. Dec 2008,
+54, (4), 572 - 596. DOI: 10.1111/j.1475-4991.2008.00288.x
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+127. Minoiu, Camelia; Reddy, Sanjay G., "The estimation of poverty and
+inequality through parametric estimation of Lorenz curves: An evaluation."
+Journal of Income Distribution. Jun 2009, 18, (2),.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+128. Miyamoto, Katsuhiro; Liu, Huangjin, "Sector choice and wage
+determinants: Evidence from urban China." Journal of Economics, Business,
+and Law. Mar 2004, 6, (1), 27 - 43.
+Full text PDF: http://iar.shufe.edu.cn/upload/_info/31031_0910120912571.pdf
+
+129. Mok, Ka Ho; Jiang, Jin, "Massification of Higher Education: Challenges
+for Admissions and Graduate Employment in China." Centre for Global Higher
+Education Working Paper No. 5. London: UCL Institute of Education, Jul
+2016.
+Full text PDF: http://www.researchcghe.org/wp-content/uploads/2016/05/WP5.pdf
+
+130. Nakamura, Emi; Steinsson, Jon; Liu, Miao, "Are Chinese growth and
+inflation too smooth? Evidence from Engel curves." American Economic
+Journal: Macroeconomics. Jul 2016, 8, (3), 113 - 144.
+Full text PDF: http://www.researchcghe.org/wp-content/uploads/2016/05/WP5.pdf
+
+131. Nee, Victor; Cao, Yang, "Market transition and the firm: Institutional
+change and income inequality in urban China." Management and Organization
+Review. Mar 2005, 1, (1), 23 - 56. DOI: 10.1111/j.1740-8784.2004.00003.x
+Full text PDF: http://www.researchcghe.org/wp-content/uploads/2016/05/WP5.pdf
+
+132. Okushima, Shinichiro; Uchimura, Hiroko, "Economic Reforms and Income
+Inequality in Urban China." Institute of Developing Economies Discussion
+Paper No. 25, Chiba, Japan: Institute of Developing Economies (IDE), Japan
+External Trade Organization (JETRO), Apr 2005..
+Full text PDF: http://ir.ide.go.jp/dspace/bitstream/2344/181/3/ARRIDE_Discussion_No.25_okushima.pdf
+
+133. Okushima, Shinichiro; Uchimura, Hiroko, "How does the economic reform
+exert Influence on inequality in urban China?." Journal of the Asia Pacific
+Economy. 2006, 11, (1), 35 - 58. DOI: 10.1080/13547860500347711
+Full text PDF: http://ir.ide.go.jp/dspace/bitstream/2344/181/3/ARRIDE_Discussion_No.25_okushima.pdf
+
+134. Osberg, Lars; Xu, Kuan, "How Should We Measure Global Poverty in a
+Changing World?." UNU-WIDER Working Paper No. 2006/64. United Nations
+University; World Institute for Development Economics Research, Jun 2006.
+Full text PDF: http://www.econstor.eu/bitstream/10419/63407/1/51419913X.pdf
+
+135. Osberg, Lars; Xu, Kuan, "How Should We Measure Poverty in a Changing
+World?." Presented at the 2004 International Conference on Official Poverty
+Statistics, National Statistical Coordination Board of Philippines UN
+Statistics Division, Mandaluyong City, Philippines, Feb 28, 2005.
+Full text PDF: http://www.econstor.eu/bitstream/10419/63407/1/51419913X.pdf
+
+136. Osberg, Lars; Xu, Kuan, "How should we measure poverty in a changing
+world? Methodological issues and Chinese case study." Review of Development
+Economics. May 2008, 12, (2), 419 - 441. DOI: 10.1111/j.1467-
+9361.2008.00449.x
+Full text PDF: http://www.econstor.eu/bitstream/10419/63407/1/51419913X.pdf
+
+137. Pan, Xi, "The Labor Market, Political Capital, and Ownership Sector in
+Urban China." Dissertation, University of Kentucky, 2010.
+Full text PDF: http://www.econstor.eu/bitstream/10419/63407/1/51419913X.pdf
+
+138. Pan, Yao, "Essays on Development Economics Applied to China." George
+Washington University, 2013.
+Full text PDF: http://www.econstor.eu/bitstream/10419/63407/1/51419913X.pdf
+
+139. Pan, Yao, "Understanding the Rural and Urban Household Saving Rise in
+China." Mar 16, 2012..
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+140. Pan, Yao, "Understanding the rural and urban household saving rise in
+China." Regional Science and Urban Economics. Jan 2016, 56, 46 - 59. DOI:
+10.1016/j.regsciurbeco.2015.10.002
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+141. Pan, Zhenfeng, "Commercial housing ownership predictors in urban
+China: An analysis of a national survey." Construction Management and
+Economics. Jan 2004, 22, (1), 85 - 91. DOI: 10.1080/0144619042000186086
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+142. Pan, Zhenfeng, "Housing quality differentials in urban China 1988-
+1995." International Journal of Social Economics. 2003, 30, (10), 1070 -
+1083. DOI: 10.1108/03068290310492869
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+143. Pan, Zhenfeng, "Housing quality of communist party members in urban
+China: A comparative study." Housing Studies. Mar 2004, 19, (2), 193 - 205.
+DOI: 10.1080/0267303032000168595
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+144. Pan, Zhenfeng, "Socioeconomic predictors of smoking and smoking
+frequency in urban China: Evidence of smoking as a social function." Health
+Promotion International. Sep 2004, 19, (3), 309 - 315. DOI:
+10.1093/heapro/dah304
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+145. Paul, Satya; Chen, Zhao; Lu, Ming, "Contribution of household income
+components to the level and rise of inequality in urban China." Journal of
+the Asia Pacific Economy. 2017, 22, (2), 212 - 226. DOI:
+10.1080/13547860.2017.1292767
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+146. Qian, Fang, "Earnings Benefit and Party Membership in Urban China."
+Thesis, East Carolina University, 2005.
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+147. Riskin, Carl; Renwei, Zhao; Shi, Li, China's Retreat from Equality:
+Income Distribution and Economic Transition. Armonk, NY: M.E. Sharpe, Inc.,
+2001.
+Full text PDF: http://home.gwu.edu/~panyao/files/Yao%20sav.pdf
+
+148. Rush, Anthony, "China's Labour Market." Reserve Bank of Australia
+Bulletin. Sydney, Australia: Reserve Bank of Australia, Sep 2011.
+Full text PDF: http://www.rba.gov.au/publications/bulletin/2011/sep/pdf/bu-0911-4.pdf
+
+149. Sai, Ding; Myers, Samuel L., Jr., "Inter-temporal Changes in Ethnic
+Urban Earnings Inequality in China." National School of Development Working
+Paper. Beijing, China: National School of Development, Peking University,
+Mar 9, 2010.
+Full text PDF: http://ftp.ccer.cn/download/11034-1.pdf
+
+150. Sato, Hiroshi; Eto, Keiya, "Economic Transition and the Communist
+Party: An Empirical Study on the CPC Membership Using the 1988-2002 CASS
+CHIP Surveys." Graduate School of Economics Discussion Paper. Tokyo, Japan:
+Hitotsubashi University, Nov 2006.
+Full text PDF: http://www.econ.hit-u.ac.jp/~kenkyu/jpn/pub/2006/pdf/06-11sato.pdf
+
+151. Sato, Hiroshi; Eto, Keiya, "The changing structure of communist party
+membership in urban China, 1988-2002." Journal of Contemporary China. Nov
+2008, 17, (57), 653 - 672. DOI: 10.1080/10670560802253345
+Full text PDF: http://www.econ.hit-u.ac.jp/~kenkyu/jpn/pub/2006/pdf/06-11sato.pdf
+
+152. Sato, Hiroshi; Shi, Li; Ximing, Yue, "The redistributive impact of
+taxation in rural China, 1995-2002." In Gustafsson, Bjorn; Li, Shi;
+Sicular, Terry, Inequality and Public Policy in China. 312 - 337, New York,
+NY: Cambridge University Press,2008.
+Full text PDF: http://www.econ.hit-u.ac.jp/~kenkyu/jpn/pub/2006/pdf/06-11sato.pdf
+
+153. Shen, Menghan, "Three Essays on How Parents and Schools Affect
+Offspring's Outcomes." Dissertation, Columbia University, 2016.
+Full text PDF: http://www.econ.hit-u.ac.jp/~kenkyu/jpn/pub/2006/pdf/06-11sato.pdf
+
+154. Shi, Li; Jin, Song; Xiaochuan, Liu, "Evolution of the gender wage gap
+among China's urban employees." Social Sciences in China. 2011, 32, (3),
+161 - 180. DOI: 10.1080/02529203.2011.598307
+Full text PDF: http://www.econ.hit-u.ac.jp/~kenkyu/jpn/pub/2006/pdf/06-11sato.pdf
+
+155. Shi, Yan, "The private direct costs of primary education in urban
+China." Education and Poverty in an International Context. 1, New York, NY:
+Society for International Education, Columbia University, Spr 2006.
+Full text PDF: http://www.tc.columbia.edu/students/sie/journal/full_journal/volume_4.pdf#page=61
+
+156. Shu, Xiaoling, "Market transition and gender segregation in urban
+China." Social Science Quarterly. 2005, 86, (s1), 1299 - 1323. DOI:
+10.1111/j.0038-4941.2005.00347.x
+Full text PDF: http://www.tc.columbia.edu/students/sie/journal/full_journal/volume_4.pdf#page=61
+
+157. Shu, Xiaoling; Bian, Yanjie, "Intercity variation in gender
+inequalities in China: Analysis of a 1995 national survey." Research in
+Social Stratification and Mobility. 2002, 19, (1), 269 - 309. DOI:
+10.1016/S0276-5624(02)80044-0
+Full text PDF: http://www.tc.columbia.edu/students/sie/journal/full_journal/volume_4.pdf#page=61
+
+158. Shu, Xiaoling; Bian, Yanjie, "Market transition and gender gap in
+earnings in urban China." Social Forces. Jun 2003, 81, (4), 1107 -. DOI:
+10.1353/sof.2003.0070
+Full text PDF: http://www.tc.columbia.edu/students/sie/journal/full_journal/volume_4.pdf#page=61
+
+159. Sicular, Terry; Ximing, Yue; Gustafsson, Bjorn; Li, Shi, "The urban-
+rural income gap and income inequality in China." In Understanding
+Inequality and Poverty in China. Studies in Development Economics and
+Policy. 30 - 71, London: Palgrave Macmillan UK,2008. DOI:
+10.1057/9780230584259_2
+Full text PDF: http://www.tc.columbia.edu/students/sie/journal/full_journal/volume_4.pdf#page=61
+
+160. Smeeding, T.; Gao, Q.; Saunders, P.; Wing, C., "Elder Poverty in an
+Ageing World: Conditions of Social Vulnerability and Low Income for Women
+in Rich and Middle-Income Nations." Luxembourg Income Study Working Paper
+Series. No. 497, New York, NY: Luxembourg Income Study, Sep 2008.
+Full text PDF: http://www.lisproject.org/publications/liswps/497.pdf
+
+161. Thunghong, Lin; Xiaogang, Wu, "The transformation of the Chinese class
+structure, 1978-2005." In Kwok-bun, Chan; Ku, Agnes S.; Yin-wah, Chu,
+Social Stratification in Chinese Societies. 81 - 112, Leiden, The
+Netherlands: Brill,2009.
+Full text PDF: http://www.lisproject.org/publications/liswps/497.pdf
+
+162. Uchimura, Hiroko, "Impact of Changes in Social Institutions on Income
+Inequality in China." OECD Development Centre Working Paper. No. 243,
+Paris, France: Organisation for Economic Co-Operation and Development, Apr
+2005.
+Full text PDF: http://venus.unive.it/rizzid/Uchimura2005.pdf
+
+163. Uchimura, Hiroko, "Inequality and public policy in China." Developing
+Economies. Sep 2009, 47, (3), 369 - 371. DOI: 10.1111/j.1746-
+1049.2009.00090_2.x
+Full text PDF: http://venus.unive.it/rizzid/Uchimura2005.pdf
+
+164. Uchimura, Hiroko, "Influence of Social Institutions on Inequality in
+China." Institute of Developing Economies Discussion Paper. No. 26, Chiba,
+Japan: Institute of Developming Economies, Apr 2005.
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+165. Valerio Mendoza, Octasiano M., "Income inequality in China's economic
+and technological development zones and high-tech industrial development
+zones, 1995-2002." China Economic Policy Review. 2014, 3, (2), 1450012 -
+1450012-22. DOI: 10.1142/S1793969014500125
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+166. Valerio Mendoza, Octasiano M., "Preferential policies and income
+inequality: Evidence from special economic zones and open cities in China."
+China Economic Review. in press 2016,. DOI: 10.1016/j.chieco.2016.07.013
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+167. Walder, Andrew G.; He, Xiaobin, "Public housing into private assets:
+Wealth creation in urban China." Social Science Research. Jul 2014, 46, 85
+- 99. DOI: 10.1016/j.ssresearch.2014.02.008
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+168. Wang, Chen; Wan, Guanghua; Yang, Dan, "Income inequality in the
+People's Republic of China: Trends, determinants, and proposed remedies."
+Journal of Economic Surveys. Sep 2014, 28, (4), 686 - 708. DOI:
+10.1111/joes.12077
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+169. Wang, Fang, "The Application of Quantile Regression in Analysis of
+Gender Earnings Gap in China." Thesis, East Carolina University, 2002.
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+170. Wang, Freda Yanrong; Wong, Raymond Sin-Kwok, "From reds to riches:
+Contemporary changes of educational assortative mating in China." Research
+in Social Stratification and Mobility. in press 2017,. DOI:
+10.1016/j.rssm.2017.06.001
+Full text PDF: http://www.ide.go.jp/English/Publish/Download/Dp/pdf/026.pdf
+
+171. Wang, Xiaobing; Piesse, Jenifer
+, "Labour Market Segregation and Integration in China:
+A Spatial and Sectoral Analysis, 1988-2002 ." King's College London
+Research Paper 51. London, UK: University of London, Sep 2008.
+Full text PDF: http://79.125.112.176/sspp/departments/management/research/papers/theme/ibcmm/productivity/chineselabour.pdf
+
+172. Wang, Xiaobing; Piesse, Jennifer, "Welfare Effects of Regressive
+Taxation and Subsidies in China." BWPI Working Paper. No. 108, Manchester,
+UK: University of Manchester, Nov 2009.
+Full text PDF: http://www.bwpi.manchester.ac.uk/resources/Working-Papers/bwpi-wp-10809.pdf
+
+173. Wang, Xiaojun; Fleisher, Belton M.; Li, Haizheng; Li, Shi, "Access to
+Higher Education and Inequality: The Chinese Experiment." Institute for the
+Study of Labor Discussion Paper. No. 4030, Bonn, Germany: Institute for the
+Study of Labor (IZA), Feb 2009.
+Abstract: http://papers.ssrn.com/sol3/papers.cfm?abstract_id=996402
+
+174. Wang, Xiaojun; Fleisher, Belton M.; Li, Haizheng; Li, Shi, "Access to
+college and heterogeneous returns to education in China." Economics of
+Education Review. Oct 2014, 42, 78 - 92. DOI:
+10.1016/j.econedurev.2014.05.006
+Abstract: http://papers.ssrn.com/sol3/papers.cfm?abstract_id=996402
+
+175. Wang, Yanrong; Wong, Raymond Sin-Kowk, "From 'Reds' to Riches:
+Contemporary Changes of Educational Assortative Mating in China from 1949
+to 2000 [poster]." Presented at the XVIII ISA World Congress of Sociology,
+International Sociological Association, Yokohama, Japan, Jul 15, 2014.
+Abstract: https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper47528.html
+
+176. Wang, Zhicui, "Changes of Patterns of Intergenerational Transfers in
+Urban and Rural China." Thesis, Lund University, 2011.
+Abstract: https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper47528.html
+
+177. Wu, Bocheng, "Returns to Secondary Education: Evidence from China."
+Thesis, Tufts University, 2015.
+Abstract: https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper47528.html
+
+178. Wu, Dongjie; Rao, Prasada, "Urbanization and Income Inequality in
+China: An Empirical Investigation at Provincial Level." Social Indicators
+Research. in press 2016,. DOI: 10.1007/s11205-016-1229-1
+Abstract: https://isaconf.confex.com/isaconf/wc2014/webprogram/Paper47528.html
+
+179. Xia, Qingjie, "The Pattern and Evolution of Poverty in Rural Poverty."
+China Institute for Employment Research Working Paper. Beijing, China:
+China Institute for Employment Research, Apr 2009.
+Full text PDF: http://www.cier.org.cn/upload/Database/20095647154517.pdf
+
+180. Xiang, Jifa, "Returns to Education in Market Transition during the
+Reform Period 1988-2002, China." Dissertation, Freie Universitat, Berlin,
+2014.
+Full text PDF: http://www.cier.org.cn/upload/Database/20095647154517.pdf
+
+181. Xiaobin, He; Fan, Xia, "Institutional reforms and household wealth
+inequality: A property transformation perspective on China’s housing
+reform." Economic Research Journal. Feb 2012,.
+Full text PDF: http://www.cier.org.cn/upload/Database/20095647154517.pdf
+
+182. Xue, Jinjun, Growth with Inequality: An International Comparison on
+Income Distribution. Singapore: World Scientific Publishing Co., 2012.
+Full text PDF: http://www.cier.org.cn/upload/Database/20095647154517.pdf
+
+183. Yang, Dennis T., "Local Labor Markets in Urban China." School of
+Economics Working Paper. Shanghai, China: Shanghai University of Finance
+and Economics, Jan 2006.
+Full text PDF: http://www.econ.shufe.edu.cn/ces/paper/ces_pdf/3/3-4.pdf
+
+184. Yang, Dennis Tao, "Determinants of schooling returns during
+transition: Evidence from Chinese cities." Journal of Comparative
+Economics. Jun 2005, 33, (2), 244 - 264. DOI: 10.1016/j.jce.2005.03.010
+Full text PDF: http://www.econ.shufe.edu.cn/ces/paper/ces_pdf/3/3-4.pdf
+
+185. Yang, Juan; Li, Shi, "The impact of rustication on sent-down cohorts'
+income." Frontiers of Economics in China. Jun 2011, 6, (2), 290 - 310. DOI:
+10.1007/s11459-011-0133-5
+Full text PDF: http://www.econ.shufe.edu.cn/ces/paper/ces_pdf/3/3-4.pdf
+
+186. Yang, Yanjun, "Education, experience or discrimination? A path
+analysis of mobile population wage gaps in China's urban labor market."
+Higher Education of Social Science. 2013, 5, (1),. DOI:
+10.3968/j.hess.1927024020130501.1083
+Full text PDF: http://www.econ.shufe.edu.cn/ces/paper/ces_pdf/3/3-4.pdf
+
+187. Yang, Yanjun; Huang, Dan, "An empirical study on the determinants of
+labor entering monopoly industry in China's urban labor market." Management
+Science and Engineering. Dec 2012, 6, (4), 78 - 82. DOI:
+10.3968/j.mse.1913035X20120604.619
+Full text PDF: http://www.econ.shufe.edu.cn/ces/paper/ces_pdf/3/3-4.pdf
+
+188. Yanrong, Wang, "The Impacts of Mass Movements and Economic Reform on
+Educational Assortative Mating in China from 1949 to 2000." Thesis, Hong
+Kong University of Science and Technology, 2013.
+Abstract: http://repository.ust.hk/ir/Record/1783.1-62379
+Full text: http://lbezone.ust.hk/bib/b1250837
+
+189. Ye, Hua, "Earnings Returns to Tertiary Education and Gender Earnings
+Gap in Urban China, 1988-2005." Thesis, The Hong Kong University of Science
+and Technology, 2009.
+Full text: http://repository.ust.hk/dspace/handle/1783.1/7189
+
+190. Yu, Han; Zhengmao, Ye, "Wage determinants, industry entry and
+comparative advantages: China’s service industry and manufacturing
+industry: 1988-2002
+." Presented at the 2010 International Symposium on Contemporary Labor
+Economics, Dec 2010.
+Full text: http://repository.ust.hk/dspace/handle/1783.1/7189
+
+191. Yue, Yang, "Essay in Family Economics and Media Economics in China."
+Dissertation, Arizona State University, 2017.
+Full text: http://repository.ust.hk/dspace/handle/1783.1/7189
+
+192. Zax, Jeffrey S., "Housing Allocations and Inequality in Early and Mid-
+Reform Urban China." Department of Economics Working Paper. Hong Kong,
+China: Chinese University of Hong Kong, Dec 7, 2007.
+Full text PDF: http://www.econ.cuhk.edu.hk/dept/seminar/07-08/1st-term/housingandinequality.pdf
+
+193. Zhang, Hongliang, "Self-Selection and Wage Differentials in Urban
+China: A Polychotomous Model with Selectivity." Urban China Research
+Network Working Paper. Albany, NY: State University of New York-Albany, Aug
+2004.
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+194. Zhang, Qinghua; Zou, Heng-Fu, "Returns to education, productivity, and
+economic growth in China." Journal of Comparative Policy Analysis. Sep
+2007, 9, (3), 293 - 308. DOI: 10.1080/13876980701494707
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+195. Zhang, Yuan; Wan, Guanghua; Khor, Niny, "The rise of middle class in
+rural China." China Agricultural Economic Review. 2012, 4, (1), 36 - 51.
+DOI: 10.1108/17561371211196766
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+196. Zhang, Zhanxin, "Institutional change and income inequality." In Tang,
+Wenfang; Holzner, Burkart, Social Change in Contemporary China: C.K. Yang
+and the Concept of Institutional Diffusion. 104 - 124, Pittsburgh, PA:
+University of Pittsburgh Press,2007.
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+197. Zhao, Chen; Guanghua, Wan; Ming, Lu, "Inter-industry inequality: An
+important source of the urban income gap--regression-based decomposition."
+Social Sciences in China. 2011, 32, (2), 159 - 177. DOI:
+10.1080/02529203.2011.573352
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+198. Zheng, Shuang, "The Trend of the Returns to Educations in Urban China
+During 1988 to 2002." Thesis, Clemson University, 2011.
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+199. Zheng, Shuang, "The trend of the returns to education in urban China
+during 1988 to 2002." Thesis, Clemson University, 2011.
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+200. Zhigang, Yuan; Lin, Chen, "The trend and mechanism of
+intergenerational income mobility in China: An analysis from the
+perspective of human capital, social capital and wealth." World Economy. in
+press 2013,. DOI: 10.1111/twec.12043
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+201. Zhou, Dong, "The long-term impacts of the Cultural Revolution: A
+micro-analysis." Labour. in press 2016,. DOI: 10.1111/labr.12074
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+202. Zhou, Jingkui, "Uncertainty, inequality and consumption preferences in
+urban China." Economic Modelling. Mar 2013, 31, 308 - 322. DOI:
+10.1016/j.econmod.2012.11.033
+Full text PDF: http://mumford.albany.edu/chinanet/shanghai2005/zhanghongliang_en.pdf
+
+203. Zhuang, Juzhong; Li, Shi, "Understanding the Recent Trend of Income
+Inequality in China." SOAS Department of Economics Working Paper No 196-
+2016. London: Department of Economics, University of London, Jun 2016.
+Full text PDF: https://www.soas.ac.uk/economics/research/workingpapers/file112902.pdf
