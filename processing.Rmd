@@ -10,25 +10,43 @@ yourData4 = read_dta("RHS_w2_d.dta")
 yourData5 = read_dta("RHS_w2_e.dta")
 
 
-yourData2
-yourData3
-yourData4
-yourData5
+# yourData2
+# yourData3
+# yourData4
+# yourData5
 ```
 
 
 
 ```{r}
 library(tidyverse)
-#2174 is CHIPS from 2002 &shrug; 
+# 2174 is CHIPS from 2002 
+# for some reason this one has the clearest county level data
 main_table_chips_2002 <- read_tsv('ICPSR_21741/DS0006/21741-0006-Data.tsv')
 
 ```
 
 
 ```{r}
-#main_table_chips is a tale with 84 columns and 37969 rows
-# the first column is 
-ncol()
+# main_table_chips is a tale with 84 columns and 37969 rows
+# the first column is county (coun), second column is vill (village), hous (is house)
+# county codes come from a separate file 
 
+counties <- readxl::read_excel('countycodes1.xlsx', skip=2, 
+                               col_names=c(
+                                 'code', 
+                                 'name'
+                                 ))
+
+counties2 <- readxl::read_excel('countycodes2.xlsx', skip=2,
+                                col_names=c('code', 
+                                            'name'))
+
+```
+
+
+```{r}
+library(dplyr)
+
+counties_main <- left_join(counties,counties2)
 ```
