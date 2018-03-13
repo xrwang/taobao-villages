@@ -15,3 +15,20 @@ yourData3
 yourData4
 yourData5
 ```
+
+
+
+```{r}
+library(tidyverse)
+#2174 is CHIPS from 2002 &shrug; 
+main_table_chips_2002 <- read_tsv('ICPSR_21741/DS0006/21741-0006-Data.tsv')
+
+```
+
+
+```{r}
+#main_table_chips is a tale with 84 columns and 37969 rows
+# the first column is 
+ncol()
+
+```
