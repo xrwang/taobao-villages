@@ -118,7 +118,10 @@ library(ggmap)
 
 ggmap_credentials()
 
-register_google(key= "AIzaSyAE8v4YljHZYZJ03VydAtAn5yNOGIfr50g")
+#register_google(key= "AIzaSyAE8v4YljHZYZJ03VydAtAn5yNOGIfr50g")
+#register_google(key= "AIzaSyC9NJaj-SjBb-woefGscea4WKqo7MYYvyk")
+register_google(key= " AIzaSyAt1r1YgKxZ4tSsk9Tb1k7_fPmV8q8vxtM")
+
 ggmap_credentials()
 
 library(ggmap)
