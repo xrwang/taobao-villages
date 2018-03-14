@@ -1,13 +1,20 @@
+---
+title: "processing CHIPs data to get satellite imagery for the locations"
+author: "Xiaowei Wang"
+output: github_document
+---
+
+
 ```{r}
 
 library(haven)
 # yourData = read_dta("CHIP2013_rural_household_f_income_asset.dta")
 # yourData
 
-yourData2 = read_dta("RHS_w2_vill.dta")
-yourData3 = read_dta("RHS_w2_abc.dta")
-yourData4 = read_dta("RHS_w2_d.dta")
-yourData5 = read_dta("RHS_w2_e.dta")
+# yourData2 = read_dta("RHS_w2_vill.dta")
+# yourData3 = read_dta("RHS_w2_abc.dta")
+# yourData4 = read_dta("RHS_w2_d.dta")
+# yourData5 = read_dta("RHS_w2_e.dta")
 
 
 # yourData2
@@ -22,10 +29,14 @@ yourData5 = read_dta("RHS_w2_e.dta")
 library(tidyverse)
 # 2174 is CHIPS from 2002 
 # for some reason this one has the clearest county level data
-main_table_chips_2002 <- read_tsv('ICPSR_21741/DS0006/21741-0006-Data.tsv')
+main_table_chips_2002 <- read_tsv('2002/DS0006/21741-0006-Data.tsv')
 
 ```
 
+```{r}
+main_table_chips_2002
+
+```
 
 ```{r}
 # main_table_chips is a tale with 84 columns and 37969 rows
@@ -48,5 +59,41 @@ counties2 <- readxl::read_excel('countycodes2.xlsx', skip=2,
 ```{r}
 library(dplyr)
 
-counties_main <- left_join(counties,counties2)
+counties_main <- read_csv('../Administrative-divisions-of-China/dist/areas.csv')
+
+counties_main
+```
+
+```{r}
+
+#add long lat columns to the counties data
+
+counties_main$lat <- 'NA'
+counties_main$long <- 'NA'
+
+city_main <- read_csv('../Administrative-divisions-of-China/dist/cities.csv')
+province_main <- read_csv('../Administrative-divisions-of-China/dist/provinces.csv')
+
+prov_county_main <- left_join(counties_main, province_main,
+                              by=c('provinceCode'='code'))
+
+prov_county_main
+```
+
+```{r}
+# villages_main <- read_csv('../Administrative-divisions-of-China/dist/villages.csv')
+
+# villages_main this is the list of villages, not necessarily helpful, wait for response from the chinese village researchers
+```
+
+```{r}
+
+n <- left_join(main_table_chips_2002, counties_main, by=c('coun'='code'))
+
+
+nrow(n)
+head(n)
+
+
+
 ```
