@@ -269,12 +269,19 @@ n
 
 ```{r}
 library(ggplot2)
-
-# test out the get map based on long lat
-location <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") %>% 
-  ggmap()
+library(ggmap)
+#  test out the get map based on long lat
+location <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") 
 
 location 
+
+
+df<-data.frame(116.4164,39.92835)
+      #a+ggplot(df) # Not sure what you intend here
+ggmap(location, extent ="device")+
+  geom_point(data=df,aes(x=116.4164,y=39.92835))
+
+ggsave('aaaaaaa', device='tiff')
 
 ```
 
