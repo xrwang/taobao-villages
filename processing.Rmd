@@ -274,7 +274,8 @@ library(ggplot2)
 location <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") %>% 
   ggmap()
 
-location
+location 
+
 ```
 
 
