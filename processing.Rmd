@@ -85,8 +85,16 @@ prov_county_main <- prov_county_main %>%
 
 prov_county_main
 
+
+
 ```
 
+
+```{r}
+
+pcoun_codes_1 <- filter(prov_county_main, code < 400000)
+pcoun_codes_2 <- filter(prov_county_main, code >= 400000)
+```
 
 
 #Grabbing the long lats from google maps
@@ -118,10 +126,6 @@ library(ggmap)
 
 ggmap_credentials()
 
-#register_google(key= "AIzaSyAE8v4YljHZYZJ03VydAtAn5yNOGIfr50g")
-#register_google(key= "AIzaSyC9NJaj-SjBb-woefGscea4WKqo7MYYvyk")
-register_google(key= " AIzaSyAt1r1YgKxZ4tSsk9Tb1k7_fPmV8q8vxtM")
-
 ggmap_credentials()
 
 library(ggmap)
@@ -134,8 +138,8 @@ ggmap_credentials()
 ```{r}
 
 
-infile <- 'input'
-data <- prov_county_main
+infile <- 'pcoun_2'
+data <-pcoun_codes_2
 
 addresses = data$geocodeAdd
 
@@ -170,7 +174,7 @@ getGeoDetails <- function(address){
    }
    answer$address_type <- paste(geo_reply$results[[1]]$types, collapse=',')
    answer$formatted_address <- geo_reply$results[[1]]$formatted_address
- 
+    
    return(answer)
 }
  
@@ -183,7 +187,7 @@ tempfilename <- paste0(infile, '_temp_geocoded.rds')
 if (file.exists(tempfilename)){
        print("Found temp file - resuming from index:")
        geocoded <- readRDS(tempfilename)
-       startindex <- nrow(geocoded)
+       startindex <- nrow(geocoded)+1
        print(startindex)
 }
  
@@ -200,15 +204,43 @@ for (ii in seq(startindex, length(addresses))){
    #save temporary results as we are going along
    saveRDS(geocoded, tempfilename)
 }
- 
+
+```
+
+```{r}
+blar <- data.frame(matrix(ncol = 3, nrow = 1516))
 #now we add the latitude and longitude to the main data
-data$lat <- geocoded$lat
-data$long <- geocoded$long
-data$accuracy <- geocoded$accuracy
+
+blar$status <- geocoded$status
+blar$formatted_address <- geocoded$formatted_address
+blar$index <- geocoded$index
+blar$lat <- geocoded$lat
+blar$long <- geocoded$long
+blar$accuracy <- geocoded$accuracy
  
+
+
 #finally write it all to the output files
-saveRDS(data, paste0("../data/", infile ,"_geocoded.rds"))
-write.table(data, file=paste0("../data/", infile ,"_geocoded.csv"), sep=",", row.names=FALSE)
+#saveRDS(data, paste0("../data/", infile ,"_geocoded.rds"))
+write.table(blar, file=paste0("", infile ,"_geocoded.csv"), sep=",", row.names=FALSE)
+
+```
+
+now there's two tables, concatenate them
+
+```{r}
+a <- read_csv('pcoun_1_geocoded.csv')
+b <- read_csv('pcoun_2_geocoded.csv')
+geocoded_areas <- bind_rows(a,b)
+
+prov_county_main$lat <- geocoded_areas$lat
+prov_county_main$long <- geocoded_areas$long
+
+prov_county_main$engAdd <- geocoded_areas$formatted_address
+prov_county_main
+```
+
+```{r}
 
 ```
 
