@@ -1,0 +1,355 @@
+File Manifest for ICPSR 21741
+
+Shi, Li. Chinese Household Income Project, 2002. ICPSR21741-v1. Ann Arbor,
+MI: Inter-university Consortium for Political and Social Research
+[distributor], 2009-08-14. http://doi.org/10.3886/ICPSR21741.v1
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-descriptioncitation.pdf       -       -         -       2014-10-27  -
+
+    21741-related_literature.txt        -       -         -       daily       -
+
+    21741-manifest.txt                  -       -         -       daily       -
+
+
+DS0001 Urban Individual Income, Consumption, and Employment Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0001-Codebook.pdf             -       -         -       2009-08-14  cce0f1d031d2106dd6d15d8aa43928c8
+
+    21741-0001-Data.dta                 -       20,632    151     2009-08-14  1b01aa0a0b462e4df72186c5b8afe229
+
+    21741-0001-Data.sav                 -       20,632    151     2009-08-14  af9a4967c831a4e3531484f28a7d2bd5
+
+    21741-0001-Data.stc                 -       20,632    151     2009-08-14  b81f1b64ded6d41627fcd4d2d80459d9
+
+    21741-0001-Data.tsv                 -       20,632    151     2009-08-14  5ac32da661ece2d0227369742e289a11
+
+    21741-0001-Data.txt                 377     20,632    151     2009-08-14  e776db3ca81a885a9798c3a270c651c5
+
+    21741-0001-Questionnaire-Chinese.pdf -       -         -       2009-08-14  54d0a48dab3a9883c0d0593cfbedff8d
+
+    21741-0001-Questionnaire-English.pdf -       -         -       2009-08-14  c29292cbedcae099ba2adf7a09bb2249
+
+    21741-0001-Setup.dct                -       -         -       2009-08-14  80ee4ad5501d007fb82a96ae7fc90918
+
+    21741-0001-Setup.do                 -       -         -       2009-08-14  f84b7748c515d120a60401f48f30cc8f
+
+    21741-0001-Setup.sas                -       -         -       2009-08-14  5c13bee321bdd7fecf370e6c25f95db4
+
+    21741-0001-Setup.sps                -       -         -       2009-08-14  b5f4aece4bf4c5545c063ca8183e0989
+
+    21741-0001-Supplemental_syntax.do   -       -         -       2009-08-14  c4fe373b5f3c482f2a5e160caf99a130
+
+    21741-0001-Supplemental_syntax.sas  -       -         -       2009-08-14  099efc0a28de85c52727cdb32314b882
+
+
+DS0002 Urban Household Income, Consumption, and Employment Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0002-Codebook.pdf             -       -         -       2009-08-14  f35afe8135f91c2ce85a0f59e3bea429
+
+    21741-0002-Data.dta                 -       6,835     88      2009-08-14  0a946bb2b529cebb4b8c4d85e8acfbde
+
+    21741-0002-Data.sav                 -       6,835     88      2009-08-14  70607beb4e6550090e95974e68a684d6
+
+    21741-0002-Data.stc                 -       6,835     88      2009-08-14  9e5454c6bdd03e239079382bc744cfbd
+
+    21741-0002-Data.tsv                 -       6,835     88      2009-08-14  8206bb82b1f209195ed17e6711afdcc7
+
+    21741-0002-Data.txt                 362     6,835     88      2009-08-14  d302b185984c69e84ab47fcd36628dfd
+
+    21741-0002-Questionnaire-Chinese.pdf -       -         -       2009-08-14  c56c40edc325676573c42ad93d6dc7c4
+
+    21741-0002-Questionnaire-English.pdf -       -         -       2009-08-14  64183b78a73a7859581fe6539767999c
+
+    21741-0002-Setup.dct                -       -         -       2009-08-14  b83dbd7a6c4a22d18834cd0787adddf0
+
+    21741-0002-Setup.do                 -       -         -       2009-08-14  240a6ba3bb3a450387e3bb2e44d06420
+
+    21741-0002-Setup.sas                -       -         -       2009-08-14  5733e4a5801228f0c05b3c3a651955f9
+
+    21741-0002-Setup.sps                -       -         -       2009-08-14  49ee8dd70bc48cea1e115feb2c1d8070
+
+    21741-0002-Supplemental_syntax.do   -       -         -       2009-08-14  143793c59aebda3745dcfd623f246190
+
+    21741-0002-Supplemental_syntax.sas  -       -         -       2009-08-14  68f1d7597772413c067b7bdf8f0a77eb
+
+
+DS0003 Urban Individual Annual Income Data (Survey Appendix)
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0003-Codebook.pdf             -       -         -       2009-08-14  275b9cec06e92b0f4c0fdae3f88a2ac6
+
+    21741-0003-Data.dta                 -       27,818    44      2009-08-14  da5fca9fe18271c9fbd16f184533a4e7
+
+    21741-0003-Data.sav                 -       27,818    44      2009-08-14  176bf658e332c178d8e0001053aedcd0
+
+    21741-0003-Data.stc                 -       27,818    44      2009-08-14  c9168315ec25103060bbc93de93a1e55
+
+    21741-0003-Data.tsv                 -       27,818    44      2009-08-14  02a119f5c315b6ef3e8d43b3909c62fe
+
+    21741-0003-Data.txt                 296     27,818    44      2009-08-14  3b86d1c0613c34f851822abe1fb3ebcd
+
+    21741-0003-Questionnaire-Chinese.pdf -       -         -       2009-08-14  14a5137bb4225360073088bd977e7374
+
+    21741-0003-Questionnaire-English.pdf -       -         -       2009-08-14  c8284283b2b8d9622710c088808a953c
+
+    21741-0003-Setup.dct                -       -         -       2009-08-14  db82959f09e79861668e85aa6be89c98
+
+    21741-0003-Setup.do                 -       -         -       2009-08-14  aba3e82e39709efb425f28f3db0be2ad
+
+    21741-0003-Setup.sas                -       -         -       2009-08-14  b9ab82fff758dc976d60605d1683b524
+
+    21741-0003-Setup.sps                -       -         -       2009-08-14  448aee6eb171bbdc4e73d203b2478df2
+
+    21741-0003-Supplemental_syntax.do   -       -         -       2009-08-14  52cae2e1652131a79ed695cd58db5064
+
+    21741-0003-Supplemental_syntax.sas  -       -         -       2009-08-14  0b2feb07fbdef53d8c9ad5fc3fdca6a6
+
+
+DS0004 Urban Household Assets, Expenditure, Income, and Conditions Data
+(Survey Appendix)
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0004-Codebook.pdf             -       -         -       2009-08-14  10e630c5513abaa2be27ea7f4ae7bde2
+
+    21741-0004-Data.dta                 -       6,835     212     2009-08-14  ca8e35ea30cfd14117fad20de36d3009
+
+    21741-0004-Data.sav                 -       6,835     212     2009-08-14  9e166e9779c89a9a3104fa719f7e0fd1
+
+    21741-0004-Data.stc                 -       6,835     212     2009-08-14  ac86fd64c49873914c8aa9e6d7509bd4
+
+    21741-0004-Data.tsv                 -       6,835     212     2009-08-14  cbd2c88776ecff631531fddee3be3a8e
+
+    21741-0004-Data.txt                 1331    6,835     212     2009-08-14  cb601fd25210c1f6fa7eac57ab269301
+
+    21741-0004-Questionnaire-Chinese.pdf -       -         -       2009-08-14  25f20bad1454115acfbf9be0e0744fee
+
+    21741-0004-Questionnaire-English.pdf -       -         -       2009-08-14  7ce688f67140ec8b9abaae33b75fc8f4
+
+    21741-0004-Setup.dct                -       -         -       2009-08-14  5734ee25aef43e4de821fdcb864865d7
+
+    21741-0004-Setup.do                 -       -         -       2009-08-14  da3e5b80386cad3bd64715b19a0024c0
+
+    21741-0004-Setup.sas                -       -         -       2009-08-14  df1ce73de26fa9c34caca1a399ebefd5
+
+    21741-0004-Setup.sps                -       -         -       2009-08-14  dba093aa531e17758ec242c6d2c8b6fc
+
+    21741-0004-Supplemental_syntax.do   -       -         -       2009-08-14  fea59e0841d426bb77f6fa587ec1cc60
+
+    21741-0004-Supplemental_syntax.sas  -       -         -       2009-08-14  40fda4bb861c8391b0d7d0c1099bd3c0
+
+
+DS0005 Village Administrative Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0005-Codebook.pdf             -       -         -       2009-08-14  382c22f65f90dc3d959f94e9d576df6d
+
+    21741-0005-Data.dta                 -       961       259     2009-08-14  9f32d305515ee08f4458b291826eb2ea
+
+    21741-0005-Data.sav                 -       961       259     2009-08-14  e32ea9e00afca1898822382e180afcb2
+
+    21741-0005-Data.stc                 -       961       259     2009-08-14  ac859eaa77a3dfb3b75c8c081bb447c7
+
+    21741-0005-Data.tsv                 -       961       259     2009-08-14  7b713985ec290d9f9e2a43c28df1e78b
+
+    21741-0005-Data.txt                 1249    961       259     2009-08-14  cc757ef12c02742b36b789ac40c0b23d
+
+    21741-0005-Questionnaire-Chinese.pdf -       -         -       2009-08-14  20fc2c12436dc968d7b9545eed7e0cb4
+
+    21741-0005-Questionnaire-English.pdf -       -         -       2009-08-14  2340a03455ca59c995fbd27ff82f5e22
+
+    21741-0005-Setup.dct                -       -         -       2009-08-14  9556f50240055870204bf5ce2b148e1b
+
+    21741-0005-Setup.do                 -       -         -       2009-08-14  ebb457f0828bd8dd441df824b2b67666
+
+    21741-0005-Setup.sas                -       -         -       2009-08-14  4d80a74b115b338869055fe9132759e0
+
+    21741-0005-Setup.sps                -       -         -       2009-08-14  a1c238d175e9f40785327cdf09920784
+
+
+DS0006 Rural Individual Income, Consumption, and Employment Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0006-Codebook.pdf             -       -         -       2009-08-14  f360b6ba23457739b72092d1ede8ac78
+
+    21741-0006-Data.dta                 -       37,969    84      2009-08-14  4df71dcd912fc25b8d97e1fa43a99f30
+
+    21741-0006-Data.sav                 -       37,969    84      2009-08-14  63a4cfd038fe87ca37129512d9cda9f7
+
+    21741-0006-Data.stc                 -       37,969    84      2009-08-14  ee2dbc16a32b74e931fcde4d1c04a38c
+
+    21741-0006-Data.tsv                 -       37,969    84      2009-08-14  3fe64e68ef8acd58b251b5a0fb70989e
+
+    21741-0006-Data.txt                 286     37,969    84      2009-08-14  a99fd62c8cf3d1520800b59912a7fb5f
+
+    21741-0006-Questionnaire-Chinese.pdf -       -         -       2009-08-14  6536f5c5cdc4ebf210f80381b087d9e1
+
+    21741-0006-Questionnaire-English.pdf -       -         -       2009-08-14  c16979f48d818220eb544961b484b7ae
+
+    21741-0006-Setup.dct                -       -         -       2009-08-14  091243c1de7af6c710dd1a91d68861ea
+
+    21741-0006-Setup.do                 -       -         -       2009-08-14  02aa7a331cd25608fb52c87db5531e92
+
+    21741-0006-Setup.sas                -       -         -       2009-08-14  8e4c9ec4ec366b5fb1d7dfddd9d9b468
+
+    21741-0006-Setup.sps                -       -         -       2009-08-14  76280371e631f8489bd84d9bbb384e46
+
+
+DS0007 Rural Household Income, Consumption, Employment, Social Network,
+Quality of Life, and Village Affairs Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0007-Codebook.pdf             -       -         -       2009-08-14  4de8929c5fc70fcf53e35c42c566fa06
+
+    21741-0007-Data.dta                 -       9,200     449     2009-08-14  3d70150ea6f8c6b9522a93610e87a1b8
+
+    21741-0007-Data.sav                 -       9,200     449     2009-08-14  d35c1530b1bd66887c1ca0c30f677f24
+
+    21741-0007-Data.stc                 -       9,200     449     2009-08-14  b5655d94282bbc4aed3bc122f172fb12
+
+    21741-0007-Data.tsv                 -       9,200     449     2009-08-14  7da5946bd7291ee330700b40f1e1d35e
+
+    21741-0007-Data.txt                 1726    9,200     449     2009-08-14  d76094ff0a1ae5b03680c79e24fde840
+
+    21741-0007-Questionnaire-Chinese.pdf -       -         -       2009-08-14  d4bcdeee4577224d7bcb201923d46e21
+
+    21741-0007-Questionnaire-English.pdf -       -         -       2009-08-14  a638dcf9152ce0f5d13328b526ca28dd
+
+    21741-0007-Setup.dct                -       -         -       2009-08-14  9fb63b5ab7b217a78f36cd9328871bd8
+
+    21741-0007-Setup.do                 -       -         -       2009-08-14  42d8c98b085f5f80af4fcba0fdb5d04d
+
+    21741-0007-Setup.sas                -       -         -       2009-08-14  b6ac1d44cc36c027d804af0da644b656
+
+    21741-0007-Setup.sps                -       -         -       2009-08-14  6822f12f7a48e16d8a4dfeb87e5e0395
+
+    21741-0007-Supplemental_syntax.do   -       -         -       2009-08-14  182277ae946f0b33251f3619ac90c64c
+
+    21741-0007-Supplemental_syntax.sas  -       -         -       2009-08-14  97737c436239b3224b5b7d2b8bc3cf73
+
+
+DS0008 Rural School-Age Children Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0008-Codebook.pdf             -       -         -       2009-08-14  31e42607b738428b19108101277ebd6e
+
+    21741-0008-Data.dta                 -       8,121     38      2009-08-14  c6207690d0f15241c63a5d81abbe2974
+
+    21741-0008-Data.sav                 -       8,121     38      2009-08-14  b7f0a8383f493b1304b5190c7106bdc1
+
+    21741-0008-Data.stc                 -       8,121     38      2009-08-14  2fb9da6a810a05ca36e2444d5d0abd8b
+
+    21741-0008-Data.tsv                 -       8,121     38      2009-08-14  b541fd019783402aa32e63852cb1996a
+
+    21741-0008-Data.txt                 87      8,121     38      2009-08-14  de9838d5dba3e7b2bb9fd28f842e4fb0
+
+    21741-0008-Questionnaire-Chinese.pdf -       -         -       2009-08-14  900d50dcd07dddc79c981cdbfbac1f54
+
+    21741-0008-Questionnaire-English.pdf -       -         -       2009-08-14  beb9103acc8a45ab3e9d72fae014f2d6
+
+    21741-0008-Setup.dct                -       -         -       2009-08-14  6e2dc48b77a5865cf4c3726770f556c9
+
+    21741-0008-Setup.do                 -       -         -       2009-08-14  31c9501a0420b2d52acd5e1507977c0a
+
+    21741-0008-Setup.sas                -       -         -       2009-08-14  9563c7f92312cb5b5c9da5d689541870
+
+    21741-0008-Setup.sps                -       -         -       2009-08-14  4f6a385bf96109040f0750442f2a2b74
+
+
+DS0009 Rural-Urban Migrant Individual Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0009-Codebook.pdf             -       -         -       2009-08-14  3299af0b6387dafdc67a810a71aa073c
+
+    21741-0009-Data.dta                 -       5,327     76      2009-08-14  2eb266943d3a7fe5d3af9f88fca02f20
+
+    21741-0009-Data.sav                 -       5,327     76      2009-08-14  b30645289f8871075badbed5a21ca3bf
+
+    21741-0009-Data.stc                 -       5,327     76      2009-08-14  bdfb146518cb416a7601a8b76fe1ce57
+
+    21741-0009-Data.tsv                 -       5,327     76      2009-08-14  592e66c50e3c96f79f1cd28a5b25c6bf
+
+    21741-0009-Data.txt                 216     5,327     76      2009-08-14  b32d1f4e76175fd9a65a8a49a97df560
+
+    21741-0009-Questionnaire-Chinese.pdf -       -         -       2009-08-14  d7aa7ff3e1db49cd7a0eadce04b8238a
+
+    21741-0009-Questionnaire-English.pdf -       -         -       2009-08-14  2967d43a6362980768f23f80b6ce7781
+
+    21741-0009-Setup.dct                -       -         -       2009-08-14  2133d50a79e626c93878eda5b2264ba4
+
+    21741-0009-Setup.do                 -       -         -       2009-08-14  85240ddc9143dddef00bed5739d3ee73
+
+    21741-0009-Setup.sas                -       -         -       2009-08-14  86800e2033b71e8bae6f33b40c93a40d
+
+    21741-0009-Setup.sps                -       -         -       2009-08-14  49fe2a7547e102a77600e24109ee015b
+
+    21741-0009-Supplemental_syntax.do   -       -         -       2009-08-14  01b25a8e60d884464729da9c3f62700d
+
+    21741-0009-Supplemental_syntax.sas  -       -         -       2009-08-14  2253d47f44825df686bf797833184b00
+
+
+DS0010 Rural-Urban Migrant Household Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    21741-0010-Codebook.pdf             -       -         -       2009-08-14  97a18fecd7589ebfae5a26608027f377
+
+    21741-0010-Data.dta                 -       2,000     129     2009-08-14  eb399f145f2d1575cbf9e2ba83a4863d
+
+    21741-0010-Data.sav                 -       2,000     129     2009-08-14  df298847e0d3ea39f3aa72ab260e2a44
+
+    21741-0010-Data.stc                 -       2,000     129     2009-08-14  e4988c5d8124ddf08c2594a873a326fb
+
+    21741-0010-Data.tsv                 -       2,000     129     2009-08-14  a61cd8436025adc0c5812a30dff277d1
+
+    21741-0010-Data.txt                 433     2,000     129     2009-08-14  d0904b5b2daa70600f26d09ccf1e3075
+
+    21741-0010-Questionnaire-Chinese.pdf -       -         -       2009-08-14  2183988eecd0fd325fe19d4faea1e741
+
+    21741-0010-Questionnaire-English.pdf -       -         -       2009-08-14  5c747f509cb4eada091ab4d8810af7c5
+
+    21741-0010-Setup.dct                -       -         -       2009-08-14  0a08fd76150c757fb1d956d518845b73
+
+    21741-0010-Setup.do                 -       -         -       2009-08-14  15287ae8e3e36c8193c39fbd76f0ad8e
+
+    21741-0010-Setup.sas                -       -         -       2009-08-14  0ac85b43ae3919c44fa991ecf14276b2
+
+    21741-0010-Setup.sps                -       -         -       2009-08-14  fca01bf8820bf5f72c54512938f860ab
+
+    21741-0010-Supplemental_syntax.do   -       -         -       2009-08-14  fb48d9768cf202c69c76f5664d5aaeaa
+
+    21741-0010-Supplemental_syntax.sas  -       -         -       2009-08-14  447ef83d8e2fe517e738fb2d6cb79a7b
+
+
+Version History
+
+2009-08-14 This study has been updated to include values labels, question
+text, and detailed documentation.

@@ -1,0 +1,141 @@
+File Manifest for ICPSR 3012
+
+Riskin, Carl, Zhao Renwei, and Li Shi. Chinese Household Income Project,
+1995. ICPSR03012-v2. Ann Arbor, MI: Inter-university Consortium for
+Political and Social Research [distributor], 2010-07-28.
+http://doi.org/10.3886/ICPSR03012.v2
+
+Details on the version history can be found below the file listings.
+
+
+Study-level Documentation
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03012-descriptioncitation.pdf       -       -         -       2014-10-27  -
+
+    03012-related_literature.txt        -       -         -       daily       -
+
+    03012-manifest.txt                  -       -         -       daily       -
+
+    03012-Codebook.pdf                  -       -         -       2010-07-28  ed2b5ff3b939c93424ead57d96705e50
+
+    03012-Documentation.pdf             -       -         -       2010-07-28  22a339ac113d01fd06b165df2b80eea8
+
+    03012-Questionnaire.pdf             -       -         -       2010-07-28  fefff9e9ae9f0c731c750b0ec8d11a58
+
+
+DS0001 Rural Individual Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03012-0001-Codebook.pdf             -       -         -       2010-07-28  f52c3da3e97f31dc76799d9cd8e94ddc
+
+    03012-0001-Data.dta                 -       34,739    73      2010-07-28  a0f95b1b7dff9bfb70ac6af4948c30d6
+
+    03012-0001-Data.sav                 -       34,739    73      2010-07-28  d50515e968e291f1f0c966a15a40de06
+
+    03012-0001-Data.stc                 -       34,739    73      2010-07-28  e9bbe217eeaa01cb7bb332044e0122c4
+
+    03012-0001-Data.tsv                 -       34,739    73      2010-07-28  c8e94b140ed453c3e2d350617e2d351e
+
+    03012-0001-Data.txt                 876     34,739    73      2010-07-28  0c104a22133fd340de1e0f372286c6a3
+
+    03012-0001-Setup.dct                -       -         -       2010-07-28  8f4fbf54cbed6c7462884d6b72150c0c
+
+    03012-0001-Setup.do                 -       -         -       2010-07-28  1c7368613c1b651de65a2c2368481e0b
+
+    03012-0001-Setup.sas                -       -         -       2010-07-28  e8f53b1210d3a4fbc13d06b520d18325
+
+    03012-0001-Setup.sps                -       -         -       2010-07-28  c473637280284e63894e4003507ddfb2
+
+
+DS0002 Rural Household Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03012-0002-Codebook.pdf             -       -         -       2010-07-28  18ac0966f2638a2c83e1488b13e0629c
+
+    03012-0002-Data.dta                 -       7,998     261     2010-07-28  6a490deca3e0c51fcac2329225535372
+
+    03012-0002-Data.sav                 -       7,998     261     2010-07-28  9d5534f9f99c52d7092b9bfb95c89b05
+
+    03012-0002-Data.stc                 -       7,998     261     2010-07-28  03d0e13a32e31c66893b7311c13232d1
+
+    03012-0002-Data.tsv                 -       7,998     261     2010-07-28  33aa2479fb06801f64662a116cc08dcb
+
+    03012-0002-Data.txt                 3132    7,998     261     2010-07-28  ac943353e4d6eacd8d7a193f801b9556
+
+    03012-0002-Setup.dct                -       -         -       2010-07-28  c428da0ff244aa9bbb5daf3c3b3f9ab9
+
+    03012-0002-Setup.do                 -       -         -       2010-07-28  c9d3e654673df2a7ecf588859ee00dfa
+
+    03012-0002-Setup.sas                -       -         -       2010-07-28  b121a489abf025e85425f631a0ee761c
+
+    03012-0002-Setup.sps                -       -         -       2010-07-28  17787526100e8918bdf7194582d6e593
+
+
+DS0003 Urban Individual Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03012-0003-Codebook.pdf             -       -         -       2010-07-28  2c4cb7c52199953ffae1b3e4ad6bb306
+
+    03012-0003-Data.dta                 -       21,698    102     2010-07-28  d643e80adc85f48f1b01c05b628f43d7
+
+    03012-0003-Data.sav                 -       21,698    102     2010-07-28  42c01f4a1f6d5de081c17eec5cc30c42
+
+    03012-0003-Data.stc                 -       21,698    102     2010-07-28  7fbe9d9ff72a9de7edcf7e7681d8cc3b
+
+    03012-0003-Data.tsv                 -       21,698    102     2010-07-28  42e216cdf0d9a7a468f734330bb69c61
+
+    03012-0003-Data.txt                 1224    21,698    102     2010-07-28  c89502d10bd12c9cdcc08243df423c44
+
+    03012-0003-Setup.dct                -       -         -       2010-07-28  f519a20e9c8898be3f9f2dcde0a51cd2
+
+    03012-0003-Setup.do                 -       -         -       2010-07-28  2050ea964c66e8e218418f4f37bb6405
+
+    03012-0003-Setup.sas                -       -         -       2010-07-28  838b0974b6028fb3e90d2b7de8441b65
+
+    03012-0003-Setup.sps                -       -         -       2010-07-28  33a4fc1f77963fcfbecf905af799d9c0
+
+
+DS0004 Urban Household Data
+
+    Filename                            Record  Record    Var.    Date        MD5
+                                        Length  Count     Count   Updated     Checksum
+
+    03012-0004-Codebook.pdf             -       -         -       2010-07-28  71661946fe169762c5b14590d8dc962c
+
+    03012-0004-Data.dta                 -       6,931     78      2010-07-28  b3e9f73fb0e22bb711581d85e6d8a603
+
+    03012-0004-Data.sav                 -       6,931     78      2010-07-28  833cee1d826949ff3038d837ef91da6f
+
+    03012-0004-Data.stc                 -       6,931     78      2010-07-28  0f05afbaea07c00b0e656a19611ebc27
+
+    03012-0004-Data.tsv                 -       6,931     78      2010-07-28  57af58343df7405a7bb5a8dbbde417b0
+
+    03012-0004-Data.txt                 936     6,931     78      2010-07-28  98b34011896e9d16656d5556cdc115e6
+
+    03012-0004-Setup.dct                -       -         -       2010-07-28  3b448aec8d531aee39d60913a17d35c0
+
+    03012-0004-Setup.do                 -       -         -       2010-07-28  cb1558ebfb53252172024b4362dd9231
+
+    03012-0004-Setup.sas                -       -         -       2010-07-28  a5eb7649962b9fa30bf102ed70a76a86
+
+    03012-0004-Setup.sps                -       -         -       2010-07-28  fcccddbf2a4d86c684f6e054fa02313a
+
+
+Version History
+
+2010-07-28 Added variable and value labels, coded missing values, and
+reorganized data documentation and files. Made data available in SAS, SPSS,
+Stata, ASCII with setup files, and tab-delimited ASCII.  2006-01-18 File
+QU3012.ALL.PDF was removed from any previous datasets and flagged as a
+study-level file, so that it will accompany all downloads.  2006-01-18 File
+CB3012.ALL.PDF was removed from any previous datasets and flagged as a
+study-level file, so that it will accompany all downloads.
