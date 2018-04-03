@@ -57,7 +57,7 @@ unique(ababa)
 ```{r}
 library(dplyr)
 
-counties_main <- read_csv('../../Administrative-divisions-of-China/dist/areas.csv')
+counties_main <- read_csv('https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/areas.csv')
 
 counties_main
 ```
