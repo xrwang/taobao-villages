@@ -1,5 +1,0 @@
----
-title: "ds421 readme"
-author: "Xiaowei Wang"
-output: github_document
----
