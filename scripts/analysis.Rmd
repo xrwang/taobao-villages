@@ -1,0 +1,10 @@
+---
+title: "analyzing CHIPS data!"
+author: "Xiaowei Wang"
+output: github_document
+---
+
+```{python}
+x = 'hello, python world!'
+print(x.split(' '))
+```
