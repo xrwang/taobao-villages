@@ -16,7 +16,7 @@ See http://ciid.bnu.edu.cn/chip/index.asp for more information. From their site:
 
 ## Structure of this repo
 
- :point_right: `proposal.md` [proposal.md](proposal.md) is a proposal for DS421 (hi!)
+ :point_right: `proposal.md` [ds421proposal.md](ds421proposal.md) is a proposal for DS421 (hi!)
 
  :point_right: `mar160.md` [mar160.md](mar160.md) contains a longer, graphical description of what this repo does and the background literature that this work is built on.
 
