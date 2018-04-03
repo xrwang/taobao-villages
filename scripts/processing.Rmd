@@ -122,15 +122,18 @@ library(ggmap)
 
 ```{r}
 
-ggmap_credentials()
+#Setting ggmap credentials here.
+# If you have creds in your Renviron, then you don't need to set them
 
-register_google(key='')
-
-ggmap_credentials()
-
-library(ggmap)
-
-ggmap_credentials()
+# ggmap_credentials()
+# 
+# register_google(key='')
+# 
+# ggmap_credentials()
+# 
+# library(ggmap)
+# 
+# ggmap_credentials()
 
 
 ```
