@@ -20,7 +20,11 @@ See http://ciid.bnu.edu.cn/chip/index.asp for more information. From their site:
 
  :point_right: `mar160.md` [mar160.md](mar160.md) contains a longer, graphical description of what this repo does and the background literature that this work is built on.
 
- :point_right:  `scripts` contains data processing on tabular data. It contains a `processing.Rmd` and `analysis.Rmd`. `processing.Rmd` cleans a lot of the data, joins and creates new tables out of existing CHIP data that has the columns made consistent (the variables have changed slightly from year to year of surveying). `analysis.Rmd` contains descriptive stats + exploratory analysis of CHIP data.
+ :point_right:  `scripts` contains data processing on tabular data and mild analysis. It contains a `processing.Rmd` and `analysis.Rmd`.
+
+ `processing.Rmd` cleans a lot of the data, joins and creates new tables out of existing CHIP data that has the columns made consistent (the variables have changed slightly from year to year of surveying).
+
+ `analysis.Rmd` contains descriptive stats + exploratory analysis of CHIP data.
 
  :point_right: `raster analysis` contains specific manipulations and analysis on the satellite data. I guess you can use python in Rmarkdown and we'll see how this goes...I would like to take advantage of rasterio/numpy/scikit-learn's capabilities.
 
