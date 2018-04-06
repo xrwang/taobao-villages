@@ -4,7 +4,53 @@ author: "Xiaowei Wang"
 output: github_document
 ---
 
+
+```{r}
+library(reticulate)
+use_condaenv('numlinalg')
+numpy <- import('numpy')
+rasterio <- import('rasterio')
+pandas <- import('pandas')
+osgeo <- import('osgeo')
+```
+
 ```{python}
+from __future__ import division
+import numpy as np
+import rasterio
+import subprocess
+```
+
+```{python}
+
 x = 'hello, python world!'
 print(x.split(' '))
+import rasterio
+import numpy as np
+from osgeo import gdal
+
+src = rasterio.open('/Users/xiaoweirwang/Projects/rasterio/tests/data/rgb1.tif')
+
+print(src.shape)
+
+grey = np.mean(np.dstack(src.read()), axis=2)
+
+srcprof = src.profile.copy()
+
+classes = 5
+# Breaks is an array of the class breaks: [   0.   51.  102.  153.  204.]
+breaks = (np.arange(classes) / float(classes)) * grey.max()
+
+# classify the raster
+classified = np.sum(np.dstack([(grey < b) for b in breaks]), axis=2).reshape(1, 400, 400).astype(np.int32)
+
+
+print(classified)
+```
+
+
+
+```{python}
+
+
 ```
