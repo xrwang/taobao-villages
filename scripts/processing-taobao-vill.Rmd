@@ -12,7 +12,11 @@ library(tidyverse)
 
 ## Geocoding taobao villages
 
-There are 1312 taobao villages as of 2017. 
+There are 1312 taobao villages as of 2017. This is under the google geocoding api limit, yay.
+
+Testing out the geocoding response, put the province and village together
+(省 column + 村 column, separate by comma )
+
 
 ```{r}
 read_csv('data/taobao-village-list/taobao-village-list.csv')
