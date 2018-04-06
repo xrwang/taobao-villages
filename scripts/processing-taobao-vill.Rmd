@@ -1,0 +1,19 @@
+---
+title: "processing-taobao-villages"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(tidyverse)
+
+```
+
+
+## Geocoding taobao villages
+
+There are 1312 taobao villages as of 2017. 
+
+```{r}
+read_csv('data/taobao-village-list/taobao-village-list.csv')
+```
