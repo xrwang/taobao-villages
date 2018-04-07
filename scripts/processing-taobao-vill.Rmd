@@ -19,5 +19,41 @@ Testing out the geocoding response, put the province and village together
 
 
 ```{r}
-read_csv('data/taobao-village-list/taobao-village-list.csv')
+taobao_villages <- read_csv('data/taobao-village-list/taobao-village-list.csv',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'zhen',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)
+taobao_villages <- taobao_villages %>% mutate(., geocodeAdd = paste0(sheng,cun))
+taobao_villages %>% count(sheng)
+
+
+taobao_villages_subset <- subset(taobao_villages, sheng == '河北省' )
+#Go through this list and geocode them all !
+
+taobao_villages_subset
+
+geocode_the_place <- function(geocodeAdd,...) {
+    
+    a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
+      if (status_code(json) == 200) {
+        response <- fromJSON(content(json, as='text'))
+    } else {
+    NULL
+  }
+}
+
+taobao_geocoded <- taobao_villages_subset %>%
+  pmap_df(geocode_the_place, geocodeAdd)
+
+
+```
+
+
+```{r}
+taobao_villages
 ```
