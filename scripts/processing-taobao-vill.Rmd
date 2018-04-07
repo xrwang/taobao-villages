@@ -6,7 +6,7 @@ output: html_document
 ```{r}
 library(dplyr)
 library(tidyverse)
-
+library(httr)
 ```
 
 
@@ -19,23 +19,23 @@ Testing out the geocoding response, put the province and village together
 
 
 ```{r}
-taobao_villages <- read_csv('data/taobao-village-list/taobao-village-list.csv',
+taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2016.csv',
                             col_names = c(
                               'sheng',
                               'shi',
-                              'zhen',
+                              'xian',
                               'xiangzhen',
                               'cun'
                             ),
                             skip=1)
-taobao_villages <- taobao_villages %>% mutate(., geocodeAdd = paste0(sheng,cun))
-taobao_villages %>% count(sheng)
+taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
+taobao_villages_2016 %>% count(sheng)
 
 
-taobao_villages_subset <- subset(taobao_villages, sheng == '河北省' )
+taobao_villages_subset_2016 <- subset(taobao_villages_2016, sheng == '河北省' )
 #Go through this list and geocode them all !
 
-taobao_villages_subset
+taobao_villages_subset_2016
 
 geocode_the_place <- function(geocodeAdd,...) {
     
@@ -47,7 +47,7 @@ geocode_the_place <- function(geocodeAdd,...) {
   }
 }
 
-taobao_geocoded <- taobao_villages_subset %>%
+taobao_geocoded <- taobao_villages_subset_2016 %>%
   pmap_df(geocode_the_place, geocodeAdd)
 
 
@@ -55,5 +55,35 @@ taobao_geocoded <- taobao_villages_subset %>%
 
 
 ```{r}
-taobao_villages
+taobao_villages_2016
+```
+
+## What are the differences across the years?
+```{r}
+taobao_villages_2015 <- readxl::read_excel('data/taobao-village-list/taobao-village-list-2015.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)
+
+
+
+
+taobao_villages_2015 <- taobao_villages_2015 %>% 
+  mutate(., geocodeAdd = paste0(sheng,cun))
+
+
+
+taobao_villages_2015 %>% count(sheng)
+
+taobao_villages_2015
+taobao_villages_2016
+
+common <- intersect(taobao_villages_2015$geocodeAdd, taobao_villages_2016$geocodeAdd)
+
+common
 ```
