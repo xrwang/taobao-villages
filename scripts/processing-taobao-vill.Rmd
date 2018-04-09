@@ -29,7 +29,7 @@ taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2
                             ),
                             skip=1)
 taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
-taobao_villages_2016 %>% count(sheng)
+taobao_villages_2016 %>% count(xiang)
 
 
 taobao_villages_subset_2016 <- subset(taobao_villages_2016, sheng == '河北省' )
@@ -47,8 +47,8 @@ geocode_the_place <- function(geocodeAdd,...) {
   }
 }
 
-taobao_geocoded <- taobao_villages_subset_2016 %>%
-  pmap_df(geocode_the_place, geocodeAdd)
+# taobao_geocoded <- taobao_villages_subset_2016 %>%
+#   pmap_df(geocode_the_place, geocodeAdd)
 
 
 ```
@@ -76,14 +76,58 @@ taobao_villages_2015 <- readxl::read_excel('data/taobao-village-list/taobao-vill
 taobao_villages_2015 <- taobao_villages_2015 %>% 
   mutate(., geocodeAdd = paste0(sheng,cun))
 
+taobao_villages_2014 <- readxl::read_excel('data/taobao-village-list/taobao-village-list-2014.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun',
+                              'goods_made'
+                            ),
+                            skip=1)
 
 
-taobao_villages_2015 %>% count(sheng)
+
+
+taobao_villages_2014 <- taobao_villages_2014 %>% 
+  mutate(., geocodeAdd = paste0(sheng,cun)) %>%
+  select(-goods_made)
+
+
+taobao_villages_2015 %>% count(xian)
+taobao_villages_2014 %>% count(xian)
+
+taobao_villages_2014 <- taobao_villages_2014 %>%
+                        arrange(sheng)
+taobao_villages_2015 <- taobao_villages_2015 %>%
+                        arrange(sheng)
+taobao_villages_2016 <- taobao_villages_2016 %>%
+                        arrange(sheng)
+
+newones <- setdiff(taobao_villages_2016$geocodeAdd, taobao_villages_2015$geocodeAdd)
+
+newone_table_2015_2016 <- setdiff(taobao_villages_2016, taobao_villages_2015)
+newone_table_2014_2015 <- setdiff(taobao_villages_2015, taobao_villages_2014)
+newone_table_2014_2016 <- setdiff(taobao_villages_2016, taobao_villages_2014)
+diffdiff <- setdiff(newone_table_2015_2016, newone_table_2014_2015)
 
 taobao_villages_2015
 taobao_villages_2016
 
-common <- intersect(taobao_villages_2015$geocodeAdd, taobao_villages_2016$geocodeAdd)
+```
 
-common
+
+```{r}
+newone_table_2015_2016
+newone_table_2014_2015
+diffdiff
+```
+
+## Did any taobao villages dissapear?
+```{r}
+intersect(taobao_villages_2014, taobao_villages_2016)
+nrow(taobao_villages_2014)
+nrow(intersect(taobao_villages_2014, taobao_villages_2016))
+
 ```

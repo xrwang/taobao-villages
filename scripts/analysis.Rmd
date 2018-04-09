@@ -4,7 +4,7 @@ author: "Xiaowei Wang"
 output: github_document
 ---
 
-
+## Try out python for raster analysis 
 ```{r}
 library(reticulate)
 use_condaenv('numlinalg')
@@ -52,6 +52,7 @@ print(classified)
 ```
 
 ```{python}
+# code from the lovely @vruba
 # python pca_multiband.py input.jpeg output.tif
 # n-band image -> PCA -> n-band TIFF image
 # with lots of hackety assumptions
@@ -61,8 +62,6 @@ from sys import argv
 import rasterio as rio
 import numpy as np
 from sklearn import decomposition
-
-src = rio.open('/Users/xiaoweirwang/Projects/rasterio/tests/data/rgb1.tif')
 
 
 with rio.open('/Users/xiaoweirwang/Projects/rasterio/tests/data/rgb1.tif') as src:
@@ -110,9 +109,14 @@ meta.update({
   'driver': 'GTiff'
 })
 
-with rio.open(argv[2], 'w', **meta) as dst:
+with rio.open('test.tif', 'w', **meta) as dst:
   dst.write(xyz)
+  
+with rio.open('test.tif') as src:
+  print(src.count)
+
 ```
+
 
 ```{python}
 

@@ -1,0 +1,48 @@
+---
+title: "spot analysis of taobao village sites"
+author: "Xiaowei Wang"
+output: github_document
+---
+
+## Spot analysis of taobao village sites
+
+automate this later on !
+
+```{r}
+
+library(mapview)      #interactive maps, raster + vector layers
+library(raster)       #Main raster library
+library(tidyverse)    #our old friend
+library(sf)           #to work with simple features data
+
+
+```
+
+## Read in and get some stats
+```{r}
+
+r <- brick('data/imageToDriveExample.tif')
+
+r
+#12 band data from tif
+
+plotRGB(r, r = 3, g = 2, b = 1, axes = TRUE, stretch = "lin",
+        main = "Landsat True Color Composite")
+
+```
+
+
+##compute ndvi
+```{r}
+NDVI <- function(img, i, k) {
+   bi <- img[[i]]
+   bk <- img[[k]]
+   vi <- (bk - bi) / (bk + bi)
+   return(vi)
+}
+
+# For landsat 8, NIR is 5, red is 4.
+ndvi <- NDVI(r, 4, 5)
+plot(ndvi, col = rev(terrain.colors(30)), main = 'NDVI from Landsat')
+
+```

@@ -1,0 +1,7 @@
+---
+title: "spot analysis of taobao village sites"
+author: "Xiaowei Wang"
+output: github_document
+---
+
+# Pareto distribution
