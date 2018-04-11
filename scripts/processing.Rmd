@@ -271,23 +271,35 @@ n
 ```{r}
 library(ggplot2)
 library(ggmap)
+library(dismo)
 #  test out the get map based on long lat
-location <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") 
+one_tile <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") 
 
-location 
-
-
-df<-data.frame(116.4164,39.92835)
-      #a+ggplot(df) # Not sure what you intend here
-ggmap(location, extent ="device")+
+#df<-data.frame(116.4164,39.92835)
+#       #a+ggplot(df) # Not sure what you intend here
+plot <- ggmap(one_tile, extent ="device")+
   geom_point(data=df,aes(x=116.4164,y=39.92835))
 
-ggsave('aaaaaaa', device='tiff')
+# ggsave('aaaaaaa.tiff', device='tiff')
 
+
+
+# final_map <- location +
+#   geom_point(data = df, aes(x = 116.4164, y = 39.92835)) + 
+#   theme(panel.border = element_blank(),
+#         axis.title = element_blank(),
+#         axis.text  = element_blank(),
+#         axis.ticks = element_blank(),
+#         plot.margin = unit(c(0,0,0,0), "cm"))
+
+ggsave('a', plot, device='tiff')
 ```
 
 
-## Make bounding box off of 
+## Make bounding box off of one satellite tile.
+
+bounding_box function is from https://github.com/trinker/bounding_box, an R implementation of Jan Philip Matuschek's algorithm. 
+
 ```{r}
 bounding_box <- function(lat, lon, dist, in.miles = TRUE) {
 
@@ -314,5 +326,55 @@ bounding_box <- function(lat, lon, dist, in.miles = TRUE) {
     dimnames(m) <- list(c("lng", "lat"), c("min", "max"))
     m
 }
+
+bb <- bounding_box(39.92835, 116.4164, 0.62, in.miles=TRUE )
+
+xmax <- bb[1, 2] 
+ymin <- bb[2,1]
+xmin <- bb[1, 1]
+ymax <- bb[2, 2]
+
+points_frame <- data.frame(lon = c(xmax, 116.4164, xmin),
+                           lat = c(ymax, 39.92835, ymin),
+                           name = c('max', 'center', 'min'))
+
+
+
+ggmap(one_tile, 
+      extent="normal",
+      ylab = "lat",
+      xlab = "lon") +
+  	  geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color="red", fill=NA, size=2) +
+      geom_point(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), size=5, color = "green")
+
+      # geom_point(data=data.frame(lon = 116.4164, lat = 39.92835), size=7, color="yellow")
+```
+
+
+## Now let's georeference the satellite tile that we saved!
+
+```{r}
+plot
+test_tile <- raster('a')
+
+extents <- c(xmin, xmax, ymin, ymax)
+setExtent(test_tile, extent(extents), keepres = FALSE, snap = FALSE )
+
+#plot(test_tile)
+
+```
+
+## Well it turns out that there's an easier way to save geoTiffs and assign them a CRS...
+```{r}
+
+extent_dismo <- extent(xmin, xmax, ymin, ymax)
+
+dismogmap_tile <- dismo::gmap(extent_dismo, type = 'satellite', zoom = 16)
+dismogmap_tile
+
+plot(dismogmap_tile)
+projection(dismogmap_tile) <- CRS("+init=epsg:3857")
+writeRaster(dismogmap_tile, file = "dismographtile_epsg", format = "GTiff", overwrite = TRUE, 
+    datatype = "INT1U")
 
 ```
