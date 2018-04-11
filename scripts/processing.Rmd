@@ -273,19 +273,25 @@ library(ggplot2)
 library(ggmap)
 library(dismo)
 #  test out the get map based on long lat
-one_tile <- get_map(location = c(lon = 116.4164, lat = 39.92835), zoom = 16, maptype = "satellite") 
 
-#df<-data.frame(116.4164,39.92835)
+#libeicun 106.728735, 27.040506
+longcenter <- 106.728735
+latcenter <- 27.040506
+
+
+one_tile <- get_map(location = c(lon = longcenter, lat = latcenter), zoom = 16, maptype = "satellite") 
+
+#df<-data.frame(longcenter,latcenter)
 #       #a+ggplot(df) # Not sure what you intend here
 plot <- ggmap(one_tile, extent ="device")+
-  geom_point(data=df,aes(x=116.4164,y=39.92835))
+  geom_point(data=df,aes(x=longcenter,y=latcenter))
 
 # ggsave('aaaaaaa.tiff', device='tiff')
 
 
 
 # final_map <- location +
-#   geom_point(data = df, aes(x = 116.4164, y = 39.92835)) + 
+#   geom_point(data = df, aes(x = longcenter, y = latcenter)) + 
 #   theme(panel.border = element_blank(),
 #         axis.title = element_blank(),
 #         axis.text  = element_blank(),
@@ -327,15 +333,18 @@ bounding_box <- function(lat, lon, dist, in.miles = TRUE) {
     m
 }
 
-bb <- bounding_box(39.92835, 116.4164, 0.62, in.miles=TRUE )
+
+
+bb <- bounding_box(latcenter, longcenter, 0.62, in.miles=TRUE )
 
 xmax <- bb[1, 2] 
 ymin <- bb[2,1]
 xmin <- bb[1, 1]
 ymax <- bb[2, 2]
 
-points_frame <- data.frame(lon = c(xmax, 116.4164, xmin),
-                           lat = c(ymax, 39.92835, ymin),
+
+points_frame <- data.frame(lon = c(xmax, longcenter, xmin),
+                           lat = c(ymax, latcenter, ymin),
                            name = c('max', 'center', 'min'))
 
 
@@ -347,7 +356,7 @@ ggmap(one_tile,
   	  geom_rect(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), color="red", fill=NA, size=2) +
       geom_point(aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), size=5, color = "green")
 
-      # geom_point(data=data.frame(lon = 116.4164, lat = 39.92835), size=7, color="yellow")
+      # geom_point(data=data.frame(lon = longcenter, lat = latcenter), size=7, color="yellow")
 ```
 
 
@@ -376,5 +385,17 @@ plot(dismogmap_tile)
 projection(dismogmap_tile) <- CRS("+init=epsg:3857")
 writeRaster(dismogmap_tile, file = "dismographtile_epsg", format = "GTiff", overwrite = TRUE, 
     datatype = "INT1U")
+
+```
+
+## After getting the geoTiff tile, crop the raster files from landsat as well
+
+```{r}
+landsat <- brick('data/imageToDriveExample.tif')
+#this landsat image is from libeicun
+
+cropped <- crop(landsat, extents, 'croppedlandsat')
+
+
 
 ```

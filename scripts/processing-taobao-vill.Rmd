@@ -29,7 +29,7 @@ taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2
                             ),
                             skip=1)
 taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
-taobao_villages_2016 %>% count(xiang)
+taobao_villages_2016 %>% count(xiangzhen)
 
 
 taobao_villages_subset_2016 <- subset(taobao_villages_2016, sheng == '河北省' )
