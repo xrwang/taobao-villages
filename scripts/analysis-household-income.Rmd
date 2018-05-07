@@ -22,10 +22,11 @@ library(dplyr)
 library(foreign)
 library(reticulate)
 library(haven)
-use_condaenv('numlinalg')
-numpy <- import('numpy')
-rasterio <- import('rasterio')
-pandas <- import('pandas')
+#use_condaenv('numlinalg')
+#numpy <- import('numpy')
+#rasterio <- import('rasterio')
+#pandas <- import('pandas')
+#comment out python stuff for now
 
 ```
 
