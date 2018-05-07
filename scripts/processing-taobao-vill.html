@@ -307,35 +307,288 @@ $(document).ready(function () {
 </div>
 
 
-<pre class="r"><code>library(dplyr)
-library(tidyverse)</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'</code></pre>
+<pre><code>## The following objects are masked from 'package:stats':
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 2.2.1.9000     ✔ readr   1.1.1     
+## ✔ tibble  1.4.2          ✔ purrr   0.2.4     
+## ✔ tidyr   0.7.2          ✔ stringr 1.3.0     
+## ✔ ggplot2 2.2.1.9000     ✔ forcats 0.2.0</code></pre>
+<pre><code>## Warning: package 'tibble' was built under R version 3.4.3</code></pre>
+<pre><code>## Warning: package 'stringr' was built under R version 3.4.3</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(httr)</code></pre>
 <section id="geocoding-taobao-villages" class="level2">
 <h2>Geocoding taobao villages</h2>
 <p>There are 1312 taobao villages as of 2017. This is under the google geocoding api limit, yay.</p>
 <p>Testing out the geocoding response, put the province and village together (省 column + 村 column, separate by comma )</p>
-<pre class="r"><code>read_csv('data/taobao-village-list/taobao-village-list.csv')</code></pre>
+<pre class="r"><code>taobao_villages_2016 &lt;- read_csv('data/taobao-village-list/taobao_village_list_2016.csv',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
-##   `省(市、区)` = col_character(),
-##   `市（州）` = col_character(),
-##   `县（市、区）` = col_character(),
-##   `乡镇(街道)` = col_character(),
-##   村 = col_character()
+##   sheng = col_character(),
+##   shi = col_character(),
+##   xian = col_character(),
+##   xiangzhen = col_character(),
+##   cun = col_character()
 ## )</code></pre>
-<pre><code>## # A tibble: 1,312 x 5
-##    `省(市、区)` `市（州）` `县（市、区）` `乡镇(街道)` 村      
-##    &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt;        &lt;chr&gt;   
-##  1 安徽省       宣城市     泾县           丁家桥镇     李元村  
-##  2 北京市       北京市     房山区         长阳镇       阎仙垡村
-##  3 福建省       福州市     晋安区         新店镇       西园村  
-##  4 福建省       福州市     连江县         潘渡乡       贵安村  
-##  5 福建省       福州市     闽侯县         荆溪镇       关口村  
-##  6 福建省       福州市     闽侯县         上街镇       建平村  
-##  7 福建省       福州市     闽侯县         上街镇       浦口村  
-##  8 福建省       龙岩市     新罗区         小池镇       培斜村  
-##  9 福建省       莆田市     城厢区         霞林街道     坂头村  
-## 10 福建省       莆田市     城厢区         霞林街道     下黄村  
+<pre class="r"><code>taobao_villages_2016 &lt;- taobao_villages_2016 %&gt;% mutate(., geocodeAdd = paste0(sheng,cun))
+taobao_villages_2016 %&gt;% count(xiangzhen)</code></pre>
+<pre><code>## # A tibble: 493 x 2
+##    xiangzhen      n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 丁家桥镇       1
+##  2 丁蜀镇         2
+##  3 万全镇         2
+##  4 万田乡         1
+##  5 万里镇         2
+##  6 丈亭镇         1
+##  7 三合镇         3
+##  8 三班镇         4
+##  9 三甲街道       1
+## 10 三里河街道     1
+## # ... with 483 more rows</code></pre>
+<pre class="r"><code>taobao_villages_subset_2016 &lt;- subset(taobao_villages_2016, sheng == '河北省' )
+#Go through this list and geocode them all !
+
+taobao_villages_subset_2016</code></pre>
+<pre><code>## # A tibble: 91 x 6
+##    sheng  shi    xian     xiangzhen cun      geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;         
+##  1 河北省 保定市 安新县   安新镇    大张庄村 河北省大张庄村
+##  2 河北省 保定市 白沟新城 白沟镇    白五村   河北省白五村  
+##  3 河北省 保定市 白沟新城 白沟镇    来远村   河北省来远村  
+##  4 河北省 保定市 白沟新城 白沟镇    王庄村   河北省王庄村  
+##  5 河北省 保定市 白沟新城 白沟镇    小营村   河北省小营村  
+##  6 河北省 保定市 白沟新城 白沟镇    许庄村   河北省许庄村  
+##  7 河北省 保定市 高碑店市 梁家营乡  梁北村   河北省梁北村  
+##  8 河北省 保定市 高碑店市 新城镇    南场村   河北省南场村  
+##  9 河北省 保定市 高碑店市 张六庄乡  南宫井村 河北省南宫井村
+## 10 河北省 保定市 蠡县     南庄镇    后刘市村 河北省后刘市村
+## # ... with 81 more rows</code></pre>
+<pre class="r"><code>geocode_the_place &lt;- function(geocodeAdd,...) {
+    
+    a &lt;- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
+      if (status_code(json) == 200) {
+        response &lt;- fromJSON(content(json, as='text'))
+    } else {
+    NULL
+  }
+}
+
+# taobao_geocoded &lt;- taobao_villages_subset_2016 %&gt;%
+#   pmap_df(geocode_the_place, geocodeAdd)</code></pre>
+<pre class="r"><code>taobao_villages_2016</code></pre>
+<pre><code>## # A tibble: 1,312 x 6
+##    sheng  shi    xian   xiangzhen cun      geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;         
+##  1 安徽省 宣城市 泾县   丁家桥镇  李元村   安徽省李元村  
+##  2 北京市 北京市 房山区 长阳镇    阎仙垡村 北京市阎仙垡村
+##  3 福建省 福州市 晋安区 新店镇    西园村   福建省西园村  
+##  4 福建省 福州市 连江县 潘渡乡    贵安村   福建省贵安村  
+##  5 福建省 福州市 闽侯县 荆溪镇    关口村   福建省关口村  
+##  6 福建省 福州市 闽侯县 上街镇    建平村   福建省建平村  
+##  7 福建省 福州市 闽侯县 上街镇    浦口村   福建省浦口村  
+##  8 福建省 龙岩市 新罗区 小池镇    培斜村   福建省培斜村  
+##  9 福建省 莆田市 城厢区 霞林街道  坂头村   福建省坂头村  
+## 10 福建省 莆田市 城厢区 霞林街道  下黄村   福建省下黄村  
 ## # ... with 1,302 more rows</code></pre>
+</section>
+<section id="what-are-the-differences-across-the-years" class="level2">
+<h2>What are the differences across the years?</h2>
+<pre class="r"><code>taobao_villages_2015 &lt;- readxl::read_excel('data/taobao-village-list/taobao-village-list-2015.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)
+
+
+
+
+taobao_villages_2015 &lt;- taobao_villages_2015 %&gt;% 
+  mutate(., geocodeAdd = paste0(sheng,cun))
+
+taobao_villages_2014 &lt;- readxl::read_excel('data/taobao-village-list/taobao-village-list-2014.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun',
+                              'goods_made'
+                            ),
+                            skip=1)
+
+
+
+
+taobao_villages_2014 &lt;- taobao_villages_2014 %&gt;% 
+  mutate(., geocodeAdd = paste0(sheng,cun)) %&gt;%
+  select(-goods_made)
+
+
+taobao_villages_2015 %&gt;% count(xian)</code></pre>
+<pre><code>## # A tibble: 181 x 2
+##    xian         n
+##    &lt;chr&gt;    &lt;int&gt;
+##  1 三水区       2
+##  2 三河市       1
+##  3 三门县       1
+##  4 东台市       1
+##  5 东昌府区     1
+##  6 东海县       2
+##  7 东阳市       4
+##  8 丰县         1
+##  9 临安市      14
+## 10 临沭县       1
+## # ... with 171 more rows</code></pre>
+<pre class="r"><code>taobao_villages_2014 %&gt;% count(xian)</code></pre>
+<pre><code>## # A tibble: 81 x 2
+##    xian       n
+##    &lt;chr&gt;  &lt;int&gt;
+##  1 -          5
+##  2 三门县     1
+##  3 东海县     1
+##  4 东阳市     1
+##  5 临安市     4
+##  6 义乌市     6
+##  7 仙居县     1
+##  8 仙游县     4
+##  9 南安市     3
+## 10 南宫市     4
+## # ... with 71 more rows</code></pre>
+<pre class="r"><code>taobao_villages_2014 &lt;- taobao_villages_2014 %&gt;%
+                        arrange(sheng)
+taobao_villages_2015 &lt;- taobao_villages_2015 %&gt;%
+                        arrange(sheng)
+taobao_villages_2016 &lt;- taobao_villages_2016 %&gt;%
+                        arrange(sheng)
+
+newones &lt;- setdiff(taobao_villages_2016$geocodeAdd, taobao_villages_2015$geocodeAdd)
+
+newone_table_2015_2016 &lt;- setdiff(taobao_villages_2016, taobao_villages_2015)
+newone_table_2014_2015 &lt;- setdiff(taobao_villages_2015, taobao_villages_2014)
+newone_table_2014_2016 &lt;- setdiff(taobao_villages_2016, taobao_villages_2014)
+diffdiff &lt;- setdiff(newone_table_2015_2016, newone_table_2014_2015)
+
+taobao_villages_2015</code></pre>
+<pre><code>## # A tibble: 780 x 6
+##    sheng          shi                xian   xiangzhen  cun    geocodeAdd  
+##    &lt;chr&gt;          &lt;chr&gt;              &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;       
+##  1 云南省         大理白族自治州     鹤庆县 草海镇     新华村 云南省新华村
+##  2 云南省         西双版纳傣族自治州 景洪市 嘎洒镇     曼弄枫村… 云南省曼弄枫村…
+##  3 北京           北京市             房山区 长阳镇     阎仙垡村… 北京阎仙垡村
+##  4 吉林省         延边朝鲜族自治州   安图县 二道白河镇 长白村 吉林省长白村
+##  5 四川省         成都市             郫县   安靖镇     林湾村 四川省林湾村
+##  6 四川省         成都市             郫县   安靖镇     土地村 四川省土地村
+##  7 天津           天津市             静海县 蔡公庄镇   四党口中村… 天津四党口中村…
+##  8 天津           天津市             静海县 子牙镇     潘庄子村… 天津潘庄子村
+##  9 天津           天津市             武清区 王庆坨镇   一街村 天津一街村  
+## 10 宁夏回族自治区 银川市             贺兰县 习岗镇     德胜村 宁夏回族自治区德胜村…
+## # ... with 770 more rows</code></pre>
+<pre class="r"><code>taobao_villages_2016</code></pre>
+<pre><code>## # A tibble: 1,312 x 6
+##    sheng  shi              xian   xiangzhen  cun        geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;            &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;         
+##  1 云南省 大理白族自治州   鹤庆县 草海镇     新华村     云南省新华村  
+##  2 北京市 北京市           房山区 长阳镇     阎仙垡村   北京市阎仙垡村
+##  3 吉林省 延边朝鲜族自治州 安图县 二道白河镇 长白村     吉林省长白村  
+##  4 四川省 成都市           郫县   安靖镇     林湾村     四川省林湾村  
+##  5 四川省 成都市           郫县   安靖镇     土地村     四川省土地村  
+##  6 四川省 成都市           郫县   安靖镇     雍渡村     四川省雍渡村  
+##  7 天津   天津市           北辰区 小淀镇     刘安庄村   天津刘安庄村  
+##  8 天津   天津市           静海区 蔡公庄镇   四党口中村 天津四党口中村
+##  9 天津   天津市           静海区 子牙镇     潘庄子村   天津潘庄子村  
+## 10 天津   天津市           静海区 子牙镇     子牙村     天津子牙村    
+## # ... with 1,302 more rows</code></pre>
+<pre class="r"><code>newone_table_2015_2016</code></pre>
+<pre><code>## # A tibble: 685 x 6
+##    sheng  shi    xian   xiangzhen cun        geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;         
+##  1 北京市 北京市 房山区 长阳镇    阎仙垡村   北京市阎仙垡村
+##  2 四川省 成都市 郫县   安靖镇    雍渡村     四川省雍渡村  
+##  3 天津   天津市 北辰区 小淀镇    刘安庄村   天津刘安庄村  
+##  4 天津   天津市 静海区 蔡公庄镇  四党口中村 天津四党口中村
+##  5 天津   天津市 静海区 子牙镇    潘庄子村   天津潘庄子村  
+##  6 天津   天津市 静海区 子牙镇    子牙村     天津子牙村    
+##  7 安徽省 宣城市 泾县   丁家桥镇  李元村     安徽省李元村  
+##  8 山东省 滨州市 博兴县 城东街道  鲍庄村     山东省鲍庄村  
+##  9 山东省 滨州市 博兴县 城东街道  贤城村     山东省贤城村  
+## 10 山东省 滨州市 博兴县 湖滨镇    柳白村     山东省柳白村  
+## # ... with 675 more rows</code></pre>
+<pre class="r"><code>newone_table_2014_2015</code></pre>
+<pre><code>## # A tibble: 586 x 6
+##    sheng          shi                xian   xiangzhen  cun    geocodeAdd  
+##    &lt;chr&gt;          &lt;chr&gt;              &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;       
+##  1 云南省         大理白族自治州     鹤庆县 草海镇     新华村 云南省新华村
+##  2 云南省         西双版纳傣族自治州 景洪市 嘎洒镇     曼弄枫村… 云南省曼弄枫村…
+##  3 北京           北京市             房山区 长阳镇     阎仙垡村… 北京阎仙垡村
+##  4 吉林省         延边朝鲜族自治州   安图县 二道白河镇 长白村 吉林省长白村
+##  5 天津           天津市             静海县 蔡公庄镇   四党口中村… 天津四党口中村…
+##  6 天津           天津市             静海县 子牙镇     潘庄子村… 天津潘庄子村
+##  7 天津           天津市             武清区 王庆坨镇   一街村 天津一街村  
+##  8 宁夏回族自治区 银川市             贺兰县 习岗镇     德胜村 宁夏回族自治区德胜村…
+##  9 山东省         滨州市             博兴县 城东街道   顾家村 山东省顾家村
+## 10 山东省         滨州市             博兴县 湖滨镇     柳白村*… 山东省柳白村*…
+## # ... with 576 more rows</code></pre>
+<pre class="r"><code>diffdiff</code></pre>
+<pre><code>## # A tibble: 685 x 6
+##    sheng  shi    xian   xiangzhen cun        geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;         
+##  1 北京市 北京市 房山区 长阳镇    阎仙垡村   北京市阎仙垡村
+##  2 四川省 成都市 郫县   安靖镇    雍渡村     四川省雍渡村  
+##  3 天津   天津市 北辰区 小淀镇    刘安庄村   天津刘安庄村  
+##  4 天津   天津市 静海区 蔡公庄镇  四党口中村 天津四党口中村
+##  5 天津   天津市 静海区 子牙镇    潘庄子村   天津潘庄子村  
+##  6 天津   天津市 静海区 子牙镇    子牙村     天津子牙村    
+##  7 安徽省 宣城市 泾县   丁家桥镇  李元村     安徽省李元村  
+##  8 山东省 滨州市 博兴县 城东街道  鲍庄村     山东省鲍庄村  
+##  9 山东省 滨州市 博兴县 城东街道  贤城村     山东省贤城村  
+## 10 山东省 滨州市 博兴县 湖滨镇    柳白村     山东省柳白村  
+## # ... with 675 more rows</code></pre>
+</section>
+<section id="did-any-taobao-villages-dissapear" class="level2">
+<h2>Did any taobao villages dissapear?</h2>
+<pre class="r"><code>intersect(taobao_villages_2014, taobao_villages_2016)</code></pre>
+<pre><code>## # A tibble: 176 x 6
+##    sheng  shi    xian   xiangzhen cun      geocodeAdd    
+##    &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;         
+##  1 四川省 成都市 郫县   安靖镇    林湾村   四川省林湾村  
+##  2 四川省 成都市 郫县   安靖镇    土地村   四川省土地村  
+##  3 山东省 滨州市 博兴县 锦秋街道  安柴村   山东省安柴村  
+##  4 山东省 滨州市 博兴县 锦秋街道  孟桥村   山东省孟桥村  
+##  5 山东省 滨州市 博兴县 锦秋街道  南陈家村 山东省南陈家村
+##  6 山东省 滨州市 博兴县 锦秋街道  湾头村   山东省湾头村  
+##  7 山东省 滨州市 博兴县 锦秋街道  院庄村   山东省院庄村  
+##  8 山东省 菏泽市 曹县   安才楼镇  火神台村 山东省火神台村
+##  9 广东省 潮州市 饶平县 钱东镇    上浮山村 广东省上浮山村
+## 10 广东省 佛山市 禅城区 南庄镇    吉利村   广东省吉利村  
+## # ... with 166 more rows</code></pre>
+<pre class="r"><code>nrow(taobao_villages_2014)</code></pre>
+<pre><code>## [1] 213</code></pre>
+<pre class="r"><code>nrow(intersect(taobao_villages_2014, taobao_villages_2016))</code></pre>
+<pre><code>## [1] 176</code></pre>
 </section>
 
 

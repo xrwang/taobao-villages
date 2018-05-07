@@ -1,0 +1,158 @@
+---
+title: "analysis-household-income"
+author: "xrw"
+date: "5/3/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+```
+
+## Set up
+
+Some of the older data is in dta (Stata) format, so we need `foreign`. Additionally, I'm importing reticulate bc there's some python packages I like to use...
+
+```{r}
+
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(foreign)
+library(reticulate)
+library(haven)
+use_condaenv('numlinalg')
+numpy <- import('numpy')
+rasterio <- import('rasterio')
+pandas <- import('pandas')
+
+```
+
+
+```{r dataimport}
+
+
+chips_rur_1988 <- read_dta('data/1988/09836-0002-Data.dta')
+chips_rur_1995 <- read_tsv('data/1995/DS0002/03012-0002-Data.tsv')
+chips_rur_2002<- read_tsv('data/2002/DS0006/21741-0006-Data.tsv')
+chips_rur_2007abc <- read_dta('data/2007 (2008)/RHS_w1_abc.dta')
+chips_rur_2007d <- read_dta('data/2007 (2008)/RHS_w1_d.dta')
+chips_rur_2007e1 <- read_dta('data/2007 (2008)/RHS_w1_e1.dta')
+chips_rur_2007e2 <- read_dta('data/2007 (2008)/RHS_w1_e2.dta')
+chips_rur_2007e3 <- read_dta('data/2007 (2008)/RHS_w1_e3.dta')
+chips_rur_2007e4 <- read_dta('data/2007 (2008)/RHS_w1_e4.dta')
+chips_rur_2007hhiexp <- read_dta('data/2007 (2008)/CHIP2007_income_and_expenditure_20150408.dta')
+chips_rur_2008abc <- read_dta('data/2008 (2009)/RHS_w2_abc.dta')
+chips_rur_2008d <- read_dta('data/2008 (2009)/RHS_w2_d.dta')
+chips_rur_2008e <- read_dta('data/2008 (2009)/RHS_w2_e.dta')
+chips_rur_2008f <- read_dta('data/2008 (2009)/RHS_w2_f.dta')
+chips_rur_2008hgsg <- read_dta('data/2008 (2009)/RHS_w2_hgsg.dta')
+chips_rur_2008hijk <- read_dta('data/2008 (2009)/RHS_w2_hijk.dta')
+chips_rur_2008vill <- read_dta('data/2008 (2009)/RHS_w2_vill.dta')
+
+chips_rur_2013 <- read_dta('data/2013/CHIP2013_rural_household_f_income_asset.dta')
+
+
+```
+
+
+## The data itself 
+
+We have lots of data but none of it is really consistent. I guess they changed the survey at some point.
+
+For 1988, income column: 
+TOVIL <- Income from TVE, 99999999 is NA
+WELF <- INcome from welfare fund
+NETI <- net income from economic associations
+GROST <- gross income from farming
+GSIDEI <- income from non-agricultural activities
+INPS <- income from non-productive services
+IMONE <- income from government + collectives
+HNET88 <- Net household income 1988 
+LAT <- Total cultivated land, unit: mu =1/6 acre or 1/15 ha
+X7 <- pork consumption
+COUNTY <- county 
+VHPFP <- fixed production assets, Value of family's fixed productive assets at end of 1988 (yuan)
+EFP88 <- Total household expenditures on productive operations 
+
+Examine 1988 data. 
+
+Let's use: 
+- Net household income
+- Land cultivated
+- Number of rooms in house 
+- fixed production assets, Value of family's fixed productive assets
+- Total household expenditures on productive operations
+
+
+## Other years
+
+
+## 1995 columns:
+B601 <- net income in 1993
+B602 <- net income in 1995
+B801 <- Land cultivated 
+B1001 <- Number of rooms
+B804_1 <- fixed production assets, Value of family's fixed productive assets
+B7130 <- Total household expenditures on productive operations
+
+
+
+
+
+```{r}
+library(naniar)
+
+# 99999999 is NA
+
+
+chips_rur_1988_filt <- chips_rur_1988 %>% filter(HNET88 != 99999999, LAT != 999.9, HHO != 99, VHPFP != 99999, EFP88 != 99999999 ) 
+```
+
+```{r, echo=FALSE}
+plot(chips_rur_1988_filt$HNET88, chips_rur_1988_filt$LAT)
+plot(chips_rur_1988_filt$HHO, chips_rur_1988_filt$HNET88)
+plot(chips_rur_1988_filt$VHPFP, chips_rur_1988_filt$HNET88)
+
+
+labelDataset <- function(data) {
+  correctLabel <- function(x) {
+
+    if(!is.null(attributes(x)$labels)) {
+      class(attributes(x)$labels) <- typeof(x)
+    }
+    return(x)
+  }
+  for(i in colnames(data)) {
+    data[, i] <- correctLabel(data[, i])
+  }
+  return(data)
+}
+
+
+outlier_values <- boxplot.stats(chips_rur_1988_filt$HNET88)$out  # outlier values.
+lm(HNET88~LAT, data=chips_rur_1988_filt)
+
+
+#labelDataset(chips_rur_1988_filt)
+
+chips_rur_1988_filt %>%
+  split(.$COUNTY)
+
+```
+
+
+
+
+
+```{r}
+
+
+```
+
+```{r}
+
+cr2007 <- read_dta('data/2007 (2008)/name_id_and_village_id_20151010.dta')
+```
+
