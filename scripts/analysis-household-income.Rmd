@@ -103,7 +103,8 @@ P1_63 <-
 
 
 ## 2008 (2009)
-
+KO1 <- The production asset at the end of 2008
+H01 <- cultivated land in mu 
 
 
 ## 2013 
