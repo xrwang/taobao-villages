@@ -98,8 +98,17 @@ B804_1 <- fixed production assets, Value of family's fixed productive assets
 B7130 <- Total household expenditures on productive operations
 
 ## 2002
-
+?? unclear on why data for 2002 is so bad
 P1_63 <- 
+
+
+## 2008 (2009)
+
+
+
+## 2013 
+
+
 
 ```{r}
 library(naniar)
