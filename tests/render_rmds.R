@@ -3,5 +3,5 @@ f <- list.files(recursive = TRUE)
 Rmds <- f[grepl(".Rmd$", f)]
 remove <- ('analysis.Rmd')
 ## Remove the R markdown that has the python file for now
-Rmds <- setdiff(Rmds, remove)
-lapply(Rmds, rmarkdown::render)
+Rmd2s <- setdiff(Rmds, remove)
+lapply(Rmd2s, rmarkdown::render)
