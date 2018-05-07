@@ -1,15 +1,14 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 language: R
-sudo: false
-cache: packages
 sudo: required
+cache: packages
 dist: trusty
 warnings_are_errors: false
-
 before_install:
-  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
-  - sudo apt-get --yes --force-yes update -qq
-  - sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
-
+- sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
+- sudo apt-get --yes --force-yes update -qq
+- sudo apt-get install --yes libudunits2-dev libproj-dev libgeos-dev libgdal-dev
 script:
-  - R -f tests/render_rmds.R
+- R -f tests/render_rmds.R
+env:
+  matrix:
+    secure: R2XqYZT2YFMI2pI9vCN6PwYy5JxiCs6ofABbimsztJtQ99hCI+byrpSmQWppTos415cPEZbTnLWNPRyzdfukpJErpKq/OMx5S6UtMkPYBcI6t+9+22dGwQ9LgoKtmrxxFqQ+fKmQIbOQ3XMG8zITav9K/W0L4IAYlETJ+JOce+gc26Dl3SdNx7/gylQVXvV15dU9zW0MbTYAr9RKnJxS4hd3JdzM8DV9tIpdWGD9Vc0A9H3pBm82Q51Ve1n14wj3sKKkw6x1DQIX2fu3AnSOd9djbfyW1up/E28uqrwpo8rT8YUdcvoXfMOl1XL/C9rvTiyi+OaePzrwYGgr8aCWfLxFeAlOV0uIFGINMyaJWWhszOwKQXPjtPuSq27gQ7wyfahNVyiJkRnGNnwiGLv9iqxCC3tZJn+gVazihenxBs9eWsAVhfp+C3+nXc384BVsNwL/OKrbTqpQzTGpnj16DI8Oj3VNhwBDisW6jqxDyx5n0jFvlspfbz2dbZFCb+iFEI/66lyQkwX2kkm39gXiITNV04XuzJuX48u+lgr3TIhpiXTrWmzRb84hY8pGFag0ICT9E9r6ccMJB8Eof25RQYmNFacAy1XvejETS/hFnw0OEvCxT7E1P6KSZ4imLsB7kIvTjsNSj5piFxmC62oeuqknB0y0nya9Ii8ARMsJbV8=

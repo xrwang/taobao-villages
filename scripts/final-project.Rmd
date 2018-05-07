@@ -4,3 +4,44 @@ author: "xrw"
 date: "5/3/2018"
 output: pdf_document
 ---
+
+#Contents
+
+This is a final project PDF document for DS421 stitched together from other experiments in this rpo. 
+
+Some major goals were:
+- Get satellite data/imagery for village and county names.
+- Poke around household income data
+- Poke around land use change for a few Taobao villages. 
+
+## Section A
+First we'll take a look at household income data from CHIP, an{rd geocode the counties based off a csv of "official administrative codes".
+
+We'll also poke at the data a bit, looking at changes over time.
+
+## Section B
+
+
+##CHIP
+
+CHIP (China Household Income Project) is put out by the CIID Beijing as a longitudinal survey. It's been happening since 1988 and includes all kinds of juicy stuff including land use.
+
+Load up necessary libraries. Some data is in `.dta` which is Stata file. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+```
+
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+
