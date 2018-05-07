@@ -97,9 +97,9 @@ B1001 <- Number of rooms
 B804_1 <- fixed production assets, Value of family's fixed productive assets
 B7130 <- Total household expenditures on productive operations
 
+## 2002
 
-
-
+P1_63 <- 
 
 ```{r}
 library(naniar)
