@@ -24,7 +24,7 @@ library(raster)       #Main raster library
 library(tidyverse)    #our old friend
 ```
 
-    ## ── Attaching packages ──────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ───────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     
     ## ✔ tibble  1.4.2          ✔ dplyr   0.7.4     
@@ -35,7 +35,7 @@ library(tidyverse)    #our old friend
 
     ## Warning: package 'stringr' was built under R version 3.4.3
 
-    ## ── Conflicts ─────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ──────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
     ## ✖ ggplot2::calc()  masks raster::calc()
     ## ✖ tidyr::extract() masks raster::extract()
     ## ✖ dplyr::filter()  masks stats::filter()

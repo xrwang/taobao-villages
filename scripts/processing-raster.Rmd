@@ -157,7 +157,7 @@ get_tile_save_geotiff(longitude_zzc, latitude_zzc, 'dismo_zzc', zoom = 16)
 library(rgdal)
 library(sp)
 
-landsat <- brick('data/lbc_2017.tif')
+landsat <- brick('data/lbc-raster-cropped/lbc_2017_cropped.tif')
 #this landsat image is from libeicun
 crs(landsat)
 #cropped <- crop(landsat, extent(dismogmap_tile), 'croppedlandsat')
