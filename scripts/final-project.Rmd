@@ -146,7 +146,9 @@ ggplot(meanNetIncome, aes(year, meanInNet)) +
 ```{r}
 
 chips_rur_1988_filt <- chips_rur_1988_filt %>%
-  mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY))
+  mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY)) 
+
+chips_rur_1988_filt
 
 
 
@@ -168,25 +170,23 @@ chips_rur_1988_filt %>%
 
 chips_rur_1995 %>%
   group_by(A1) %>%
-  summarise(mean=base::mean(B602))
+  summarise(mean=base::mean(B602)) %>%
+  mutate(., diff_from_country_mean = base::mean(chips_rur_1995$B602)-mean)
 
 chips_rur_2007hhiexp %>%
   group_by(name_id) %>%
-  summarise(mean=base::mean(income_net))
+  summarise(mean=base::mean(income_net)) %>%
+  mutate(., diff_from_country_mean = base::mean(chips_rur_2007hhiexp$income_net)-mean)
 
 chips_rur_2013 %>%
   group_by(coun) %>%
-  summarise(mean=base::mean(f01_1))
+  summarise(mean=base::mean(f01_1)) %>%
+  mutate(., diff_from_country_mean = base::mean(chips_rur_2013$f01_1, na.rm=TRUE)-mean)
 
 
-base::mean(chips_rur_1995$B602)
-base::mean(chips_rur_2007hhiexp$income_net)
-base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
 
 ```
 ##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 
-
-(the first set )
 
 
 ```{r}
@@ -200,19 +200,9 @@ boxplot(chips_rur_1988_filt$LAT, chips_rur_1988_filt$HNET88)
 
 ```
 
-```{r}
-url <- "http://rstatistics.net/wp-content/uploads/2015/09/ozone.csv"  
-# alternate source:  https://raw.githubusercontent.com/selva86/datasets/master/ozone.csv
-inputData <- read.csv(url)  # import data
-
-outlier_values <- boxplot.stats(inputData$pressure_height)$out  # outlier values.
-boxplot(inputData$pressure_height, main="Pressure Height", boxwex=0.1)
-#mtext(paste("Outliers: ", paste(outlier_values, collapse=", ")), cex=0.6)
-```
-
 
 ## Geocode county addresses based off the county codes
-Data from https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/, basically there's a county code and name for each county. They are not geocoded however (by geocoded I mean "center" of county)
+Data from https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/, basically there's a county code and name for each county. They are not geocoded however (by geocoded I mean "center" of county).
 
 
 #Add long lat columns to the county code table
@@ -262,6 +252,8 @@ ggmap_credentials()
 
 ```
 
+
+## Batch geocode using ggmap, h/t shayne lynn
 ```{r, eval=FALSE}
 
 
@@ -332,9 +324,6 @@ ggmap_credentials()
 #    saveRDS(geocoded, tempfilename)
 # }
 
-```
-
-```{r}
 # geocodedTable <- data.frame(matrix(ncol = 3, nrow = 1516))
 # #now we add the latitude and longitude to the main data
 # 
@@ -353,7 +342,7 @@ ggmap_credentials()
 
 ```
 
-# Now there's two tables, put them together vertically
+# Now there's two tables because we split the county list, put together vertically
 
 ```{r}
 a <- read_csv('data/pcoun_1_geocoded.csv')
@@ -364,6 +353,8 @@ prov_county_main$lat <- geocoded_areas$lat
 prov_county_main$long <- geocoded_areas$long
 
 prov_county_main$engAdd <- geocoded_areas$formatted_address
+
+#One big geocoded table
 prov_county_main
 ```
 
@@ -371,11 +362,75 @@ prov_county_main
 
 ## Geocoding taobao villages
 
-There are 1312 taobao villages as of 2017. This is under the google geocoding api limit, yay.
+There are 1312 taobao villages as of 2017. 
+
+I have data for Taobao villages from 2014-2016
+
 
 Testing out the geocoding response, put the province and village together
 (省 column + 村 column, separate by comma )
 
 
+```{r}
+taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2016.csv',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)
+
+taobao_villages_2015 <- readxl::read_excel('data/taobao-village-list/taobao-village-list-2015.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun'
+                            ),
+                            skip=1)
+taobao_villages_2015 <- taobao_villages_2015 %>% 
+  mutate(., geocodeAdd = paste0(sheng,cun))
+
+taobao_villages_2014 <- readxl::read_excel('data/taobao-village-list/taobao-village-list-2014.xlsx',
+                            col_names = c(
+                              'sheng',
+                              'shi',
+                              'xian',
+                              'xiangzhen',
+                              'cun',
+                              'goods_made'
+                            ),
+                            skip=1)
+
+```
+
+```{r}
+taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
+taobao_villages_2016 %>% count(xiangzhen)
 
 
+taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合镇' )
+#Go through this list and geocode them all !
+
+taobao_villages_subset_2016
+
+# geocode_the_place <- function(geocodeAdd,...) {
+# 
+#     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
+#     
+#   #     if (status_code(json) == 200) {
+#   #       response <- fromJSON(content(json, as='text'))
+#   #   } else {
+#   #   NULL
+#   # }
+# }
+# 
+# 
+# taobao_geocoded <- taobao_villages_subset_2016 %>%
+#   pmap_df(geocode_the_place, geocodeAdd)
+
+
+```
