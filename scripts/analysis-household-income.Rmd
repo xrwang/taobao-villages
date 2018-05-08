@@ -80,11 +80,11 @@ EFP88 <- Total household expenditures on productive operations
 Examine 1988 data. 
 
 Let's use: 
-- Net household income
-- Land cultivated
-- Number of rooms in house 
-- fixed production assets, Value of family's fixed productive assets
-- Total household expenditures on productive operations
+- HNET88 Net household income
+- LAT Land cultivated
+- HHO Number of rooms in house 
+- VHPFP fixed production assets, Value of family's fixed productive assets
+- EFP88 Total household expenditures on productive operations
 
 
 ## Other years
@@ -148,8 +148,8 @@ lm(HNET88~LAT, data=chips_rur_1988_filt)
 
 #labelDataset(chips_rur_1988_filt)
 
-chips_rur_1988_filt %>%
-  split(.$COUNTY)
+# chips_rur_1988_filt %>%
+#   split(.$COUNTY)
 
 ```
 

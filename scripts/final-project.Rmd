@@ -137,6 +137,24 @@ ggplot(meanNetIncome, aes(year, meanInNet)) +
  
 ```
 
+##County level variations
+
+```{r}
+chips_rur_1988_filt %>%
+  group_by(COUNTY) %>%
+  summarise(mean=base::mean(HNET88))
+
+
+chips_rur_1995 %>%
+  group_by(COUNTY) %>%
+  summarise(mean=base::mean(B602))
+
+chips_rur_2007hhiexp %>%
+  group_by() %>%
+  summarise(mean=base::mean(B602))
+
+```
+
 ```{r}
 
 

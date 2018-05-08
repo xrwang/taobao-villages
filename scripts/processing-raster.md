@@ -136,37 +136,10 @@ get_tile_save(longitude = longitude_lb, latitude = latitude_lb, filename = 'lb')
 ![](processing-raster_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ``` r
-get_tile_save(longitude = longitude_mdc, latitude = latitude_mdc, filename = 'mdc')
+#get_tile_save(longitude = longitude_mdc, latitude = latitude_mdc, filename = 'mdc')
+#get_tile_save(longitude = longitude_chengloucun, latitude = latitude_chengloucun, filename = 'mdc')
+#get_tile_save(longitude = longitude_zzc, latitude = latitude_zzc, filename = 'zhizucun')
 ```
-
-    ## Source : https://maps.googleapis.com/maps/api/staticmap?center=29.399521,120.123507&zoom=16&size=640x640&scale=2&maptype=satellite&language=en-EN
-    ## Saving 7 x 5 in image
-
-    ## Warning: Ignoring unknown aesthetics: xmin, xmax, ymin, ymax
-
-![](processing-raster_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
-
-``` r
-get_tile_save(longitude = longitude_chengloucun, latitude = latitude_chengloucun, filename = 'mdc')
-```
-
-    ## Source : https://maps.googleapis.com/maps/api/staticmap?center=34.282095,116.843732&zoom=16&size=640x640&scale=2&maptype=satellite&language=en-EN
-    ## Saving 7 x 5 in image
-
-    ## Warning: Ignoring unknown aesthetics: xmin, xmax, ymin, ymax
-
-![](processing-raster_files/figure-gfm/unnamed-chunk-2-3.png)<!-- -->
-
-``` r
-get_tile_save(longitude = longitude_zzc, latitude = latitude_zzc, filename = 'zhizucun')
-```
-
-    ## Source : https://maps.googleapis.com/maps/api/staticmap?center=30.222385,119.378449&zoom=16&size=640x640&scale=2&maptype=satellite&language=en-EN
-    ## Saving 7 x 5 in image
-
-    ## Warning: Ignoring unknown aesthetics: xmin, xmax, ymin, ymax
-
-![](processing-raster_files/figure-gfm/unnamed-chunk-2-4.png)<!-- -->
 
 ## Now let’s georeference the satellite tile that we saved\!
 
@@ -224,7 +197,7 @@ library(rgdal)
 ``` r
 library(sp)
 
-landsat <- brick('data/lbc_2017.tif')
+landsat <- brick('data/lbc-raster-cropped/lbc_2017_cropped.tif')
 #this landsat image is from libeicun
 crs(landsat)
 ```
@@ -275,37 +248,24 @@ and
 latt <- latitude_lb
 longt <- longitude_lb
 
-longitude_chengloucun
-```
-
-    ## [1] 116.8437
-
-``` r
-    boundingboxt <- bounding_box(latt, longt, 0.62, in.miles=TRUE )
- 
-
-    txmax <- boundingboxt[1, 2] 
-    tymin <- boundingboxt[2,1]
-    txmin <- boundingboxt[1, 1]
-    tymax <- boundingboxt[2, 2]
-textent_dismo <- extent(txmin, txmax, tymin, tymax)
-dismogmapt_tile <- dismo::gmap(textent_dismo, type = 'satellite', zoom = 16)
-newproj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-dismogmap_tile_wgs <- projectRaster(dismogmapt_tile, crs = newproj)
-identicalCRS(dismogmapt_tile,landsat)
-```
-
-    ## [1] FALSE
-
-``` r
-cropped <- crop(landsat, extent(dismogmap_tile_wgs))
-
-plotRGB(cropped, r = 3, g = 2, b = 1, axes = TRUE, stretch = "lin",
-        main = "Landsat True Color Composite")
-```
-
-![](processing-raster_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
-``` r
-rf <- writeRaster(cropped, filename="data/lbc_2017_cropped.tif", format="GTiff", overwrite=TRUE)
+# longitude_chengloucun
+#     boundingboxt <- bounding_box(latt, longt, 0.62, in.miles=TRUE )
+#  
+# 
+#     txmax <- boundingboxt[1, 2] 
+#     tymin <- boundingboxt[2,1]
+#     txmin <- boundingboxt[1, 1]
+#     tymax <- boundingboxt[2, 2]
+# textent_dismo <- extent(txmin, txmax, tymin, tymax)
+# dismogmapt_tile <- dismo::gmap(textent_dismo, type = 'satellite', zoom = 16)
+# newproj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+# dismogmap_tile_wgs <- projectRaster(dismogmapt_tile, crs = newproj)
+# identicalCRS(dismogmapt_tile,landsat)
+# 
+# cropped <- crop(landsat, extent(dismogmap_tile_wgs))
+# 
+# plotRGB(cropped, r = 3, g = 2, b = 1, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite")
+# 
+# rf <- writeRaster(cropped, filename="data/lbc_2017_cropped.tif", format="GTiff", overwrite=TRUE)
 ```
