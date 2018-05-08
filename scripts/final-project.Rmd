@@ -46,6 +46,8 @@ library(ggmap)
 library(sf)
 library(raster)
 library(spData)        # load geographic data
+library(httr)
+library(jsonlite)
 ```
 
 
@@ -148,13 +150,15 @@ ggplot(meanNetIncome, aes(year, meanInNet)) +
 chips_rur_1988_filt <- chips_rur_1988_filt %>%
   mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY)) 
 
-chips_rur_1988_filt
-
+chips_rur_1988_filt$UCODE <- substr(chips_rur_1988_filt$UCODE, 1,6)
 
 
 #A1 is county and city code
 chips_rur_1995 %>%
   mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY))
+
+
+chips_rur_2007hhiexp$name_id <- substr(chips_rur_2007hhiexp$name_id, 1, 6)
 
 ```
 
@@ -163,27 +167,25 @@ chips_rur_1995 %>%
 
 ```{r}
 chips_rur_1988_filt %>%
-  group_by(PROVCOUNTY) %>%
-  summarise(mean=base::mean(HNET88)) %>%
-  mutate(., diff_from_country_mean = base::mean(chips_rur_1988_filt$HNET88)-mean)
-
+  group_by(UCODE) %>%
+  summarise(mean = base::mean(HNET88)) %>%
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1988_filt$HNET88))
+base::mean(chips_rur_1988_filt$HNET88)
 
 chips_rur_1995 %>%
   group_by(A1) %>%
   summarise(mean=base::mean(B602)) %>%
-  mutate(., diff_from_country_mean = base::mean(chips_rur_1995$B602)-mean)
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1995$B602))
 
 chips_rur_2007hhiexp %>%
   group_by(name_id) %>%
   summarise(mean=base::mean(income_net)) %>%
-  mutate(., diff_from_country_mean = base::mean(chips_rur_2007hhiexp$income_net)-mean)
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2007hhiexp$income_net))
 
 chips_rur_2013 %>%
   group_by(coun) %>%
   summarise(mean=base::mean(f01_1)) %>%
-  mutate(., diff_from_country_mean = base::mean(chips_rur_2013$f01_1, na.rm=TRUE)-mean)
-
-
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2013$f01_1, na.rm=TRUE))
 
 ```
 ##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 
@@ -358,6 +360,18 @@ prov_county_main$engAdd <- geocoded_areas$formatted_address
 prov_county_main
 ```
 
+## Income maps
+```{r}
+
+#Join CHIP data to geocoded tabel, make a map
+
+
+
+
+
+
+```
+
 # Taobao villages 
 
 ## Geocoding taobao villages
@@ -416,21 +430,25 @@ taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合
 #Go through this list and geocode them all !
 
 taobao_villages_subset_2016
+token <- Sys.getenv("GAPI1")
+#https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+geocode_the_place_f <- function(geocodeAdd,...) {
 
-# geocode_the_place <- function(geocodeAdd,...) {
-# 
-#     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
-#     
-#   #     if (status_code(json) == 200) {
-#   #       response <- fromJSON(content(json, as='text'))
-#   #   } else {
-#   #   NULL
-#   # }
-# }
-# 
-# 
-# taobao_geocoded <- taobao_villages_subset_2016 %>%
-#   pmap_df(geocode_the_place, geocodeAdd)
+  #http://api.iucnredlist.org/index/species/Acaena-exigua.json
+    json <- httr::GET(paste0('https://maps.googleapis.com/maps/api/geocode/json?address=', geocodeAdd, '&key=', token))
+  
+    if (status_code(json) == 200) {
+      results <- fromJSON(content(json, as='text'))$results$geometry$location
 
+    } else {
+    NULL
+    }
+}
+
+taobao_villages_2016_subset_geocoded <- taobao_villages_subset_2016 %>%
+  bind_cols(., pmap_df(., geocode_the_place_f))
+  
+
+taobao_villages_2016_subset_geocoded
 
 ```
