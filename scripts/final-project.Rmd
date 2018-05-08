@@ -33,13 +33,87 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 ```
 
+```{r}
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(foreign)
+library(reticulate)
+library(haven)
+
+```
+
 
 ```{r}
+chips_rur_1988 <- read_dta('data/1988/09836-0002-Data.dta')
+chips_rur_1995 <- read_tsv('data/1995/DS0002/03012-0002-Data.tsv')
+chips_rur_2002<- read_tsv('data/2002/DS0006/21741-0006-Data.tsv')
+chips_rur_2007abc <- read_dta('data/2007 (2008)/RHS_w1_abc.dta')
+chips_rur_2007d <- read_dta('data/2007 (2008)/RHS_w1_d.dta')
+chips_rur_2007e1 <- read_dta('data/2007 (2008)/RHS_w1_e1.dta')
+chips_rur_2007e2 <- read_dta('data/2007 (2008)/RHS_w1_e2.dta')
+chips_rur_2007e3 <- read_dta('data/2007 (2008)/RHS_w1_e3.dta')
+chips_rur_2007e4 <- read_dta('data/2007 (2008)/RHS_w1_e4.dta')
+chips_rur_2007hhiexp <- read_dta('data/2007 (2008)/CHIP2007_income_and_expenditure_20150408.dta')
+chips_rur_2008abc <- read_dta('data/2008 (2009)/RHS_w2_abc.dta')
+chips_rur_2008d <- read_dta('data/2008 (2009)/RHS_w2_d.dta')
+chips_rur_2008e <- read_dta('data/2008 (2009)/RHS_w2_e.dta')
+chips_rur_2008f <- read_dta('data/2008 (2009)/RHS_w2_f.dta')
+chips_rur_2008hgsg <- read_dta('data/2008 (2009)/RHS_w2_hgsg.dta')
+chips_rur_2008hijk <- read_dta('data/2008 (2009)/RHS_w2_hijk.dta')
+chips_rur_2008vill <- read_dta('data/2008 (2009)/RHS_w2_vill.dta')
+chips_rur_2013 <- read_dta('data/2013/CHIP2013_rural_household_f_income_asset.dta')
 
 
 ```
 
+```{r, echo=FALSE}
+#Helper function for dta files
+
+
+labelDataset <- function(data) {
+  correctLabel <- function(x) {
+
+    if(!is.null(attributes(x)$labels)) {
+      class(attributes(x)$labels) <- typeof(x)
+    }
+    return(x)
+  }
+
+  for(i in colnames(data)) {
+    data[, i] <- correctLabel(data[, i])
+  }
+  return(data)
+}
+
+#labelDataset(chips_rur_2007hhiexp)
+
+```
+
+
+### Table of columns used:
+
+| Year | Net household income | Land cultivated | Number of rooms in House | Fixed production assets | Total household exp on production
+|---|---|---|---|---|---|
+|1988| HNET88 | LAT | HHO | VHPFP | EFP88 |
+|1995| B602 | B801 | B1001 | B804_1 | B7130 |
+|2002| na| na| na| na| na|
+|2007| income_net | na | na | na | na|
+|2009| na | H01 | na | K01 | na|
+|2013| F01_1 | L01_1 | na | F07_1 + F07_2 | F02_1 | 
+
+
 ```{r}
+# Filter out some data from 1988 because there's missing values. They got rid of missing values in later datasets.
+
+chips_rur_1988_filt <- chips_rur_1988 %>% filter(HNET88 != 99999999, LAT != 999.9, HHO != 99, VHPFP != 99999, EFP88 != 99999999 ) 
+
+base::mean(chips_rur_1988_filt$HNET88)
+base::mean(chips_rur_1995$B602)
+base::mean(chips_rur_2007hhiexp$income_net)
+base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
+
+
 
 
 ```
