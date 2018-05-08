@@ -113,9 +113,26 @@ base::mean(chips_rur_1995$B602)
 base::mean(chips_rur_2007hhiexp$income_net)
 base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
 
+mean_household_income()
+new_tibble()
 
+ggplot()
 
 
 ```
+
+
+
+
+# Taobao villages 
+
+## Geocoding taobao villages
+
+There are 1312 taobao villages as of 2017. This is under the google geocoding api limit, yay.
+
+Testing out the geocoding response, put the province and village together
+(省 column + 村 column, separate by comma )
+
+
 
 

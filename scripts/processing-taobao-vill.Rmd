@@ -7,6 +7,7 @@ output: html_document
 library(dplyr)
 library(tidyverse)
 library(httr)
+library(ggmap)
 ```
 
 
@@ -32,7 +33,7 @@ taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(s
 taobao_villages_2016 %>% count(xiangzhen)
 
 
-taobao_villages_subset_2016 <- subset(taobao_villages_2016, sheng == '河北省' )
+taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合镇' )
 #Go through this list and geocode them all !
 
 taobao_villages_subset_2016
@@ -48,8 +49,8 @@ geocode_the_place <- function(geocodeAdd,...) {
 }
 
 
-# taobao_geocoded <- taobao_villages_subset_2016 %>%
-#   pmap_df(geocode_the_place, geocodeAdd)
+taobao_geocoded <- taobao_villages_subset_2016 %>%
+  pmap_df(geocode_the_place, geocodeAdd)
 
 
 ```
