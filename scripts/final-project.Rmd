@@ -1,6 +1,6 @@
 ---
-title: "ds421 final project"
-author: "xrw"
+title: "DS421 semester 2 final project"
+author: "@xrwang"
 date: "5/3/2018"
 output: 
   pdf_document:
@@ -42,7 +42,8 @@ library(dplyr)
 library(foreign)
 library(reticulate)
 library(haven)
-
+library(ggmap)
+library(sf)
 ```
 
 
@@ -65,6 +66,9 @@ chips_rur_2008hgsg <- read_dta('data/2008 (2009)/RHS_w2_hgsg.dta')
 chips_rur_2008hijk <- read_dta('data/2008 (2009)/RHS_w2_hijk.dta')
 chips_rur_2008vill <- read_dta('data/2008 (2009)/RHS_w2_vill.dta')
 chips_rur_2013 <- read_dta('data/2013/CHIP2013_rural_household_f_income_asset.dta')
+
+
+name_vill_id_2007 <- read_dta('data/2007 (2008)/name_id_and_village_id_20151010.dta')
 
 
 ```
@@ -137,11 +141,25 @@ ggplot(meanNetIncome, aes(year, meanInNet)) +
  
 ```
 
+```{r}
+
+chips_rur_1988_filt <- chips_rur_1988_filt %>%
+  mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY))
+
+
+
+#A1 is county and city code
+chips_rur_1995 %>%
+  mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY))
+
+```
+
+
 ##County level variations
 
 ```{r}
 chips_rur_1988_filt %>%
-  group_by(COUNTY) %>%
+  group_by(PROVCOUNTY) %>%
   summarise(mean=base::mean(HNET88))
 
 
@@ -150,10 +168,20 @@ chips_rur_1995 %>%
   summarise(mean=base::mean(B602))
 
 chips_rur_2007hhiexp %>%
-  group_by() %>%
-  summarise(mean=base::mean(B602))
+  group_by(name_id) %>%
+  summarise(mean=base::mean(income_net))
+
+chips_rur_2013 %>%
+  group_by(coun) %>%
+  summarise(mean=base::mean(f01_1))
+
+head(chips_rur_2013)
 
 ```
+##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 
+
+(the first set )
+
 
 ```{r}
 
@@ -177,7 +205,161 @@ boxplot(inputData$pressure_height, main="Pressure Height", boxwex=0.1)
 ```
 
 
+## Geocode county addresses based off the county codes
+Data from https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/, basically there's a county code and name for each county. They are not geocoded however (by geocoded I mean "center" of county)
 
+
+#Add long lat columns to the county code table
+
+```{r}
+
+counties_main <- read_csv('https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/areas.csv')
+
+counties_main
+
+counties_main$lat <- 'NA'
+counties_main$long <- 'NA'
+
+city_main <- read_csv('https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/cities.csv')
+province_main <- read_csv('https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/provinces.csv')
+
+prov_county_main <- left_join(counties_main, province_main,
+                              by=c('provinceCode'='code'))
+
+prov_county_main <- prov_county_main %>%
+    rename('cityName' = name.y, 
+           'countyName' = name.x) %>%
+    mutate(., geocodeAdd = paste0(cityName,countyName))
+
+
+prov_county_main
+
+```
+
+
+# Set an API key for ggmap so we don't go over the limit 
+
+```{r, eval=FALSE}
+
+ggmap_credentials()
+register_google(key='insertyourkeyhere')
+library(ggmap)
+ggmap_credentials()
+
+```
+
+## Divide the table into two so as to preempt going over the free geocoding limit
+```{r, eval=FALSE}
+
+# pcoun_codes_1 <- filter(prov_county_main, code < 400000)
+# pcoun_codes_2 <- filter(prov_county_main, code >= 400000)
+
+```
+
+```{r, eval=FALSE}
+
+
+# infile <- 'pcoun_2'
+# data <-pcoun_codes_2
+# 
+# addresses = data$geocodeAdd
+# 
+# #define a function that will process googles server responses for us.
+# getGeoDetails <- function(address){
+#    #use the gecode function to query google servers
+#    geo_reply = geocode(address, output='all', messaging=TRUE, override_limit=TRUE)
+#    #now extract the bits that we need from the returned list
+# 
+#    answer <- data.frame(lat=NA, long=NA, accuracy=NA, formatted_address=NA, address_type=NA, status=NA)
+#    answer$status <- geo_reply$status
+# 
+#    #if we are over the query limit - want to pause for an hour
+#    while(geo_reply$status == "OVER_QUERY_LIMIT"){
+#        print("OVER QUERY LIMIT - Pausing for 1 hour at:")
+#        time <- Sys.time()
+#        print(as.character(time))
+#        Sys.sleep(60*60)
+#        geo_reply = geocode(address, output='all', messaging=TRUE, override_limit=TRUE)
+#        answer$status <- geo_reply$status
+#    }
+# 
+#    #return Na's if we didn't get a match:
+#    if (geo_reply$status != "OK"){
+#        return(answer)
+#    }
+#    #else, extract what we need from the Google server reply into a dataframe:
+#    answer$lat <- geo_reply$results[[1]]$geometry$location$lat
+#    answer$long <- geo_reply$results[[1]]$geometry$location$lng
+#    if (length(geo_reply$results[[1]]$types) > 0){
+#        answer$accuracy <- geo_reply$results[[1]]$types[[1]]
+#    }
+#    answer$address_type <- paste(geo_reply$results[[1]]$types, collapse=',')
+#    answer$formatted_address <- geo_reply$results[[1]]$formatted_address
+# 
+#    return(answer)
+# }
+# 
+# #initialise a dataframe to hold the results
+# geocoded <- data.frame()
+# # find out where to start in the address list (if the script was interrupted before):
+# startindex <- 1
+# #if a temp file exists - load it up and count the rows!
+# tempfilename <- paste0(infile, '_temp_geocoded.rds')
+# if (file.exists(tempfilename)){
+#        print("Found temp file - resuming from index:")
+#        geocoded <- readRDS(tempfilename)
+#        startindex <- nrow(geocoded)+1
+#        print(startindex)
+# }
+# 
+# # Start the geocoding process - address by address. geocode() function takes care of query speed limit.
+# for (ii in seq(startindex, length(addresses))) {
+#    print(paste("Working on index", ii, "of", length(addresses)))
+#    #query the google geocoder - this will pause here if we are over the limit.
+# 
+#    result = getGeoDetails(addresses[ii])
+#    print(result$status)
+#    result$index <- ii
+#    #append the answer to the results file.
+#    geocoded <- rbind(geocoded, result)
+#    #save temporary results as we are going along
+#    saveRDS(geocoded, tempfilename)
+# }
+
+```
+
+```{r}
+# geocodedTable <- data.frame(matrix(ncol = 3, nrow = 1516))
+# #now we add the latitude and longitude to the main data
+# 
+# geocodedTable$status <- geocoded$status
+# geocodedTable$formatted_address <- geocoded$formatted_address
+# geocodedTable$index <- geocoded$index
+# geocodedTable$lat <- geocoded$lat
+# geocodedTable$long <- geocoded$long
+# geocodedTable$accuracy <- geocoded$accuracy
+# 
+# 
+# 
+# #finally write it all to the output files
+# saveRDS(data, paste0("../data/", infile ,"_geocoded.rds"))
+# write.table(geocodedTable, file=paste0("", infile ,"_geocoded.csv"), sep=",", row.names=FALSE)
+
+```
+
+# Now there's two tables, put them together vertically
+
+```{r}
+a <- read_csv('data/pcoun_1_geocoded.csv')
+b <- read_csv('data/pcoun_2_geocoded.csv')
+geocoded_areas <- bind_rows(a,b)
+
+prov_county_main$lat <- geocoded_areas$lat
+prov_county_main$long <- geocoded_areas$long
+
+prov_county_main$engAdd <- geocoded_areas$formatted_address
+prov_county_main
+```
 
 # Taobao villages 
 

@@ -8,6 +8,9 @@ library(dplyr)
 library(tidyverse)
 library(httr)
 library(ggmap)
+library(httr)
+library("jsonlite")
+
 ```
 
 
@@ -39,13 +42,14 @@ taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合
 taobao_villages_subset_2016
 
 # geocode_the_place <- function(geocodeAdd,...) {
-#     
+# 
 #     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
-#       if (status_code(json) == 200) {
-#         response <- fromJSON(content(json, as='text'))
-#     } else {
-#     NULL
-#   }
+#     
+#   #     if (status_code(json) == 200) {
+#   #       response <- fromJSON(content(json, as='text'))
+#   #   } else {
+#   #   NULL
+#   # }
 # }
 # 
 # 
