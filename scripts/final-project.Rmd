@@ -44,6 +44,8 @@ library(reticulate)
 library(haven)
 library(ggmap)
 library(sf)
+library(raster)
+library(spData)        # load geographic data
 ```
 
 
@@ -155,16 +157,17 @@ chips_rur_1995 %>%
 ```
 
 
-##County level variations
+##County level variations in income
 
 ```{r}
 chips_rur_1988_filt %>%
   group_by(PROVCOUNTY) %>%
-  summarise(mean=base::mean(HNET88))
+  summarise(mean=base::mean(HNET88)) %>%
+  mutate(., diff_from_country_mean = base::mean(chips_rur_1988_filt$HNET88)-mean)
 
 
 chips_rur_1995 %>%
-  group_by(COUNTY) %>%
+  group_by(A1) %>%
   summarise(mean=base::mean(B602))
 
 chips_rur_2007hhiexp %>%
@@ -175,7 +178,10 @@ chips_rur_2013 %>%
   group_by(coun) %>%
   summarise(mean=base::mean(f01_1))
 
-head(chips_rur_2013)
+
+base::mean(chips_rur_1995$B602)
+base::mean(chips_rur_2007hhiexp$income_net)
+base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
 
 ```
 ##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 

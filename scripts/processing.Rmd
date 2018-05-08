@@ -32,7 +32,7 @@ library(tidyverse)
 main_table_chips_2002 <- read_tsv('data/2002/DS0006/21741-0006-Data.tsv')
 main_table_chips_1995 <- read_tsv('data/1995/DS0002/03012-0002-Data.tsv')
 main_table_chips_1988 <- read_dta('data/1988/09836-0002-Data.dta')
-main_table_chips_2008 <- read_dta("data/2008/RHS_w2_vill.dta")
+main_table_chips_2008 <- read_dta("data/2008 (2009)/RHS_w2_vill.dta")
 main_table_chips_2013 <- read_dta("data/2013/CHIP2013_rural_household_f_income_asset.dta")
 
 
