@@ -127,6 +127,17 @@ base::mean(chips_rur_1995$B602)
 base::mean(chips_rur_2007hhiexp$income_net)
 base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
 
+meanNetIncome <- new_tibble(list(year = c(1988,1995,2007,2013), 
+                     meanInNet = c(base::mean(chips_rur_1988_filt$HNET88), base::mean(chips_rur_1995$B602), base::mean(chips_rur_2007hhiexp$income_net), base::mean(chips_rur_2013$f01_1, na.rm=TRUE))))
+
+ggplot(meanNetIncome, aes(year, meanInNet)) +
+  geom_line() +
+  geom_point() +
+  geom_label(label=meanNetIncome$meanInNet, nudge_x = 2, nudge_y = 1)
+ 
+```
+
+```{r}
 
 
 outlier_values_1988 <- boxplot.stats(chips_rur_1988_filt$HNET88)$out  # outlier values.
@@ -134,7 +145,6 @@ outlier_values_1995 <- boxplot.stats(chips_rur_1995$B602)$out  # outlier values.
 outlier_values_2007 <- boxplot.stats(chips_rur_2007hhiexp$income_net)$out  # outlier values.
 outlier_values_2013 <- boxplot.stats(chips_rur_2013$f01_1)$out  # outlier values.
 boxplot(chips_rur_1988_filt$LAT, chips_rur_1988_filt$HNET88)
-
 
 ```
 
