@@ -2,7 +2,9 @@
 title: "ds421 final project"
 author: "xrw"
 date: "5/3/2018"
-output: pdf_document
+output: 
+  pdf_document:
+    latex_engine: xelatex
 ---
 
 #Contents
@@ -86,7 +88,19 @@ labelDataset <- function(data) {
   return(data)
 }
 
-#labelDataset(chips_rur_2007hhiexp)
+
+# Helper function 2
+
+turn_to_csv <- function (data, year) {
+  if (year == 1988) {
+    
+  }
+  
+  
+  
+  
+}
+
 
 ```
 
@@ -113,12 +127,25 @@ base::mean(chips_rur_1995$B602)
 base::mean(chips_rur_2007hhiexp$income_net)
 base::mean(chips_rur_2013$f01_1, na.rm=TRUE)
 
-mean_household_income()
-new_tibble()
-
-ggplot()
 
 
+outlier_values_1988 <- boxplot.stats(chips_rur_1988_filt$HNET88)$out  # outlier values.
+outlier_values_1995 <- boxplot.stats(chips_rur_1995$B602)$out  # outlier values.
+outlier_values_2007 <- boxplot.stats(chips_rur_2007hhiexp$income_net)$out  # outlier values.
+outlier_values_2013 <- boxplot.stats(chips_rur_2013$f01_1)$out  # outlier values.
+boxplot(chips_rur_1988_filt$LAT, chips_rur_1988_filt$HNET88)
+
+
+```
+
+```{r}
+url <- "http://rstatistics.net/wp-content/uploads/2015/09/ozone.csv"  
+# alternate source:  https://raw.githubusercontent.com/selva86/datasets/master/ozone.csv
+inputData <- read.csv(url)  # import data
+
+outlier_values <- boxplot.stats(inputData$pressure_height)$out  # outlier values.
+boxplot(inputData$pressure_height, main="Pressure Height", boxwex=0.1)
+#mtext(paste("Outliers: ", paste(outlier_values, collapse=", ")), cex=0.6)
 ```
 
 
