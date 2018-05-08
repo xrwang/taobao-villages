@@ -38,19 +38,19 @@ taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合
 
 taobao_villages_subset_2016
 
-geocode_the_place <- function(geocodeAdd,...) {
-    
-    a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
-      if (status_code(json) == 200) {
-        response <- fromJSON(content(json, as='text'))
-    } else {
-    NULL
-  }
-}
-
-
-taobao_geocoded <- taobao_villages_subset_2016 %>%
-  pmap_df(geocode_the_place, geocodeAdd)
+# geocode_the_place <- function(geocodeAdd,...) {
+#     
+#     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
+#       if (status_code(json) == 200) {
+#         response <- fromJSON(content(json, as='text'))
+#     } else {
+#     NULL
+#   }
+# }
+# 
+# 
+# taobao_geocoded <- taobao_villages_subset_2016 %>%
+#   pmap_df(geocode_the_place, geocodeAdd)
 
 
 ```
