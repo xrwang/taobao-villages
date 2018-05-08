@@ -202,25 +202,25 @@ Landsat projection and
 latt <- latitude_lb
 longt <- longitude_lb
 
-longitude_chengloucun
-    boundingboxt <- bounding_box(latt, longt, 0.62, in.miles=TRUE )
- 
-
-    txmax <- boundingboxt[1, 2] 
-    tymin <- boundingboxt[2,1]
-    txmin <- boundingboxt[1, 1]
-    tymax <- boundingboxt[2, 2]
-textent_dismo <- extent(txmin, txmax, tymin, tymax)
-dismogmapt_tile <- dismo::gmap(textent_dismo, type = 'satellite', zoom = 16)
-newproj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
-dismogmap_tile_wgs <- projectRaster(dismogmapt_tile, crs = newproj)
-identicalCRS(dismogmapt_tile,landsat)
-
-cropped <- crop(landsat, extent(dismogmap_tile_wgs))
-
-plotRGB(cropped, r = 3, g = 2, b = 1, axes = TRUE, stretch = "lin",
-        main = "Landsat True Color Composite")
-
-rf <- writeRaster(cropped, filename="data/lbc_2017_cropped.tif", format="GTiff", overwrite=TRUE)
+# longitude_chengloucun
+#     boundingboxt <- bounding_box(latt, longt, 0.62, in.miles=TRUE )
+#  
+# 
+#     txmax <- boundingboxt[1, 2] 
+#     tymin <- boundingboxt[2,1]
+#     txmin <- boundingboxt[1, 1]
+#     tymax <- boundingboxt[2, 2]
+# textent_dismo <- extent(txmin, txmax, tymin, tymax)
+# dismogmapt_tile <- dismo::gmap(textent_dismo, type = 'satellite', zoom = 16)
+# newproj <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+# dismogmap_tile_wgs <- projectRaster(dismogmapt_tile, crs = newproj)
+# identicalCRS(dismogmapt_tile,landsat)
+# 
+# cropped <- crop(landsat, extent(dismogmap_tile_wgs))
+# 
+# plotRGB(cropped, r = 3, g = 2, b = 1, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite")
+# 
+# rf <- writeRaster(cropped, filename="data/lbc_2017_cropped.tif", format="GTiff", overwrite=TRUE)
 
 ```
