@@ -47,6 +47,7 @@ geocode_the_place <- function(geocodeAdd,...) {
   }
 }
 
+
 # taobao_geocoded <- taobao_villages_subset_2016 %>%
 #   pmap_df(geocode_the_place, geocodeAdd)
 
@@ -92,7 +93,7 @@ taobao_villages_2014 <- readxl::read_excel('data/taobao-village-list/taobao-vill
 
 taobao_villages_2014 <- taobao_villages_2014 %>% 
   mutate(., geocodeAdd = paste0(sheng,cun)) %>%
-  select(-goods_made)
+  dplyr::select(-goods_made)
 
 
 taobao_villages_2015 %>% count(xian)
