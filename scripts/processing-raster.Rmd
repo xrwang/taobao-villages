@@ -100,7 +100,7 @@ get_tile_save <- function (longitude, latitude, filename) {
     
 }
 
-get_tile_save(longitude = longitude_lb, latitude = latitude_lb, filename = 'lb')
+#get_tile_save(longitude = longitude_lb, latitude = latitude_lb, filename = 'lb')
 #get_tile_save(longitude = longitude_mdc, latitude = latitude_mdc, filename = 'mdc')
 #get_tile_save(longitude = longitude_chengloucun, latitude = latitude_chengloucun, filename = 'mdc')
 #get_tile_save(longitude = longitude_zzc, latitude = latitude_zzc, filename = 'zhizucun')
