@@ -194,7 +194,7 @@ make_a_bbox_shapefile <- function (long, lat, filename) {
 
 #Projections are off!
 
-Landsat projection and 
+Landsat projection and making sure everything is same projection 
 ```{r}
 
 #landsat: +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0

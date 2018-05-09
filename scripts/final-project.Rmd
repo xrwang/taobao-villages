@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 ```
 
-```{r}
+```{r libraries}
 library(tidyr)
 library(tidyverse)
 library(dplyr)
@@ -50,10 +50,11 @@ library(spData)        # load geographic data
 library(httr)
 library(jsonlite)
 library(mapview)
+library(leaflet)
 ```
 
 
-```{r}
+```{r loadData}
 chips_rur_1988 <- read_dta('data/1988/09836-0002-Data.dta')
 chips_rur_1995 <- read_tsv('data/1995/DS0002/03012-0002-Data.tsv')
 chips_rur_2002<- read_tsv('data/2002/DS0006/21741-0006-Data.tsv')
@@ -79,9 +80,9 @@ name_vill_id_2007 <- read_dta('data/2007 (2008)/name_id_and_village_id_20151010.
 
 ```
 
-```{r, echo=FALSE}
+```{r helperFunc, echo=FALSE}
 #Helper function for dta files
-
+# labels turn out weird sometimes, not sure why
 
 labelDataset <- function(data) {
   correctLabel <- function(x) {
@@ -127,7 +128,7 @@ turn_to_csv <- function (data, year) {
 |2013| F01_1 | L01_1 | na | F07_1 + F07_2 | F02_1 | 
 
 
-```{r}
+```{r filterData}
 # Filter out some data from 1988 because there's missing values. They got rid of missing values in later datasets.
 
 chips_rur_1988_filt <- chips_rur_1988 %>% filter(HNET88 != 99999999, LAT != 999.9, HHO != 99, VHPFP != 99999, EFP88 != 99999999 ) 
@@ -147,7 +148,7 @@ ggplot(meanNetIncome, aes(year, meanInNet)) +
  
 ```
 
-```{r}
+```{r ucodeClean}
 
 chips_rur_1988_filt <- chips_rur_1988_filt %>%
   mutate(., PROVCOUNTY = paste0(PROVINCE, COUNTY)) 
@@ -167,7 +168,7 @@ chips_rur_2007hhiexp$name_id <- substr(chips_rur_2007hhiexp$name_id, 1, 6)
 
 ##County level variations in income
 
-```{r}
+```{r countyLevelVariations}
 chips_rur_1988_filt %>%
   group_by(UCODE) %>%
   summarise(mean = base::mean(HNET88)) %>%
@@ -205,7 +206,7 @@ chips_rur_2013 %>%
 ##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 
 
 
-```{r}
+```{r outliers}
 
 
 outlier_values_1988 <- boxplot.stats(chips_rur_1988_filt$HNET88)$out  # outlier values.
@@ -223,7 +224,7 @@ Data from https://raw.githubusercontent.com/modood/Administrative-divisions-of-C
 
 #Add long lat columns to the county code table
 
-```{r}
+```{r addLongLatMakeCountyTabel}
 
 counties_main <- read_csv('https://raw.githubusercontent.com/modood/Administrative-divisions-of-China/master/dist/areas.csv')
 
@@ -248,19 +249,12 @@ prov_county_main
 
 ```
 
-## Join prov_county_main to the tables
-```{r}
-
-chips_rur_1988_filt$UCODE <- strtoi(chips_rur_1988_filt$UCODE)
-chips_rur_1988_filt <- chips_rur_1988_filt %>% left_join(prov_county_main, by=c('UCODE'='code')) %>% na.omit()
 
 
-```
-
-
+## Batch geocode using ggmap, h/t shayne lynn
 # Set an API key for ggmap so we don't go over the limit 
 
-```{r, eval=FALSE}
+```{r ggCred, eval=FALSE}
 
 ggmap_credentials()
 register_google(key='insertyourkeyhere')
@@ -277,9 +271,8 @@ ggmap_credentials()
 
 ```
 
-
-## Batch geocode using ggmap, h/t shayne lynn
-```{r, eval=FALSE}
+This section is commented out to prevent geocoding thousands of rows everytime we knit....
+```{r geocode, eval=FALSE}
 
 
 # infile <- 'pcoun_2'
@@ -369,7 +362,7 @@ ggmap_credentials()
 
 # Now there's two tables because we split the county list, put together vertically
 
-```{r}
+```{r countyTableGeocoded}
 a <- read_csv('data/pcoun_1_geocoded.csv')
 b <- read_csv('data/pcoun_2_geocoded.csv')
 geocoded_areas <- bind_rows(a,b)
@@ -379,22 +372,29 @@ prov_county_main$long <- geocoded_areas$long
 
 prov_county_main$engAdd <- geocoded_areas$formatted_address
 
-#One big geocoded table
-a <- chips_rur_1988_filt %>% filter(lat != 0)
+
 ```
 
+
+## Join prov_county_main to the tables
+```{r joinTables}
+chips_rur_1988_filt$UCODE <- strtoi(chips_rur_1988_filt$UCODE)
+prov_county_main
+chips_rur_1988_geocoded <- chips_rur_1988_filt %>% 
+  inner_join(prov_county_main, by=c('UCODE'='code')) %>%
+  na.omit()
+
+
+```
+
+
+
+
 ## Maps of survey locations
-```{r}
-
-#Join CHIP data to geocoded tabel, make a map
-
-
-
-#mapview(data.frame(x = prov_county_main$long, y = prov_county_main$lat), xcol = "x", ycol = "y", crs = 4326, na.rm=TRUE)
-mapviewOptions(basemaps = c("CartoDB.DarkMatter", "OpenStreetMap.DE"),
-               layers.control.pos = "topright")
-mapview(data.frame(x = a$long  , y = a$lat), xcol = "x", ycol = "y", crs = 3857)
-
+```{r makeMap}
+leaflet(data = chips_rur_1988_geocoded) %>% 
+  addTiles() %>%
+  addMarkers(~long, ~lat, popup = ~as.character(HNET88), label = ~as.character(HNET88))
 
 ```
 
@@ -411,7 +411,7 @@ Testing out the geocoding response, put the province and village together
 (省 column + 村 column, separate by comma )
 
 
-```{r}
+```{r taobaovillages}
 taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2016.csv',
                             col_names = c(
                               'sheng',
@@ -493,8 +493,514 @@ taobao_villages_2016_geocoded
 
 
 ## Here I setup a location (lat long point) and then find the bounding box for it. I then am able to georeference jpgs like the ones that come from Google Satellite Maps
+
+## Make bounding box off of one satellite tile.
+
+bounding_box function is from https://github.com/trinker/bounding_box, an R implementation of Jan Philip Matuschek's algorithm. 
+
 ```{r}
+bounding_box <- function(lat, lon, dist, in.miles = TRUE) {
+
+    ## Helper functions
+    if (in.miles) {
+        ang_rad <- function(miles) miles/3958.756
+    } else {
+        ang_rad <- function(miles) miles/1000
+    }
+    `%+/-%` <- function(x, margin){x + c(-1, +1)*margin}
+    deg2rad <- function(x) x/(180/pi)
+    rad2deg <- function(x) x*(180/pi)
+    lat_range <- function(latr, r) rad2deg(latr %+/-% r)
+    lon_range <- function(lonr, dlon) rad2deg(lonr %+/-% dlon)
+
+    r <- ang_rad(dist)
+    latr <- deg2rad(lat)
+    lonr <- deg2rad(lon)
+    dlon <- asin(sin(r)/cos(latr))
+
+    m <- matrix(c(lon_range(lonr = lonr, dlon = dlon), 
+        lat_range(latr=latr, r=r)), nrow=2, byrow = TRUE)
+
+    dimnames(m) <- list(c("lng", "lat"), c("min", "max"))
+    m
+}
+
+```
+
+```{r}
+#浙江省紫竹村 zizhucun not a TBC at al 30.222385 119.378449
+longitude_zzc <- 119.378449
+latitude_zzc <- 30.222385
+
+library(dismo)
+
+get_tile_save_geotiff <- function (long, lat, filename, zoom) {
+    boundingbox <- bounding_box(lat, long, 0.62, in.miles=TRUE )
+ 
+    xmax <- boundingbox[1, 2] 
+    ymin <- boundingbox[2,1]
+    xmin <- boundingbox[1, 1]
+    ymax <- boundingbox[2, 2]
+
+    
+  extent_dismo <- extent(xmin, xmax, ymin, ymax)
+  dismogmap_tile <- dismo::gmap(extent_dismo, type = 'satellite', zoom = zoom)
+  plot(dismogmap_tile)
+  projection(dismogmap_tile) <- CRS("+init=epsg:3857")
+  writeRaster(dismogmap_tile, file = filename, format = "GTiff", overwrite = TRUE, 
+    datatype = "INT1U")
+}
+
+# Comment out the actual call for testing purposes
+# get_tile_save_geotiff(longitude_zzc, latitude_zzc, 'dismo_zzc', zoom = 16)
+
+```
+
+## After getting the geoTiff tile, crop the raster files from landsat as well
+
+```{r}
+
+library(rgdal)
+library(sp)
+
+landsat <- brick('data/zzc/zzc_2016.tif')
+#this landsat image is from libeicun
+crs(landsat)
+#cropped <- crop(landsat, extent(dismogmap_tile), 'croppedlandsat')
+
+make_a_bbox_shapefile <- function (long, lat, filename) {
+  bb <- bounding_box(lat, long, 0.62, in.miles=TRUE )
+
+  xmax <- bb[1, 2] 
+  ymin <- bb[2,1]
+  xmin <- bb[1, 1]
+  ymax <- bb[2, 2]
+      
+  
+  coords = matrix(c(xmax, ymax,
+                xmin, ymax,
+               xmin, ymin,
+               xmax, ymin,
+               xmax, ymax), 
+             ncol = 2, byrow = TRUE)
+
+
+  #Tryig out making a bounding box to a shapefile, to cross check with Google Earth and QGIS
+  P1 <- Polygon(coords)
+  Ps1 <- SpatialPolygons(list(Polygons(list(P1), ID = "a")), proj4string=CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"))
+  Ps2 <- as(Ps1, "SpatialPolygonsDataFrame")
+  writeOGR(Ps2, filename, layer=filename, driver='ESRI Shapefile' )
+}
+
+# This part is commented out because I already made the shapefiles
+
+#make_a_bbox_shapefile(longitude_mdc, latitude_mdc, filename = 'madingcun')
+#make_a_bbox_shapefile(longitude_chengloucun, latitude_chengloucun, filename = 'chengloucun')
+#make_a_bbox_shapefile(longitude_zzc, latitude_zzc, filename = 'zhizhucun' )
+
+```
+
+
+
+# Quick analysis of taobao village sites NDVI change over the years
+
+## Read in and get some stats
+```{r}
+
+lbc2014 <- brick('data/lbc-raster-cropped/lbc_2014_cropped.tif')
+lbc2015 <- brick('data/lbc-raster-cropped/lbc_2015_cropped.tif')
+lbc2016 <- brick('data/lbc-raster-cropped/lbc_2016_cropped.tif')
+lbc2017 <- brick('data/lbc-raster-cropped/lbc_2017_cropped.tif')
+
+lbc2014
+lbc2015
+lbc2016
+lbc2017
+#12 band data from tif
+
+plotRGB(lbc2014, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+        main = "Landsat True Color Composite lbc 2014")
+
+# plotRGB(lbc2015, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite lbc2015")
+# 
+# plotRGB(lbc2016, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite lbc2016")
+# 
+# plotRGB(lbc2017, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite lbc2017")
+```
+
+
+##compute ndvi for LBC
+```{r}
+NDVI <- function(img, i, k) {
+   bi <- img[[i]]
+   bk <- img[[k]]
+   vi <- (bk - bi) / (bk + bi)
+   return(vi)
+}
+```
+
+
+##function for NDBI
+```{r}
+NDBI <- function (img, w, n) {
+  bw <- img[[w]]
+  bn <- img[[n]]
+  vn <- (bw - bn) / (bw + bn)
+}
+```
+
+```{r}
+# For landsat 8, NIR is 5, red is 4.
+ndvilbc_2014 <- NDVI(lbc2014, 4, 5)
+ndvilbc_2015 <- NDVI(lbc2015, 4 , 5)
+ndvilbc_2016 <- NDVI(lbc2016, 4, 5)
+ndvilbc_2017 <- NDVI(lbc2017, 4, 5)
+
+
+ndbilbc_2014 <- NDBI(lbc2014, 7, 5)
+ndbilbc_2015 <- NDBI(lbc2015, 7 , 5)
+ndbilbc_2016 <- NDBI(lbc2016, 7, 5)
+ndbilbc_2017 <- NDBI(lbc2017, 7, 5)
+
 
 
 
 ```
+
+
+```{r}
+plot(ndvilbc_2014, col = rev(terrain.colors(30)), main = 'NDVI lbc2014')
+plot(ndvilbc_2015, col = rev(terrain.colors(30)), main = 'NDVI lbc2015')
+ plot(ndvilbc_2016, col = rev(terrain.colors(30)), main = 'NDVI lbc2016')
+ plot(ndvilbc_2017, col = rev(terrain.colors(30)), main = 'NDVI lbc2017')
+
+
+# view distribution of NDVI values
+# hist(ndvilbc_2014,
+#   main = "NDVI: Distribution of pixels\n Landsat 2014 Libeicun",
+#   col = "springgreen",
+#   xlab = "NDVI lbc2014")
+# 
+
+
+```
+
+
+```{r}
+
+plot(ndbilbc_2014, col = rev(terrain.colors(30)), main = 'NDBI lbc2014')
+# plot(ndbilbc_2015, col = rev(terrain.colors(30)), main = 'NDBI lbc2015')
+# plot(ndbilbc_2016, col = rev(terrain.colors(30)), main = 'NDBI lbc2016')
+# plot(ndbilbc_2017, col = rev(terrain.colors(30)), main = 'NDBI lbc2017')
+
+```
+## Calculate average NDVI as a time series
+
+```{r}
+ndvi_lbc_stack <- stack(ndvilbc_2014,ndvilbc_2015,ndvilbc_2016, ndvilbc_2017)
+#names(ndvi_lbc_stack) <- c(2014,2015,2016,2017)
+avg_ndvi_lbc <- cellStats(ndvi_lbc_stack, mean)
+
+avg_ndvi_lbc <- as_tibble(avg_ndvi_lbc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_ndvi_lbc$'year' <- c(2014,2015,2016,2017)
+hist(ndvi_lbc_stack)
+
+avg_ndvi_lbc <- avg_ndvi_lbc[c("year", "value")]
+avg_ndvi_lbc = rename(avg_ndvi_lbc, `meanndvi` = value)
+# avg_ndvi_lbc
+
+ggplot(data = avg_ndvi_lbc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+```
+
+### Calculate average NDBI as a time series
+
+```{r}
+
+ndbi_lbc_stack <- stack(ndbilbc_2014,ndbilbc_2015,ndbilbc_2016, ndbilbc_2017)
+#names(ndbi_lbc_stack) <- c(2014,2015,2016,2017)
+avg_ndbi_lbc <- cellStats(ndbi_lbc_stack, mean)
+
+avg_ndbi_lbc <- as_tibble(avg_ndbi_lbc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_ndbi_lbc$'year' <- c(2014,2015,2016,2017)
+hist(ndbi_lbc_stack)
+
+avg_ndbi_lbc <- avg_ndbi_lbc[c("year", "value")]
+avg_ndbi_lbc = rename(avg_ndbi_lbc, `meanndbi` = value)
+# avg_ndbi_lbc
+
+ggplot(data = avg_ndbi_lbc, aes(x=year, y=meanndbi)) +
+  geom_point()
+
+```
+
+
+
+## NDVI for non taobao village, 安徽省程楼村, Chengloucun
+
+```{r}
+
+clc2014 <- brick('data/clc/clc_2014.tif')
+clc2015 <- brick('data/clc/clc_2015.tif')
+clc2016 <- brick('data/clc/clc_2016.tif')
+clc2017 <- brick('data/clc/clc_2017.tif')
+clc2014nl <- brick('data/clc/clc_2014_nlviirs.tif')
+
+
+#12 band data from tif
+plotRGB(clc2014, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+        main = "Landsat True Color Composite clc 2014")
+
+# plotRGB(clc2015, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite clc2015")
+# 
+# plotRGB(clc2016, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite clc2016")
+
+plotRGB(clc2017, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+        main = "Landsat True Color Composite clc2017")
+
+ndviclc_2014 <- NDVI(clc2014, 4, 5)
+ndviclc_2015 <- NDVI(clc2015, 4 , 5)
+ndviclc_2016 <- NDVI(clc2016, 4, 5)
+ndviclc_2017 <- NDVI(clc2017, 4, 5)
+
+```
+
+```{r}
+plot(clc2014nl, col = gray.colors(10, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+plot(ndviclc_2014, col = rev(terrain.colors(30)), main = 'NDVI clc2014')
+# plot(ndviclc_2015, col = rev(terrain.colors(30)), main = 'NDVI clc2015')
+# plot(ndviclc_2016, col = rev(terrain.colors(30)), main = 'NDVI clc2016')
+# plot(ndviclc_2017, col = rev(terrain.colors(30)), main = 'NDVI clc2017')
+# 
+
+
+ndvi_clc_stack <- stack(ndviclc_2014,ndviclc_2015,ndviclc_2016, ndviclc_2017)
+#names(ndvi_clc_stack) <- c(2014,2015,2016,2017)
+avg_ndvi_clc <- cellStats(ndvi_clc_stack, mean)
+
+avg_ndvi_clc <- as_tibble(avg_ndvi_clc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_ndvi_clc$'year' <- c(2014,2015,2016,2017)
+hist(ndvi_clc_stack)
+
+avg_ndvi_clc <- avg_ndvi_clc[c("year", "value")]
+avg_ndvi_clc = rename(avg_ndvi_clc, `meanndvi` = value)
+# avg_ndvi_clc
+
+ggplot(data = avg_ndvi_clc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+```
+
+## NDVI for a Taobao village, 浙江省马丁村 Madingcun which was implemented as a Taobao village in 2015
+```{r}
+
+mdc2014 <- brick('data/mdc/mdc_2014.tif')
+mdc2015 <- brick('data/mdc/mdc_2015.tif')
+mdc2016 <- brick('data/mdc/mdc_2016.tif')
+mdc2017 <- brick('data/mdc/mdc_2017.tif')
+mdc2014nl <- brick('data/mdc/mdc_2014_nlviirs.tif')
+
+mdc2014
+
+#12 band data from tif
+
+
+
+ndvimdc_2014 <- NDVI(mdc2014, 4, 5)
+ndvimdc_2015 <- NDVI(mdc2015, 4 , 5)
+ndvimdc_2016 <- NDVI(mdc2016, 4, 5)
+ndvimdc_2017 <- NDVI(mdc2017, 4, 5)
+
+```
+
+```{r}
+plotRGB(mdc2014, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+        main = "Landsat True Color Composite mdc 2014")
+
+# plotRGB(mdc2015, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite mdc2015")
+# 
+# plotRGB(mdc2016, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite mdc2016")
+# 
+# plotRGB(mdc2017, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite mdc2017")
+plot(ndvimdc_2014, col = rev(terrain.colors(30)), main = 'NDVI mdc2014')
+# plot(ndvimdc_2015, col = rev(terrain.colors(30)), main = 'NDVI mdc2015')
+# plot(ndvimdc_2016, col = rev(terrain.colors(30)), main = 'NDVI mdc2016')
+# plot(ndvimdc_2017, col = rev(terrain.colors(30)), main = 'NDVI mdc2017')
+# 
+
+
+ndvi_mdc_stack <- stack(ndvimdc_2014,ndvimdc_2015,ndvimdc_2016, ndvimdc_2017)
+#names(ndvi_mdc_stack) <- c(2014,2015,2016,2017)
+avg_ndvi_mdc <- cellStats(ndvi_mdc_stack, mean)
+
+avg_ndvi_mdc <- as_tibble(avg_ndvi_mdc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_ndvi_mdc$'year' <- c(2014,2015,2016,2017)
+hist(ndvi_mdc_stack)
+
+avg_ndvi_mdc <- avg_ndvi_mdc[c("year", "value")]
+avg_ndvi_mdc = rename(avg_ndvi_mdc, `meanndvi` = value)
+# avg_ndvi_mdc
+
+ggplot(data = avg_ndvi_mdc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+```
+
+
+## Try another non-taobao village, Zizhucun
+
+```{r}
+
+zzc2014 <- brick('data/zzc/zzc_2014.tif')
+zzc2015 <- brick('data/zzc/zzc_2015.tif')
+zzc2016 <- brick('data/zzc/zzc_2016.tif')
+zzc2017 <- brick('data/zzc/zzc_2017.tif')
+
+zzcnl_2014 <- brick('data/zzc/zzc_2014_nlviirs.tif')
+zzcnl_2015 <- brick('data/zzc/zzc_2015_nlviirs.tif')
+zzcnl_2016 <- brick('data/zzc/zzc_2016_nlviirs.tif')
+zzcnl_2017 <- brick('data/zzc/zzc_2017_nlviirs.tif')
+
+
+
+#12 band data from tif
+
+
+
+ndvizzc_2014 <- NDVI(zzc2014, 4, 5)
+ndvizzc_2015 <- NDVI(zzc2015, 4 , 5)
+ndvizzc_2016 <- NDVI(zzc2016, 4, 5)
+ndvizzc_2017 <- NDVI(zzc2017, 4, 5)
+
+```
+
+```{r}
+
+# plotRGB(zzc2014, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite zzc 2014")
+# 
+# plotRGB(zzc2015, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite zzc2015")
+# 
+# plotRGB(zzc2016, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite zzc2016")
+# 
+# plotRGB(zzc2017, r = 4, g = 3, b = 2, axes = TRUE, stretch = "lin",
+#         main = "Landsat True Color Composite zzc2017")
+raster::plot(zzcnl_2014, col = gray.colors(10, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+# raster::plot(zzc2015nl, col = gray.colors(10, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+# raster::plot(zzc2016nl, col = gray.colors(10, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+# raster::plot(zzc2017nl, col = gray.colors(10, start = 0, end = 1, gamma = 2.2, alpha = NULL))
+
+
+plot(ndvizzc_2014, col = rev(terrain.colors(30)), main = 'NDVI zzc2014')
+# plot(ndvizzc_2015, col = rev(terrain.colors(30)), main = 'NDVI zzc2015')
+# plot(ndvizzc_2016, col = rev(terrain.colors(30)), main = 'NDVI zzc2016')
+# plot(ndvizzc_2017, col = rev(terrain.colors(30)), main = 'NDVI zzc2017')
+# 
+
+
+ndvi_zzc_stack <- stack(ndvizzc_2014,ndvizzc_2015,ndvizzc_2016, ndvizzc_2017)
+nl_zzc_stack <- stack(zzcnl_2014,zzcnl_2015,zzcnl_2016, zzcnl_2017)
+
+#names(ndvi_zzc_stack) <- c(2014,2015,2016,2017)
+avg_ndvi_zzc <- cellStats(ndvi_zzc_stack, mean)
+
+avg_ndvi_zzc <- as_tibble(avg_ndvi_zzc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_ndvi_zzc$'year' <- c(2014,2015,2016,2017)
+hist(ndvi_zzc_stack)
+
+avg_ndvi_zzc <- avg_ndvi_zzc[c("year", "value")]
+avg_ndvi_zzc = rename(avg_ndvi_zzc, `meanndvi` = value)
+# avg_ndvi_zzc
+
+ggplot(data = avg_ndvi_zzc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+
+# night lights
+#names(ndvi_zzc_stack) <- c(2014,2015,2016,2017)
+avg_nl_zzc <- cellStats(nl_zzc_stack, mean)
+
+avg_nl_zzc <- as_tibble(avg_nl_zzc)
+# add a site column to our data
+
+
+# add a "year" column to our data
+avg_nl_zzc$'year' <- c(2014,2015,2016,2017)
+hist(nl_zzc_stack)
+
+avg_nl_zzc <- avg_nl_zzc[c("year", "value")]
+avg_nl_zzc = rename(avg_nl_zzc, `meannl` = value)
+avg_nl_zzc
+
+ggplot(data = avg_nl_zzc, aes(x=year, y=meannl)) +
+  geom_point()
+
+```
+
+
+
+## All four together
+
+```{r}
+#Taobao villages
+ggplot(data = avg_ndvi_lbc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+ggplot(data = avg_ndvi_mdc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+ggplot(data = avg_ndvi_clc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+ggplot(data = avg_ndvi_zzc, aes(x=year, y=meanndvi)) +
+  geom_point()
+
+
+```
+
+
+
+
+```{r}
+hist(ndvi_lbc_stack)
+hist(ndvi_mdc_stack)
+
+hist(ndvi_clc_stack)
+hist(ndvi_zzc_stack)
+
+
+
+```
+
+
