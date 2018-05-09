@@ -3,8 +3,7 @@ title: "DS421 semester 2 final project"
 author: "@xrwang"
 date: "5/3/2018"
 output: 
-  html_document:
-    keep_md: yes
+  github_document: default
   pdf_document:
     latex_engine: xelatex
 always_allow_html: yes
