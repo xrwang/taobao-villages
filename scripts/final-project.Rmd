@@ -421,8 +421,12 @@ taobao_villages_2014 <- readxl::read_excel('data/taobao-village-list/taobao-vill
 
 ```
 
+
+
+#Geocode taobao villages
 ```{r}
-taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
+taobao_villages_2016 <- taobao_villages_2016 %>% 
+  mutate(., geocodeAdd = paste0(sheng,cun))
 taobao_villages_2016 %>% count(xiangzhen)
 
 
@@ -430,7 +434,12 @@ taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合
 #Go through this list and geocode them all !
 
 taobao_villages_subset_2016
-token <- Sys.getenv("GAPI1")
+
+```
+
+## Set environment token for api call, geocode and bind together.
+```{r}
+token <- Sys.getenv("GOOGMAPS")
 #https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
 geocode_the_place_f <- function(geocodeAdd,...) {
 
@@ -441,7 +450,7 @@ geocode_the_place_f <- function(geocodeAdd,...) {
       results <- fromJSON(content(json, as='text'))$results$geometry$location
 
     } else {
-    NULL
+      NULL
     }
 }
 
