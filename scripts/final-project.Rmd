@@ -445,10 +445,10 @@ geocode_the_place_f <- function(geocodeAdd,...) {
     }
 }
 
-taobao_villages_2016_subset_geocoded <- taobao_villages_subset_2016 %>%
+taobao_villages_2016_geocoded <- taobao_villages_subset_2016 %>%
   bind_cols(., pmap_df(., geocode_the_place_f))
   
 
-taobao_villages_2016_subset_geocoded
+taobao_villages_2016_geocoded
 
 ```
