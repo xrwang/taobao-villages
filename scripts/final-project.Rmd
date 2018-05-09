@@ -5,6 +5,7 @@ date: "5/3/2018"
 output: 
   pdf_document:
     latex_engine: xelatex
+always_allow_html: yes
 ---
 
 #Contents
@@ -48,6 +49,7 @@ library(raster)
 library(spData)        # load geographic data
 library(httr)
 library(jsonlite)
+library(mapview)
 ```
 
 
@@ -169,23 +171,35 @@ chips_rur_2007hhiexp$name_id <- substr(chips_rur_2007hhiexp$name_id, 1, 6)
 chips_rur_1988_filt %>%
   group_by(UCODE) %>%
   summarise(mean = base::mean(HNET88)) %>%
-  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1988_filt$HNET88))
-base::mean(chips_rur_1988_filt$HNET88)
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1988_filt$HNET88)) %>%
+  ggplot(aes(UCODE,mean)) +
+           geom_point()
+
 
 chips_rur_1995 %>%
   group_by(A1) %>%
   summarise(mean=base::mean(B602)) %>%
-  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1995$B602))
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_1995$B602))  %>%
+  ggplot(aes(A1,mean)) +
+           geom_point()
+
 
 chips_rur_2007hhiexp %>%
   group_by(name_id) %>%
   summarise(mean=base::mean(income_net)) %>%
-  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2007hhiexp$income_net))
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2007hhiexp$income_net)) %>%
+  ggplot(aes(name_id,mean)) +
+           geom_point()
+
+chips_rur_2007hhiexp %>%
+  group_by(name_id) 
 
 chips_rur_2013 %>%
   group_by(coun) %>%
   summarise(mean=base::mean(f01_1)) %>%
-  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2013$f01_1, na.rm=TRUE))
+  mutate(., diff_from_country_mean = mean-base::mean(chips_rur_2013$f01_1, na.rm=TRUE)) %>%
+  ggplot(aes(coun,mean)) +
+           geom_point()
 
 ```
 ##dice off last 3 digits from `name id` of chips_rur_2007hhiexp 
@@ -231,6 +245,15 @@ prov_county_main <- prov_county_main %>%
 
 
 prov_county_main
+
+```
+
+## Join prov_county_main to the tables
+```{r}
+
+chips_rur_1988_filt$UCODE <- strtoi(chips_rur_1988_filt$UCODE)
+chips_rur_1988_filt <- chips_rur_1988_filt %>% left_join(prov_county_main, by=c('UCODE'='code')) %>% na.omit()
+
 
 ```
 
@@ -357,17 +380,20 @@ prov_county_main$long <- geocoded_areas$long
 prov_county_main$engAdd <- geocoded_areas$formatted_address
 
 #One big geocoded table
-prov_county_main
+a <- chips_rur_1988_filt %>% filter(lat != 0)
 ```
 
-## Income maps
+## Maps of survey locations
 ```{r}
 
 #Join CHIP data to geocoded tabel, make a map
 
 
 
-
+#mapview(data.frame(x = prov_county_main$long, y = prov_county_main$lat), xcol = "x", ycol = "y", crs = 4326, na.rm=TRUE)
+mapviewOptions(basemaps = c("CartoDB.DarkMatter", "OpenStreetMap.DE"),
+               layers.control.pos = "topright")
+mapview(data.frame(x = a$long  , y = a$lat), xcol = "x", ycol = "y", crs = 3857)
 
 
 ```
@@ -459,5 +485,16 @@ taobao_villages_2016_geocoded <- taobao_villages_subset_2016 %>%
   
 
 taobao_villages_2016_geocoded
+
+```
+
+
+#Did NDVI (Normalized difference vegetation index) change for a few of the taobao villages?
+
+
+## Here I setup a location (lat long point) and then find the bounding box for it. I then am able to georeference jpgs like the ones that come from Google Satellite Maps
+```{r}
+
+
 
 ```
