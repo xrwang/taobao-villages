@@ -9,7 +9,8 @@ library(tidyverse)
 library(httr)
 library(ggmap)
 library(httr)
-library("jsonlite")
+library(jsonlite)
+library(rjson)
 
 ```
 
@@ -33,28 +34,34 @@ taobao_villages_2016 <- read_csv('data/taobao-village-list/taobao_village_list_2
                             ),
                             skip=1)
 taobao_villages_2016 <- taobao_villages_2016 %>% mutate(., geocodeAdd = paste0(sheng,cun))
-taobao_villages_2016 %>% count(xiangzhen)
+a<- taobao_villages_2016 %>% count(sheng, sort=TRUE)
 
+library(gridExtra)
+a
+png("test.png", height = 50*nrow(a), width = 200*ncol(a))
+grid.table(a)
+dev.off()
 
-taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合镇' )
+#taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合镇' )
 #Go through this list and geocode them all !
 
-taobao_villages_subset_2016
+#taobao_villages_subset_2016
 
-# geocode_the_place <- function(geocodeAdd,...) {
-# 
-#     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
-#     
-#   #     if (status_code(json) == 200) {
-#   #       response <- fromJSON(content(json, as='text'))
-#   #   } else {
-#   #   NULL
-#   # }
-# }
-# 
-# 
-# taobao_geocoded <- taobao_villages_subset_2016 %>%
-#   pmap_df(geocode_the_place, geocodeAdd)
+geocode_the_place <- function(geocodeAdd,...) {
+ 
+     a <- geocode(geocodeAdd, output='all', messaging=TRUE, override_limit=TRUE)
+    
+        if (status_code(json) == 200) {
+
+          response <- fromJSON(content(json, as='text'))
+      } else {
+      NULL
+    }
+ }
+ 
+ 
+ # taobao_geocoded <- taobao_villages_subset_2016 %>%
+ #   pmap_df(geocode_the_place, geocodeAdd)
 
 
 ```
@@ -121,6 +128,7 @@ diffdiff <- setdiff(newone_table_2015_2016, newone_table_2014_2015)
 taobao_villages_2015
 taobao_villages_2016
 
+taobao_villages_2015 %>% filter(., sheng =="山东省")
 ```
 
 
@@ -135,5 +143,14 @@ diffdiff
 intersect(taobao_villages_2014, taobao_villages_2016)
 nrow(taobao_villages_2014)
 nrow(intersect(taobao_villages_2014, taobao_villages_2016))
+
+
+
+
+```
+
+
+```{r}
+taobao_villages_2016_geoc <- read_csv('')
 
 ```

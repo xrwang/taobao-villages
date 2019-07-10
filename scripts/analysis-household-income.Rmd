@@ -160,7 +160,8 @@ lm(HNET88~LAT, data=chips_rur_1988_filt)
 
 ```{r}
 
-
+chips_rur_2013_fixed <- chips_rur_2013 %>%
+                        mutate(., hhcode2= substr(chips_rur_2013$hhcode, 1, nchar(chips_rur_2013$hhcode)-9))
 ```
 
 ```{r}

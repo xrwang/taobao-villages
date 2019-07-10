@@ -124,18 +124,7 @@ get_tile_save <- function (longitude, latitude, filename) {
     
 }
 
-get_tile_save(longitude = longitude_lb, latitude = latitude_lb, filename = 'lb')
-```
-
-    ## Source : https://maps.googleapis.com/maps/api/staticmap?center=27.040506,106.728735&zoom=16&size=640x640&scale=2&maptype=satellite&language=en-EN
-
-    ## Saving 7 x 5 in image
-
-    ## Warning: Ignoring unknown aesthetics: xmin, xmax, ymin, ymax
-
-![](processing-raster_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
-
-``` r
+#get_tile_save(longitude = longitude_lb, latitude = latitude_lb, filename = 'lb')
 #get_tile_save(longitude = longitude_mdc, latitude = latitude_mdc, filename = 'mdc')
 #get_tile_save(longitude = longitude_chengloucun, latitude = latitude_chengloucun, filename = 'mdc')
 #get_tile_save(longitude = longitude_zzc, latitude = latitude_zzc, filename = 'zhizucun')
@@ -239,8 +228,8 @@ make_a_bbox_shapefile <- function (long, lat, filename) {
 
 \#Projections are off\!
 
-Landsat projection
-and
+Landsat projection and making sure everything is same
+projection
 
 ``` r
 #landsat: +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0

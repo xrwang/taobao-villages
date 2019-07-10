@@ -456,6 +456,7 @@ taobao_villages_2016 <- taobao_villages_2016 %>%
   mutate(., geocodeAdd = paste0(sheng,cun))
 taobao_villages_2016 %>% count(xiangzhen)
 
+taobao_villages_2016 
 
 taobao_villages_subset_2016 <- subset(taobao_villages_2016, xiangzhen == '三合镇' )
 #Go through this list and geocode them all !
@@ -471,21 +472,33 @@ token <- Sys.getenv("GOOGMAPS")
 geocode_the_place_f <- function(geocodeAdd,...) {
 
   #http://api.iucnredlist.org/index/species/Acaena-exigua.json
-    json <- httr::GET(paste0('https://maps.googleapis.com/maps/api/geocode/json?address=', geocodeAdd, '&key=', token))
-  
+    json <- httr::GET(paste0('https://maps.googleapis.com/maps/api/geocode/json?address=', geocodeAdd))
     if (status_code(json) == 200) {
       results <- fromJSON(content(json, as='text'))$results$geometry$location
-
+      print(results)
     } else {
       NULL
     }
 }
 
-taobao_villages_2016_geocoded <- taobao_villages_subset_2016 %>%
-  bind_cols(., pmap_df(., geocode_the_place_f))
-  
+# taobao_villages_2016_geocoded_sub <- taobao_villages_subset_2016 %>%
+#   bind_cols(., pmap_df(., geocode_the_place_f))
+#   
 
-taobao_villages_2016_geocoded
+library(tidyverse)
+library(ggmap)
+
+taobao_villages_subset_2016
+taobao_villages_2016_geocoded_sub 
+#locations_df <- mutate_geocode(taobao_villages_subset_2016, geocodeAdd)
+#locations_df
+
+taobao_villages_2016_geocoded_full <-  mutate_geocode(taobao_villages_2016, geocodeAdd)
+
+# taobao_villages_2016_geocoded_full <- taobao_villages_subset %>%
+#   bind_cols(., pmap_df(., geocode_the_place_f))
+# 
+# taobao_villages_2016_geocoded_full
 
 ```
 
@@ -498,7 +511,12 @@ taobao_villages_2016_geocoded
 ## Make bounding box off of one satellite tile.
 
 bounding_box function is from https://github.com/trinker/bounding_box, an R implementation of Jan Philip Matuschek's algorithm. 
+```{r}
+taobao_villages_2016_geocoded_full
 
+write_csv(taobao_villages_2016_geocoded_full, "data/taobao_villages_2016_geocoded_full.csv")
+
+```
 ```{r}
 bounding_box <- function(lat, lon, dist, in.miles = TRUE) {
 
